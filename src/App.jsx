@@ -4,7 +4,8 @@ import {
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
   signOut, 
-  onAuthStateChanged 
+  onAuthStateChanged,
+  sendPasswordResetEmail 
 } from 'firebase/auth';
 import { 
   doc, 
@@ -39,6 +40,57 @@ const AREAS_ADMINISTRACAO = [
 // E-mail oficial do Administrador
 const ADMIN_EMAIL_AUTORIZADO = "ofeitosa94@gmail.com";
 
+// Tabela Oficial de Conquistas Mensais + Secretas
+const CONQUISTAS_SISTEMA = [
+  // 📚 Participação
+  { id: 'part_1', cat: 'Participação', nome: 'Primeiro Passo', desc: 'Responder 10 questões no mês', icone: '🎯', xp: 30, secreta: false, checar: (u) => (u.questoesRespondidasMes || 0) >= 10 },
+  { id: 'part_2', cat: 'Participação', nome: 'Participante', desc: 'Completar 3 quizzes no mês', icone: '📚', xp: 50, secreta: false, checar: (u) => (u.quizzesRealizadosMes || 0) >= 3 },
+  { id: 'part_3', cat: 'Participação', nome: 'Ativo', desc: 'Completar 6 quizzes no mês', icone: '⚡', secreta: false, xp: 75, checar: (u) => (u.quizzesRealizadosMes || 0) >= 6 },
+  { id: 'part_4', cat: 'Participação', nome: 'Dedicado', desc: 'Completar 10 quizzes no mês', icone: '🔥', secreta: false, xp: 100, checar: (u) => (u.quizzesRealizadosMes || 0) >= 10 },
+
+  // 🎯 Desempenho Geral
+  { id: 'des_1', cat: 'Desempenho', nome: 'Primeiro Acerto', desc: 'Acertar 1 questão no mês', icone: '✅', xp: 20, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 1 },
+  { id: 'des_2', cat: 'Desempenho', nome: 'Conhecedor', desc: '25 acertos no mês', icone: '🧠', xp: 50, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 25 },
+  { id: 'des_3', cat: 'Desempenho', nome: 'Bom Desempenho', desc: '50 acertos no mês', icone: '🌟', xp: 75, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 50 },
+  { id: 'des_4', cat: 'Desempenho', nome: 'Especialista', desc: '100 acertos no mês', icone: '🥇', xp: 150, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 100 },
+  { id: 'des_5', cat: 'Desempenho', nome: 'Mestre do Mês', desc: '150 acertos no mês', icone: '👑', xp: 250, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 150 },
+
+  // 🔥 Desempenho no Quiz (Sessão Única)
+  { id: 'quiz_1', cat: 'Quiz', nome: 'Quiz Completo', desc: 'Finalizar um bloco de 10', icone: '🏁', xp: 20, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 0 },
+  { id: 'quiz_2', cat: 'Quiz', nome: 'Mão Cheia', desc: 'Acertar 5/10 em um quiz', icone: '✋', xp: 30, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 5 },
+  { id: 'quiz_3', cat: 'Quiz', nome: 'Bom Quiz', desc: 'Acertar 7/10 em um quiz', icone: '👍', xp: 50, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 7 },
+  { id: 'quiz_4', cat: 'Quiz', nome: 'Excelente', desc: 'Acertar 9/10 em um quiz', icone: '🚀', xp: 75, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 9 },
+  { id: 'quiz_5', cat: 'Quiz', nome: 'Perfeito', desc: 'Acertar 10/10 em um quiz', icone: '💯', xp: 100, secreta: false, checar: (_, acertosQuiz) => acertosQuiz === 10 },
+
+  // 🏅 Categorias / Disciplinas
+  { id: 'cat_1', cat: 'Categorias', nome: 'Explorador', desc: 'Responder ≥10 questões em 3 categorias', icone: '🗺️', xp: 50, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).filter(k => u.categoriasRespondidas[k] >= 10).length >= 3 },
+  { id: 'cat_2', cat: 'Categorias', nome: 'Multidisciplinar', desc: 'Responder questões em 5 categorias', icone: '🧩', xp: 100, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).length >= 5 },
+  { id: 'cat_3', cat: 'Categorias', nome: 'Generalista', desc: 'Responder questões nas 10 categorias', icone: '🎓', xp: 200, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).length >= 10 },
+
+  // 🔒 Conquistas Secretas (Ocultas até desbloquear)
+  { id: 'sec_1', cat: 'Secreta', nome: 'Velocista ADM', desc: 'Respondeu e acertou uma questão em menos de 5s', icone: '⚡', xp: 100, secreta: true, checar: (_, __, tempoRestante) => tempoRestante >= 55 },
+  { id: 'sec_2', cat: 'Secreta', nome: 'Perfeição Absoluta', desc: 'Concluiu um quiz com 100% sem cometer erros', icone: '💎', xp: 200, secreta: true, checar: (_, acertosQuiz) => acertosQuiz === 10 },
+  { id: 'sec_3', cat: 'Secreta', nome: 'Coruja da Madrugada', desc: 'Estudou e concluiu um quiz no turno da noite/madrugada', icone: '🦉', xp: 80, secreta: true, checar: () => { const h = new Date().getHours(); return h >= 22 || h < 4; } }
+];
+
+// Tabela Oficial de Missões Dinâmicas
+const MISSOES_SISTEMA = [
+  // 🟢 Diárias
+  { id: 'dia_1', tipo: 'Diária', nome: 'Desafio Diário', desc: 'Responda 10 questões hoje', alvo: 10, xp: 30, progresso: (u) => u.progressoMissoes?.questoesHoje || 0 },
+  { id: 'dia_2', tipo: 'Diária', nome: 'Desafio Rápido', desc: 'Acerte 5 questões hoje', alvo: 5, xp: 40, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
+
+  // 🔵 Semanais
+  { id: 'sem_1', tipo: 'Semanal', nome: 'Semana de Estudos', desc: 'Responda 30 questões esta semana', alvo: 30, xp: 100, progresso: (u) => u.progressoMissoes?.questoesSemana || 0 },
+  { id: 'sem_2', tipo: 'Semanal', nome: 'Semana Perfeita', desc: 'Complete 3 quizzes com ≥70% de aproveitamento', alvo: 3, xp: 150, progresso: (u) => u.progressoMissoes?.quizzes70pctSemana || 0 },
+  { id: 'sem_3', tipo: 'Semanal', nome: 'Explorador Semanal', desc: 'Responda questões em 3 categorias diferentes', alvo: 3, xp: 100, progresso: (u) => (u.progressoMissoes?.categoriasSemana || []).length },
+
+  // 🔴 Mensais
+  { id: 'men_1', tipo: 'Mensal', nome: 'Desafio do Mês', desc: 'Responda 100 questões durante o mês', alvo: 100, xp: 300, progresso: (u) => u.questoesRespondidasMes || 0 },
+  { id: 'men_2', tipo: 'Mensal', nome: 'Mestre das Categorias', desc: 'Complete um quiz em todas as 10 categorias', alvo: 10, xp: 400, progresso: (u) => (u.progressoMissoes?.quizzes10CategoriasMes || []).length },
+  { id: 'men_3', tipo: 'Mensal', nome: 'Consistência', desc: 'Participe em pelo menos 15 dias diferentes no mês', alvo: 15, xp: 300, progresso: (u) => (u.diasAtivosMes || []).length },
+  { id: 'men_4', tipo: 'Mensal', nome: 'Excelência', desc: 'Mantenha média de acertos superior a 80% no mês (Min. 50 qst)', alvo: 80, xp: 500, progresso: (u) => u.questoesRespondidasMes >= 50 ? Math.round((u.questoesAcertadasMes / u.questoesRespondidasMes) * 100) : 0 }
+];
+
 // Algoritmo Fisher-Yates para embaralhar listas
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -53,9 +105,10 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [isLogin, setIsLogin] = useState(true);
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [abaAtiva, setAbaAtiva] = useState('home');
 
-  // Form Login/Cadastro
+  // Form Login/Cadastro/Reset
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nome, setNome] = useState('');
@@ -63,17 +116,19 @@ export default function App() {
   const [turma, setTurma] = useState('');
   const [unidade, setUnidade] = useState('');
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   // Quiz & Timer
   const [perguntas, setPerguntas] = useState([]);
-  const [perguntasSessao, setPerguntasSessao] = useState([]); // Bloco de até 10 perguntas embaralhadas
-  const [perguntasErradasSessao, setPerguntasErradasSessao] = useState([]); // Guarda as erradas para refazer
+  const [perguntasSessao, setPerguntasSessao] = useState([]); 
+  const [perguntasErradasSessao, setPerguntasErradasSessao] = useState([]); 
   const [disciplinaSelecionada, setDisciplinaSelecionada] = useState(null);
   const [indicePerguntaAtual, setIndicePerguntaAtual] = useState(0);
   const [opcaoSelecionada, setOpcaoSelecionada] = useState(null);
   const [respostaConfirmada, setRespostaConfirmada] = useState(false);
   const [pontosSessao, setPontosSessao] = useState(0);
+  const [acertosSessao, setAcertosSessao] = useState(0);
   const [quizFinalizado, setQuizFinalizado] = useState(false);
   const [isModoRefazer, setIsModoRefazer] = useState(false);
   
@@ -100,12 +155,13 @@ export default function App() {
   const [altE, setAltE] = useState('');
   const [respostaCorretaIndex, setRespostaCorretaIndex] = useState(0);
   const [novaExplicacao, setNovaExplicacao] = useState('');
+  const [nomeNovaTemporada, setNomeNovaTemporada] = useState('OUTUBRO/2026');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        carregarDadosUsuario(currentUser.uid);
+        await carregarDadosUsuario(currentUser.uid);
         carregarPerguntas();
         carregarRanking();
       } else {
@@ -131,8 +187,58 @@ export default function App() {
     const docRef = doc(db, 'users', uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      setUserData(docSnap.data());
+      const data = docSnap.data();
+
+      const hoje = new Date().toISOString().split('T')[0];
+      const diasAtivos = data.diasAtivosMes || [];
+      const ultimoDiaAtivo = data.ultimoDiaAtivo || '';
+      
+      let updates = {};
+
+      if (!diasAtivos.includes(hoje)) {
+        updates.diasAtivosMes = [...diasAtivos, hoje];
+        data.diasAtivosMes = updates.diasAtivosMes;
+      }
+
+      // Se virou o dia, reseta histórico diário de acertos, erros e progresso das missões diárias
+      if (ultimoDiaAtivo !== hoje) {
+        updates.ultimoDiaAtivo = hoje;
+        updates.questoesRespondidasHoje = [];
+        updates.questoesErradasHoje = [];
+        updates["progressoMissoes.questoesHoje"] = 0;
+        updates["progressoMissoes.acertosHoje"] = 0;
+
+        data.ultimoDiaAtivo = hoje;
+        data.questoesRespondidasHoje = [];
+        data.questoesErradasHoje = [];
+        data.progressoMissoes = {
+          ...(data.progressoMissoes || {}),
+          questoesHoje: 0,
+          acertosHoje: 0
+        };
+      }
+
+      // Garante que o objeto progressoMissoes exista para contas legadas
+      if (!data.progressoMissoes) {
+        updates.progressoMissoes = {
+          questoesHoje: 0,
+          acertosHoje: 0,
+          questoesSemana: 0,
+          quizzes70pctSemana: 0,
+          categoriasSemana: [],
+          quizzes10CategoriasMes: []
+        };
+        data.progressoMissoes = updates.progressoMissoes;
+      }
+
+      if (Object.keys(updates).length > 0) {
+        await updateDoc(docRef, updates);
+      }
+
+      setUserData(data);
+      return data;
     }
+    return null;
   };
 
   const carregarPerguntas = async () => {
@@ -152,7 +258,7 @@ export default function App() {
 
   const carregarRanking = async () => {
     try {
-      const q = query(collection(db, 'users'), orderBy('pontuacaoGeral', 'desc'), limit(10));
+      const q = query(collection(db, 'users'), orderBy('xpTemporada', 'desc'), limit(10));
       const querySnapshot = await getDocs(q);
       const ranking = [];
       querySnapshot.forEach((doc) => {
@@ -161,6 +267,54 @@ export default function App() {
       setRankingAlunos(ranking);
     } catch (err) {
       console.error("Erro ao carregar ranking:", err);
+    }
+  };
+
+  const checarEConcederConquistas = async (dadosAtualizados, acertosQuizAtual = -1, tempoDaQuestao = 0) => {
+    if (!user) return;
+    const userRef = doc(db, 'users', user.uid);
+    let xpGeralAdd = 0;
+
+    const conquistasAtuais = dadosAtualizados.conquistasDesbloqueadas || [];
+    const novasConquistas = [];
+
+    CONQUISTAS_SISTEMA.forEach((conquista) => {
+      if (!conquistasAtuais.includes(conquista.id)) {
+        if (conquista.checar(dadosAtualizados, acertosQuizAtual, tempoDaQuestao)) {
+          novasConquistas.push(conquista.id);
+          xpGeralAdd += conquista.xp;
+        }
+      }
+    });
+
+    const missoesConcluidasAtuais = dadosAtualizados.missoesConcluidas || [];
+    const novasMissoesCompletas = [];
+
+    MISSOES_SISTEMA.forEach((missao) => {
+      if (!missoesConcluidasAtuais.includes(missao.id)) {
+        const valorAtual = missao.progresso(dadosAtualizados);
+        if (valorAtual >= missao.alvo) {
+          novasMissoesCompletas.push(missao.id);
+          xpGeralAdd += missao.xp;
+        }
+      }
+    });
+
+    if (novasConquistas.length > 0 || novasMissoesCompletas.length > 0) {
+      await updateDoc(userRef, {
+        conquistasDesbloqueadas: [...conquistasAtuais, ...novasConquistas],
+        missoesConcluidas: [...missoesConcluidasAtuais, ...novasMissoesCompletas],
+        xpTemporada: increment(xpGeralAdd),
+        pontuacaoGeral: increment(xpGeralAdd)
+      });
+
+      let msg = '🎉 PARABÉNS!\n';
+      if (novasMissoesCompletas.length > 0) msg += `🎯 ${novasMissoesCompletas.length} Missão(ões) Cumprida(s)!\n`;
+      if (novasConquistas.length > 0) msg += `🏆 ${novasConquistas.length} Conquista(s) Desbloqueada(s)!\n`;
+      msg += `+${xpGeralAdd} XP creditados!`;
+
+      alert(msg);
+      await carregarDadosUsuario(user.uid);
     }
   };
 
@@ -179,10 +333,12 @@ export default function App() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccessMessage('');
     setLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const newUser = userCredential.user;
+      const hoje = new Date().toISOString().split('T')[0];
 
       const newUserData = {
         uid: newUser.uid,
@@ -191,11 +347,35 @@ export default function App() {
         curso: curso,
         turma: turma,
         unidade: unidade,
+        
         pontuacaoGeral: 0,
         quizzesRealizados: 0,
         questoesRespondidas: 0,
         questoesAcertadas: 0,
         maiorSequencia: 0,
+        
+        xpTemporada: 0,
+        quizzesRealizadosMes: 0,
+        questoesRespondidasMes: 0,
+        questoesAcertadasMes: 0,
+        categoriasRespondidas: {},
+        conquistasDesbloqueadas: [],
+        missoesConcluidas: [],
+        diasAtivosMes: [hoje],
+        ultimoDiaAtivo: hoje,
+        questoesRespondidasHoje: [],
+        questoesErradasHoje: [],
+        temporadaAtual: "SETEMBRO/2026",
+
+        progressoMissoes: {
+          questoesHoje: 0,
+          acertosHoje: 0,
+          questoesSemana: 0,
+          quizzes70pctSemana: 0,
+          categoriasSemana: [],
+          quizzes10CategoriasMes: []
+        },
+
         isAdmin: email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase()
       };
 
@@ -210,6 +390,7 @@ export default function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccessMessage('');
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -219,10 +400,33 @@ export default function App() {
     setLoading(false);
   };
 
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    setError('');
+    setSuccessMessage('');
+
+    if (!email) {
+      setError('Digite seu e-mail para continuar.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setSuccessMessage('E-mail de redefinição enviado com sucesso! Verifique sua caixa de entrada ou spam.');
+    } catch (err) {
+      if (err.code === 'auth/user-not-found') {
+        setError('E-mail não encontrado no sistema.');
+      } else {
+        setError('Erro ao enviar e-mail de redefinição. Verifique se o e-mail está correto.');
+      }
+    }
+    setLoading(false);
+  };
+
   const handleTornarAdmin = async () => {
     if (!user) return;
 
-    // Trava de Segurança Rígida
     if (user.email.toLowerCase() !== ADMIN_EMAIL_AUTORIZADO.toLowerCase()) {
       alert("Acesso negado: Apenas a conta oficial (ofeitosa94@gmail.com) tem permissão de Administrador.");
       return;
@@ -323,34 +527,60 @@ export default function App() {
     }
   };
 
-  const handleResetarRanking = async () => {
-    if (window.confirm("Tem certeza que deseja zerar a pontuação de TODOS os alunos no ranking?")) {
+  const handleEncerrarTemporada = async () => {
+    if (!nomeNovaTemporada) {
+      alert("Informe o nome da nova temporada (Ex: OUTUBRO/2026).");
+      return;
+    }
+
+    if (window.confirm(`Tem certeza que deseja encerrar a temporada atual e iniciar a temporada ${nomeNovaTemporada}? O XP, missões e conquistas mensais de TODOS os alunos serão resetados.`)) {
       setLoading(true);
       try {
         const querySnapshot = await getDocs(collection(db, 'users'));
         
         const promessas = querySnapshot.docs.map((userDoc) => 
-          updateDoc(doc(db, 'users', userDoc.id), { pontuacaoGeral: 0 })
+          updateDoc(doc(db, 'users', userDoc.id), {
+            xpTemporada: 0,
+            quizzesRealizadosMes: 0,
+            questoesRespondidasMes: 0,
+            questoesAcertadasMes: 0,
+            categoriasRespondidas: {},
+            conquistasDesbloqueadas: [],
+            missoesConcluidas: [],
+            diasAtivosMes: [],
+            temporadaAtual: nomeNovaTemporada,
+            "progressoMissoes.quizzes10CategoriasMes": []
+          })
         );
 
         await Promise.all(promessas);
 
-        alert("Ranking resetado com sucesso!");
+        alert(`Temporada ${nomeNovaTemporada} iniciada com sucesso!`);
         carregarRanking();
-        carregarDadosUsuario(user.uid);
+        await carregarDadosUsuario(user.uid);
       } catch (err) {
-        alert("Erro ao resetar ranking: " + err.message);
+        alert("Erro ao zerar temporada: " + err.message);
       } finally {
         setLoading(false);
       }
     }
   };
 
-  // Prepara o bloco de até 10 questões com alternativas embaralhadas
   const prepararBlocoQuestoes = (listaOrigem, quantidade = 10) => {
-    const embaralhadas = shuffleArray(listaOrigem).slice(0, quantidade);
+    const erradasHojeIds = userData?.questoesErradasHoje || [];
+    const respondidasHojeIds = userData?.questoesRespondidasHoje || [];
+
+    const naoRespondidasHoje = listaOrigem.filter(q => !respondidasHojeIds.includes(q.id));
+    const acertadasHoje = listaOrigem.filter(q => respondidasHojeIds.includes(q.id) && !erradasHojeIds.includes(q.id));
+    const erradasHoje = listaOrigem.filter(q => erradasHojeIds.includes(q.id));
+
+    const grupo1 = shuffleArray(naoRespondidasHoje);
+    const grupo2 = shuffleArray(acertadasHoje);
+    const grupo3 = shuffleArray(erradasHoje);
+
+    const listaOrdenada = [...grupo1, ...grupo2, ...grupo3].slice(0, quantidade);
     
-    return embaralhadas.map((q) => {
+    return listaOrdenada.map((q) => {
       const altsComIndice = q.alternativas.map((texto, idx) => ({
         texto,
         isCorreta: idx === q.respostaCorreta
@@ -381,6 +611,7 @@ export default function App() {
     setOpcaoSelecionada(null);
     setRespostaConfirmada(false);
     setPontosSessao(0);
+    setAcertosSessao(0);
     setStreak(0);
     setIsModoRefazer(false);
     setQuizFinalizado(false);
@@ -419,48 +650,83 @@ export default function App() {
     let xpGanho = 0;
     const tempoDecorrido = TEMPO_LIMITE - tempoRestante;
     const acertou = opcaoSelecionada === perguntaAtual.respostaCorreta;
+    const discAtual = perguntaAtual.disciplina;
+    const qId = perguntaAtual.id;
+
+    const respondidasHoje = userData?.questoesRespondidasHoje || [];
+    const erradasHoje = userData?.questoesErradasHoje || [];
+    const jaRespondidaHoje = respondidasHoje.includes(qId);
+
+    const contagemCategorias = { ...(userData?.categoriasRespondidas || {}) };
+    contagemCategorias[discAtual] = (contagemCategorias[discAtual] || 0) + 1;
+
+    const catSemanaAtual = userData?.progressoMissoes?.categoriasSemana || [];
+    const novasCatSemana = catSemanaAtual.includes(discAtual) ? catSemanaAtual : [...catSemanaAtual, discAtual];
+
+    const novasRespondidasHoje = jaRespondidaHoje ? respondidasHoje : [...respondidasHoje, qId];
+    let novasErradasHoje = [...erradasHoje];
 
     let updatesUsuario = {
-      questoesRespondidas: increment(1)
+      questoesRespondidas: increment(1),
+      questoesRespondidasMes: increment(1),
+      categoriasRespondidas: contagemCategorias,
+      questoesRespondidasHoje: novasRespondidasHoje,
+      "progressoMissoes.questoesHoje": increment(1),
+      "progressoMissoes.questoesSemana": increment(1),
+      "progressoMissoes.categoriasSemana": novasCatSemana
     };
 
     if (acertou && tempoRestante > 0) {
+      setAcertosSessao((prev) => prev + 1);
       updatesUsuario.questoesAcertadas = increment(1);
+      updatesUsuario.questoesAcertadasMes = increment(1);
+      updatesUsuario["progressoMissoes.acertosHoje"] = increment(1);
+
+      novasErradasHoje = novasErradasHoje.filter(id => id !== qId);
 
       if (!isModoRefazer) {
-        // Regra de Negócio Padrão: 5 XP (Presença) + 25 XP (Acerto) - 3 XP a cada 10s
         const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
-        xpGanho = Math.max(0, (5 + 25) - penalidadeTempo);
+        let xpBase = Math.max(0, 30 - penalidadeTempo);
 
-        // Lógica de Streak
-        const novoStreak = streak + 1;
-        setStreak(novoStreak);
+        if (jaRespondidaHoje) {
+          xpGanho = Math.floor(xpBase / 2);
+          setMensagemBonus('⚠️ Questão repetida hoje: Metade dos pontos (sem bônus de sequência).');
+        } else {
+          xpGanho = xpBase;
+          const novoStreak = streak + 1;
+          setStreak(novoStreak);
 
-        if (novoStreak > (userData?.maiorSequencia || 0)) {
-          updatesUsuario.maiorSequencia = novoStreak;
-        }
+          if (novoStreak > (userData?.maiorSequencia || 0)) {
+            updatesUsuario.maiorSequencia = novoStreak;
+          }
 
-        if (novoStreak === 3) {
-          xpGanho += 20;
-          setMensagemBonus('🔥 Sequência de 3 acertos! (+20 XP)');
-        } else if (novoStreak === 5) {
-          xpGanho += 50;
-          setMensagemBonus('⚡ Sequência Incrível de 5 acertos! (+50 XP)');
+          if (novoStreak === 3) {
+            xpGanho += 20;
+            setMensagemBonus('🔥 Sequência de 3 acertos! (+20 XP)');
+          } else if (novoStreak === 5) {
+            xpGanho += 50;
+            setMensagemBonus('⚡ Sequência Incrível de 5 acertos! (+50 XP)');
+          }
         }
       } else {
-        // Refazer: Teto de 15 XP (50% da pontuação máxima)
         const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
         xpGanho = Math.max(0, 15 - penalidadeTempo);
       }
     } else {
       setStreak(0);
+      if (!novasErradasHoje.includes(qId)) {
+        novasErradasHoje.push(qId);
+      }
       if (!isModoRefazer) {
         setPerguntasErradasSessao((prev) => [...prev, perguntaAtual]);
       }
     }
 
+    updatesUsuario.questoesErradasHoje = novasErradasHoje;
+
     if (xpGanho > 0) {
       updatesUsuario.pontuacaoGeral = increment(xpGanho);
+      updatesUsuario.xpTemporada = increment(xpGanho);
     }
 
     setXpUltimaQuestao(xpGanho);
@@ -468,8 +734,10 @@ export default function App() {
 
     const userRef = doc(db, 'users', user.uid);
     await updateDoc(userRef, updatesUsuario);
-    carregarDadosUsuario(user.uid);
+    const dadosNovos = await carregarDadosUsuario(user.uid);
     carregarRanking();
+
+    await checarEConcederConquistas(dadosNovos, -1, tempoRestante);
   };
 
   const handleProximaPergunta = async () => {
@@ -480,27 +748,39 @@ export default function App() {
       setTempoRestante(TEMPO_LIMITE);
       setMensagemBonus('');
     } else {
-      // Concluiu o Quiz (+30 XP Bônus de Finalização do Quiz)
       const userRef = doc(db, 'users', user.uid);
+      const aproveitamentoQuiz = (acertosSessao / perguntasSessao.length) * 100;
+
+      let payloadFinalQuiz = { 
+        quizzesRealizados: increment(1),
+        quizzesRealizadosMes: increment(1)
+      };
+
       if (!isModoRefazer) {
         const bonusConclusao = 30;
         setPontosSessao((prev) => prev + bonusConclusao);
-        await updateDoc(userRef, { 
-          pontuacaoGeral: increment(bonusConclusao),
-          quizzesRealizados: increment(1) 
-        });
-      } else {
-        await updateDoc(userRef, { 
-          quizzesRealizados: increment(1) 
-        });
+        payloadFinalQuiz.pontuacaoGeral = increment(bonusConclusao);
+        payloadFinalQuiz.xpTemporada = increment(bonusConclusao);
+
+        if (aproveitamentoQuiz >= 70) {
+          payloadFinalQuiz["progressoMissoes.quizzes70pctSemana"] = increment(1);
+        }
+
+        const cat10Mes = userData?.progressoMissoes?.quizzes10CategoriasMes || [];
+        if (disciplinaSelecionada && disciplinaSelecionada !== 'Todas' && !cat10Mes.includes(disciplinaSelecionada)) {
+          payloadFinalQuiz["progressoMissoes.quizzes10CategoriasMes"] = [...cat10Mes, disciplinaSelecionada];
+        }
       }
-      await carregarDadosUsuario(user.uid);
+
+      await updateDoc(userRef, payloadFinalQuiz);
+      const dadosNovos = await carregarDadosUsuario(user.uid);
       setQuizFinalizado(true);
       carregarRanking();
+
+      await checarEConcederConquistas(dadosNovos, acertosSessao);
     }
   };
 
-  // TELA DE QUIZ
   if (user && userData && disciplinaSelecionada) {
     if (perguntasSessao.length === 0) {
       return (
@@ -531,6 +811,7 @@ export default function App() {
             <div className="bg-slate-700/50 p-4 rounded-xl mb-6 border border-slate-600">
               <span className="text-xs text-slate-400 block mb-1">XP Total Ganho nesta Sessão</span>
               <span className="text-3xl font-black text-emerald-400">+{pontosSessao} XP</span>
+              <span className="text-xs text-slate-400 block mt-2">Acertos: {acertosSessao} de {perguntasSessao.length}</span>
             </div>
 
             {perguntasErradasSessao.length > 0 && !isModoRefazer && (
@@ -678,10 +959,11 @@ export default function App() {
     );
   }
 
-  // DASHBOARD PRINCIPAL
   if (user && userData) {
     const listaDisciplinas = ['Todas', ...AREAS_ADMINISTRACAO];
     const isUserAdminAutorizado = userData.isAdmin && user.email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase();
+    const conquistasDesbloqueadas = userData.conquistasDesbloqueadas || [];
+    const missoesConcluidas = userData.missoesConcluidas || [];
 
     return (
       <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center p-4">
@@ -691,6 +973,9 @@ export default function App() {
             <div>
               <h2 className="text-xl font-bold text-indigo-400">Olá, {userData.nome}!</h2>
               <p className="text-xs text-slate-400">{userData.email}</p>
+              <span className="inline-block mt-1 text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-semibold">
+                🗓️ Temporada: {userData.temporadaAtual || 'SETEMBRO/2026'}
+              </span>
             </div>
             <button 
               onClick={() => signOut(auth)}
@@ -706,6 +991,12 @@ export default function App() {
               className={`flex-1 py-2 text-xs font-semibold rounded-lg transition ${abaAtiva === 'home' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
             >
               📚 Quiz
+            </button>
+            <button 
+              onClick={() => setAbaAtiva('missoes')}
+              className={`flex-1 py-2 text-xs font-semibold rounded-lg transition ${abaAtiva === 'missoes' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'}`}
+            >
+              🎯 Missões
             </button>
             <button 
               onClick={() => { setAbaAtiva('ranking'); carregarRanking(); }}
@@ -733,8 +1024,9 @@ export default function App() {
             <div>
               <div className="bg-slate-700/40 p-4 rounded-xl border border-slate-600 flex justify-between items-center mb-6">
                 <div>
-                  <span className="text-xs text-slate-400 block">Sua Pontuação Total</span>
-                  <span className="text-2xl font-black text-emerald-400">{userData.pontuacaoGeral || 0} XP</span>
+                  <span className="text-xs text-slate-400 block">XP Mensal ({userData.temporadaAtual || 'Temporada'})</span>
+                  <span className="text-2xl font-black text-emerald-400">{userData.xpTemporada || 0} XP</span>
+                  <span className="text-[10px] text-slate-400 block mt-0.5">Vitalício: {userData.pontuacaoGeral || 0} XP</span>
                 </div>
                 {perguntas.length === 0 && (
                   <button 
@@ -770,11 +1062,64 @@ export default function App() {
             </div>
           )}
 
+          {abaAtiva === 'missoes' && (
+            <div className="space-y-6">
+              {['Diária', 'Semanal', 'Mensal'].map((categoriaTipo) => (
+                <div key={categoriaTipo} className="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-indigo-400 mb-3 flex items-center gap-1.5">
+                    {categoriaTipo === 'Diária' ? '🟢 Missões Diárias' : categoriaTipo === 'Semanal' ? '🔵 Missões Semanais' : '🔴 Missões Mensais'}
+                  </h4>
+
+                  <div className="space-y-2.5">
+                    {MISSOES_SISTEMA.filter(m => m.tipo === categoriaTipo).map((missao) => {
+                      const concluida = missoesConcluidas.includes(missao.id);
+                      const valorProgresso = Math.min(missao.progresso(userData), missao.alvo);
+                      const pct = Math.round((valorProgresso / missao.alvo) * 100);
+
+                      return (
+                        <div key={missao.id} className={`p-3 rounded-lg border text-xs ${concluida ? 'bg-emerald-950/40 border-emerald-500/40' : 'bg-slate-800/80 border-slate-700'}`}>
+                          <div className="flex justify-between items-start mb-1.5">
+                            <div>
+                              <span className={`font-bold block ${concluida ? 'text-emerald-300 line-through' : 'text-slate-200'}`}>
+                                {concluida ? '☑' : '☐'} {missao.nome}
+                              </span>
+                              <p className="text-[11px] text-slate-400">{missao.desc}</p>
+                            </div>
+                            <span className="font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                              +{missao.xp} XP
+                            </span>
+                          </div>
+
+                          {!concluida && (
+                            <div className="mt-2">
+                              <div className="flex justify-between text-[10px] text-slate-400 mb-1">
+                                <span>Progresso</span>
+                                <span>{valorProgresso} / {missao.alvo}</span>
+                              </div>
+                              <div className="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                                <div className="bg-indigo-500 h-full transition-all duration-500" style={{ width: `${pct}%` }}></div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           {abaAtiva === 'ranking' && (
             <div>
-              <h3 className="text-sm font-bold text-slate-200 mb-4 flex items-center gap-2">
-                🏆 Top Alunos em Administração
-              </h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-sm font-bold text-slate-200 flex items-center gap-2">
+                  🏆 Top Alunos - {userData.temporadaAtual || 'Temporada Atual'}
+                </h3>
+                <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold">
+                  Ordenado por XP Mensal
+                </span>
+              </div>
 
               <div className="space-y-2">
                 {rankingAlunos.map((aluno, index) => (
@@ -788,10 +1133,13 @@ export default function App() {
                       </span>
                       <div>
                         <span className="text-sm font-medium text-slate-200 block">{aluno.nome}</span>
-                        {aluno.uid === user.uid && <span className="text-[10px] text-indigo-400">(Você)</span>}
+                        <div className="flex gap-2">
+                          {aluno.uid === user.uid && <span className="text-[10px] text-indigo-400 font-bold">(Você)</span>}
+                          <span className="text-[10px] text-slate-400">Total: {aluno.pontuacaoGeral || 0} XP</span>
+                        </div>
                       </div>
                     </div>
-                    <span className="text-sm font-black text-emerald-400">{aluno.pontuacaoGeral || 0} XP</span>
+                    <span className="text-sm font-black text-emerald-400">{aluno.xpTemporada || 0} XP</span>
                   </div>
                 ))}
               </div>
@@ -813,12 +1161,12 @@ export default function App() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                  <span className="text-[11px] text-slate-400 block mb-1">⚡ XP Acumulado</span>
-                  <span className="text-2xl font-black text-emerald-400">{userData.pontuacaoGeral || 0} XP</span>
+                  <span className="text-[11px] text-slate-400 block mb-1">⚡ XP Temporada</span>
+                  <span className="text-2xl font-black text-emerald-400">{userData.xpTemporada || 0} XP</span>
                 </div>
 
                 <div className="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                  <span className="text-[11px] text-slate-400 block mb-1">🏆 Posição no Ranking</span>
+                  <span className="text-[11px] text-slate-400 block mb-1">👑 Pos. Temporada</span>
                   <span className="text-2xl font-black text-amber-400">
                     #{rankingAlunos.findIndex(a => a.uid === user.uid) !== -1 
                       ? rankingAlunos.findIndex(a => a.uid === user.uid) + 1 
@@ -841,9 +1189,47 @@ export default function App() {
                 </div>
               </div>
 
+              <div className="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="text-xs font-bold text-slate-200">🏆 Conquistas Mensais & Secretas ({conquistasDesbloqueadas.length}/{CONQUISTAS_SISTEMA.length})</h4>
+                  <span className="text-[10px] text-slate-400">Reinicia no fim do mês</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto pr-1">
+                  {CONQUISTAS_SISTEMA.map((item) => {
+                    const possui = conquistasDesbloqueadas.includes(item.id);
+                    return (
+                      <div 
+                        key={item.id}
+                        className={`p-2.5 rounded-lg border text-xs flex items-center gap-2.5 transition ${
+                          possui 
+                            ? 'bg-indigo-950/70 border-indigo-500/50 text-slate-100' 
+                            : 'bg-slate-800/40 border-slate-800 text-slate-500 opacity-60'
+                        }`}
+                      >
+                        <span className="text-2xl">{possui ? item.icone : '🔒'}</span>
+                        <div className="overflow-hidden">
+                          <span className={`font-bold block truncate ${possui ? 'text-indigo-300' : 'text-slate-400'}`}>
+                            {item.secreta && !possui ? 'Conquista Secreta' : item.nome}
+                          </span>
+                          <p className="text-[10px] leading-tight text-slate-400 truncate">
+                            {item.secreta && !possui ? 'Descubra como desbloquear.' : item.desc}
+                          </p>
+                          <span className="text-[9px] font-black text-emerald-400">+{item.xp} XP</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-700 space-y-2 text-xs">
                 <div className="flex justify-between py-1.5 border-b border-slate-800">
-                  <span className="text-slate-400">Quizzes Realizados</span>
+                  <span className="text-slate-400">XP Vitalício (Total Histórico)</span>
+                  <span className="font-bold text-emerald-400">{userData.pontuacaoGeral || 0} XP</span>
+                </div>
+                <div className="flex justify-between py-1.5 border-b border-slate-800">
+                  <span className="text-slate-400">Quizzes Realizados (Geral)</span>
                   <span className="font-bold text-slate-200">{userData.quizzesRealizados || 0}</span>
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-slate-800">
@@ -851,7 +1237,7 @@ export default function App() {
                   <span className="font-bold text-slate-200">{userData.questoesRespondidas || 0}</span>
                 </div>
                 <div className="flex justify-between py-1.5">
-                  <span className="text-slate-400">Questões Acertadas</span>
+                  <span className="text-slate-400">Questões Acertadas (Geral)</span>
                   <span className="font-bold text-emerald-400">{userData.questoesAcertadas || 0}</span>
                 </div>
               </div>
@@ -860,13 +1246,30 @@ export default function App() {
 
           {abaAtiva === 'admin' && isUserAdminAutorizado && (
             <div>
-              <button 
-                onClick={handleResetarRanking}
-                disabled={loading}
-                className="w-full bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-500/30 text-xs font-semibold py-2.5 rounded-lg transition mb-6"
-              >
-                ⚠️ Resetar Pontuação de Todos os Alunos
-              </button>
+              <div className="bg-slate-900 p-4 rounded-xl border border-amber-500/30 mb-6">
+                <h4 className="text-xs font-bold text-amber-300 mb-1 flex items-center gap-1">
+                  🗓️ Gerenciador de Temporada Mensal
+                </h4>
+                <p className="text-[11px] text-slate-400 mb-3">
+                  Ao encerrar a temporada, o XP do ranking, missões e conquistas mensais são resetados para todos os alunos. O histórico geral e estatísticas acumuladas permanecem intactos.
+                </p>
+                <div className="flex gap-2">
+                  <input 
+                    type="text" 
+                    value={nomeNovaTemporada}
+                    onChange={(e) => setNomeNovaTemporada(e.target.value)}
+                    placeholder="Ex: OUTUBRO/2026"
+                    className="bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs flex-1"
+                  />
+                  <button 
+                    onClick={handleEncerrarTemporada}
+                    disabled={loading}
+                    className="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-4 py-1.5 rounded-lg text-xs transition"
+                  >
+                    Encerrar e Reiniciar
+                  </button>
+                </div>
+              </div>
 
               <div className="bg-slate-900 p-4 rounded-xl border border-indigo-500/30 mb-6">
                 <h4 className="text-xs font-bold text-indigo-300 mb-1 flex items-center gap-1">
@@ -1007,7 +1410,6 @@ export default function App() {
     );
   }
 
-  // LOGIN / CADASTRO
   return (
     <div className="min-h-screen bg-slate-900 text-white flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-slate-800 rounded-2xl p-8 shadow-2xl border border-slate-700">
@@ -1022,101 +1424,156 @@ export default function App() {
           </div>
         )}
 
-        <form onSubmit={isLogin ? handleLogin : handleRegister} className="space-y-4">
-          {!isLogin && (
-            <>
-              <div>
-                <label className="block text-xs text-slate-400 mb-1">Nome Completo</label>
-                <input 
-                  type="text" 
-                  required
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                  placeholder="Seu nome"
-                  className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
-                />
-              </div>
+        {successMessage && (
+          <div className="mb-4 p-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm rounded-lg text-center">
+            {successMessage}
+          </div>
+        )}
 
-              <div>
-                <label className="block text-xs text-slate-400 mb-1">Curso</label>
-                <input 
-                  type="text" 
-                  required
-                  value={curso}
-                  onChange={(e) => setCurso(e.target.value)}
-                  placeholder="Ex: Administração"
-                  className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
-                />
-              </div>
+        {isForgotPassword ? (
+          <form onSubmit={handleForgotPassword} className="space-y-4">
+            <div>
+              <p className="text-xs text-slate-300 mb-4 text-center">
+                Digite o seu e-mail cadastrado. Enviaremos um link para você redefinir sua senha.
+              </p>
+              <label className="block text-xs text-slate-400 mb-1">E-mail</label>
+              <input 
+                type="email" 
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="seu@email.com"
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
+              />
+            </div>
 
-              <div className="grid grid-cols-2 gap-3">
+            <button 
+              type="submit"
+              disabled={loading}
+              className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-lg transition duration-200 mt-2 shadow-lg shadow-indigo-600/30"
+            >
+              {loading ? 'Enviando...' : 'Enviar Link de Recuperação'}
+            </button>
+
+            <div className="mt-4 text-center">
+              <button 
+                type="button"
+                onClick={() => { setIsForgotPassword(false); setError(''); setSuccessMessage(''); }}
+                className="text-xs text-slate-400 hover:text-indigo-400 transition"
+              >
+                ← Voltar para o Login
+              </button>
+            </div>
+          </form>
+        ) : (
+          <form onSubmit={isLogin ? handleLogin : handleRegister} className="space-y-4">
+            {!isLogin && (
+              <>
                 <div>
-                  <label className="block text-xs text-slate-400 mb-1">Turma</label>
+                  <label className="block text-xs text-slate-400 mb-1">Nome Completo</label>
                   <input 
                     type="text" 
                     required
-                    value={turma}
-                    onChange={(e) => setTurma(e.target.value)}
-                    placeholder="Ex: 3º A"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                    placeholder="Seu nome"
                     className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-xs text-slate-400 mb-1">Unidade</label>
+                  <label className="block text-xs text-slate-400 mb-1">Curso</label>
                   <input 
                     type="text" 
                     required
-                    value={unidade}
-                    onChange={(e) => setUnidade(e.target.value)}
-                    placeholder="Ex: Campus Centro"
+                    value={curso}
+                    onChange={(e) => setCurso(e.target.value)}
+                    placeholder="Ex: Administração"
                     className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
                   />
                 </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs text-slate-400 mb-1">Turma</label>
+                    <input 
+                      type="text" 
+                      required
+                      value={turma}
+                      onChange={(e) => setTurma(e.target.value)}
+                      placeholder="Ex: 3º A"
+                      className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-slate-400 mb-1">Unidade</label>
+                    <input 
+                      type="text" 
+                      required
+                      value={unidade}
+                      onChange={(e) => setUnidade(e.target.value)}
+                      placeholder="Ex: Campus Centro"
+                      className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+                </div>
+              </>
+            )}
+
+            <div>
+              <label className="block text-xs text-slate-400 mb-1">E-mail</label>
+              <input 
+                type="email" 
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="seu@email.com"
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <label className="block text-xs text-slate-400">Senha</label>
+                {isLogin && (
+                  <button 
+                    type="button"
+                    onClick={() => { setIsForgotPassword(true); setError(''); setSuccessMessage(''); }}
+                    className="text-[11px] text-indigo-400 hover:underline"
+                  >
+                    Esqueceu a senha?
+                  </button>
+                )}
               </div>
-            </>
-          )}
+              <input 
+                type="password" 
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
+              />
+            </div>
 
-          <div>
-            <label className="block text-xs text-slate-400 mb-1">E-mail</label>
-            <input 
-              type="email" 
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="seu@email.com"
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
-            />
-          </div>
+            <button 
+              type="submit"
+              disabled={loading}
+              className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-lg transition duration-200 mt-2 shadow-lg shadow-indigo-600/30"
+            >
+              {loading ? 'Carregando...' : isLogin ? 'Entrar' : 'Criar Conta'}
+            </button>
 
-          <div>
-            <label className="block text-xs text-slate-400 mb-1">Senha</label>
-            <input 
-              type="password" 
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"
-            />
-          </div>
-
-          <button 
-            type="submit"
-            disabled={loading}
-            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-lg transition duration-200 mt-2 shadow-lg shadow-indigo-600/30"
-          >
-            {loading ? 'Carregando...' : isLogin ? 'Entrar' : 'Criar Conta'}
-          </button>
-        </form>
-
-        <div className="mt-6 text-center">
-          <button 
-            onClick={() => { setIsLogin(!isLogin); setError(''); }}
-            className="text-xs text-slate-400 hover:text-indigo-400 transition"
-          >
-            {isLogin ? 'Ainda não tem conta? Cadastre-se' : 'Já possui conta? Faça Login'}
-          </button>
-        </div>
+            <div className="mt-6 text-center">
+              <button 
+                type="button"
+                onClick={() => { setIsLogin(!isLogin); setError(''); setSuccessMessage(''); }}
+                className="text-xs text-slate-400 hover:text-indigo-400 transition"
+              >
+                {isLogin ? 'Ainda não tem conta? Cadastre-se' : 'Já possui conta? Faça Login'}
+              </button>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );

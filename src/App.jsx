@@ -742,8 +742,18 @@ export default function App() {
       novasErradasHoje = novasErradasHoje.filter(id => id !== qId);
 
       if (!isModoRefazer) {
+        // Define o XP base de acordo com a dificuldade da questão
+        const xpPorDificuldade = {
+          'Fácil': 15,
+          'Médio': 30,
+          'Difícil': 50
+        };
+
+        // Obter o valor base da questão atual (ou 30 como padrão se não definido)
+        const baseDificuldade = xpPorDificuldade[perguntaAtual.dificuldade] || 30;
+
         const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
-        let xpBase = Math.max(0, 30 - penalidadeTempo);
+        let xpBase = Math.max(0, baseDificuldade - penalidadeTempo);
 
         if (jaRespondidaHoje) {
           xpGanho = Math.floor(xpBase / 2);
@@ -766,8 +776,15 @@ export default function App() {
           }
         }
       } else {
+        // Ajuste do XP no Modo Refazer dinâmico por dificuldade
+        const xpRefazerPorDificuldade = {
+          'Fácil': 10,
+          'Médio': 15,
+          'Difícil': 25
+        };
+        const baseRefazer = xpRefazerPorDificuldade[perguntaAtual.dificuldade] || 15;
         const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
-        xpGanho = Math.max(0, 15 - penalidadeTempo);
+        xpGanho = Math.max(0, baseRefazer - penalidadeTempo);
       }
     } else {
       setStreak(0);
@@ -874,7 +891,7 @@ export default function App() {
                 onClick={refazerQuestoesErradas}
                 className="w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 rounded-lg transition mb-3"
               >
-                🔄 Refazer Erradas ({perguntasErradasSessao.length}) - Máx 15 XP
+                🔄 Refazer Erradas ({perguntasErradasSessao.length})
               </button>
             )}
 
@@ -929,8 +946,8 @@ export default function App() {
           </div>
 
           <div className="flex gap-2 mb-4">
-            <span className="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">
-              Dificuldade: {perguntaAtual.dificuldade}
+            <span className="text-[10px] bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded font-bold">
+              Dificuldade: {perguntaAtual.dificuldade} ({perguntaAtual.dificuldade === 'Fácil' ? '15 XP' : perguntaAtual.dificuldade === 'Difícil' ? '50 XP' : '30 XP'})
             </span>
             {perguntaAtual.tipo && (
               <span className="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">

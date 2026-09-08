@@ -73,23 +73,40 @@ const CONQUISTAS_SISTEMA = [
   { id: 'sec_3', cat: 'Secreta', nome: 'Coruja da Madrugada', desc: 'Estudou e concluiu um quiz no turno da noite/madrugada', icone: '🦉', xp: 80, secreta: true, checar: () => { const h = new Date().getHours(); return h >= 22 || h < 4; } }
 ];
 
-// Tabela Oficial de Missões Dinâmicas
-const MISSOES_SISTEMA = [
-  // 🟢 Diárias
-  { id: 'dia_1', tipo: 'Diária', nome: 'Desafio Diário', desc: 'Responda 10 questões hoje', alvo: 10, xp: 30, progresso: (u) => u.progressoMissoes?.questoesHoje || 0 },
-  { id: 'dia_2', tipo: 'Diária', nome: 'Desafio Rápido', desc: 'Acerte 5 questões hoje', alvo: 5, xp: 40, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
+// Array Completo de Missões (DEFAULT_MISSIONS) - 3 Diárias | 5 Semanais | 8 Mensais
+const DEFAULT_MISSIONS = [
+  // 🟢 Diárias (3)
+  { id: 'dia_1', tipo: 'Diária', nome: 'Primeiro Bloco', desc: 'Completar 1 quiz completo', alvo: 1, xp: 30, progresso: (u) => u.progressoMissoes?.quizzesHoje || 0 },
+  { id: 'dia_2', tipo: 'Diária', nome: 'Foco Diário', desc: 'Obter 3 acertos em questões hoje', alvo: 3, xp: 35, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
+  { id: 'dia_3', tipo: 'Diária', nome: 'Meta do Dia', desc: 'Obter 5 acertos em questões hoje', alvo: 5, xp: 50, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
 
-  // 🔵 Semanais
-  { id: 'sem_1', tipo: 'Semanal', nome: 'Semana de Estudos', desc: 'Responda 30 questões esta semana', alvo: 30, xp: 100, progresso: (u) => u.progressoMissoes?.questoesSemana || 0 },
-  { id: 'sem_2', tipo: 'Semanal', nome: 'Semana Perfeita', desc: 'Complete 3 quizzes com ≥70% de aproveitamento', alvo: 3, xp: 150, progresso: (u) => u.progressoMissoes?.quizzes70pctSemana || 0 },
-  { id: 'sem_3', tipo: 'Semanal', nome: 'Explorador Semanal', desc: 'Responda questões em 3 categorias diferentes', alvo: 3, xp: 100, progresso: (u) => (u.progressoMissoes?.categoriasSemana || []).length },
+  // 🔵 Semanais (5)
+  { id: 'sem_1', tipo: 'Semanal', nome: 'Maratona Semanal', desc: 'Completar 5 quizzes nesta semana', alvo: 5, xp: 100, progresso: (u) => u.progressoMissoes?.quizzesSemana || 0 },
+  { id: 'sem_2', tipo: 'Semanal', nome: 'Construindo Base', desc: 'Obter 15 acertos esta semana', alvo: 15, xp: 120, progresso: (u) => u.progressoMissoes?.acertosSemana || 0 },
+  { id: 'sem_3', tipo: 'Semanal', nome: 'Domínio Semanal', desc: 'Obter 30 acertos esta semana', alvo: 30, xp: 180, progresso: (u) => u.progressoMissoes?.acertosSemana || 0 },
+  { id: 'sem_4', tipo: 'Semanal', nome: 'Mestre da Semana', desc: 'Completar 10 quizzes nesta semana', alvo: 10, xp: 220, progresso: (u) => u.progressoMissoes?.quizzesSemana || 0 },
+  { id: 'sem_5', tipo: 'Semanal', nome: 'Precisão Cirúrgica', desc: 'Completar 1 quiz com 100% de precisão (10/10)', alvo: 1, xp: 200, progresso: (u) => u.progressoMissoes?.quizzesPerfeitosSemana || 0 },
 
-  // 🔴 Mensais
-  { id: 'men_1', tipo: 'Mensal', nome: 'Desafio do Mês', desc: 'Responda 100 questões durante o mês', alvo: 100, xp: 300, progresso: (u) => u.questoesRespondidasMes || 0 },
-  { id: 'men_2', tipo: 'Mensal', nome: 'Mestre das Categorias', desc: 'Complete um quiz em todas as 10 categorias', alvo: 10, xp: 400, progresso: (u) => (u.progressoMissoes?.quizzes10CategoriasMes || []).length },
-  { id: 'men_3', tipo: 'Mensal', nome: 'Consistência', desc: 'Participe em pelo menos 15 dias diferentes no mês', alvo: 15, xp: 300, progresso: (u) => (u.diasAtivosMes || []).length },
-  { id: 'men_4', tipo: 'Mensal', nome: 'Excelência', desc: 'Mantenha média de acertos superior a 80% no mês (Min. 50 qst)', alvo: 80, xp: 500, progresso: (u) => u.questoesRespondidasMes >= 50 ? Math.round((u.questoesAcertadasMes / u.questoesRespondidasMes) * 100) : 0 }
+  // 🔴 Mensais (8)
+  { id: 'men_1', tipo: 'Mensal', nome: 'Ritmo Mensal', desc: 'Completar 20 quizzes durante o mês', alvo: 20, xp: 300, progresso: (u) => u.quizzesRealizadosMes || 0 },
+  { id: 'men_2', tipo: 'Mensal', nome: 'Meio Caminho', desc: 'Obter 50 acertos no mês', alvo: 50, xp: 250, progresso: (u) => u.questoesAcertadasMes || 0 },
+  { id: 'men_3', tipo: 'Mensal', nome: 'Centena', desc: 'Obter 100 acertos no mês', alvo: 100, xp: 400, progresso: (u) => u.questoesAcertadasMes || 0 },
+  { id: 'men_4', tipo: 'Mensal', nome: 'Acúmulo de XP', desc: 'Alcançar 2500 XP na temporada atual', alvo: 2500, xp: 500, progresso: (u) => u.xpTemporada || 0 },
+  { id: 'men_5', tipo: 'Mensal', nome: 'Consistência de Aço', desc: 'Completar 50 quizzes no mês', alvo: 50, xp: 600, progresso: (u) => u.quizzesRealizadosMes || 0 },
+  { id: 'men_6', tipo: 'Mensal', nome: 'Subindo de Nível', desc: 'Alcançar o Nível 5 de progresso', alvo: 5, xp: 350, progresso: (u) => Math.floor((u.pontuacaoGeral || 0) / 500) + 1 },
+  { id: 'men_7', tipo: 'Mensal', nome: 'Perfeição Constante', desc: 'Completar 5 quizzes sem errar nada (100% de precisão)', alvo: 5, xp: 500, progresso: (u) => u.progressoMissoes?.quizzesPerfeitosMes || 0 },
+  { id: 'men_8', tipo: 'Mensal', nome: 'Lenda do Mês', desc: 'Obter 300 acertos acumulados no mês', alvo: 300, xp: 800, progresso: (u) => u.questoesAcertadasMes || 0 }
 ];
+
+// Auxiliar para obter a chave única da semana do ano (ex: "2026-W37")
+const getChaveSemanaAtual = (dateObj = new Date()) => {
+  const d = new Date(Date.UTC(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return `${d.getUTCFullYear()}-W${weekNo}`;
+};
 
 // Algoritmo Fisher-Yates para embaralhar listas
 const shuffleArray = (array) => {
@@ -107,6 +124,9 @@ export default function App() {
   const [isLogin, setIsLogin] = useState(true);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [abaAtiva, setAbaAtiva] = useState('home');
+
+  // Filtro interno da aba de Missões ('Todas', 'Diária', 'Semanal', 'Mensal')
+  const [filtroMissao, setFiltroMissao] = useState('Todas');
 
   // Form Login/Cadastro/Reset
   const [email, setEmail] = useState('');
@@ -189,44 +209,81 @@ export default function App() {
     if (docSnap.exists()) {
       const data = docSnap.data();
 
-      const hoje = new Date().toISOString().split('T')[0];
+      const agora = new Date();
+      const hoje = agora.toISOString().split('T')[0]; // AAA-MM-DD
+      const mesAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`;
+      const semanaAtual = getChaveSemanaAtual(agora);
+
       const diasAtivos = data.diasAtivosMes || [];
       const ultimoDiaAtivo = data.ultimoDiaAtivo || '';
+      const ultimaSemanaAtiva = data.ultimaSemanaAtiva || '';
+      const ultimoMesAtivo = data.ultimoMesAtivo || '';
       
       let updates = {};
+      let missoesConcluidasAtualizadas = [...(data.missoesConcluidas || [])];
 
       if (!diasAtivos.includes(hoje)) {
         updates.diasAtivosMes = [...diasAtivos, hoje];
         data.diasAtivosMes = updates.diasAtivosMes;
       }
 
-      // Se virou o dia, reseta histórico diário de acertos, erros e progresso das missões diárias
+      // 1. Reset Diário (À meia-noite)
       if (ultimoDiaAtivo !== hoje) {
         updates.ultimoDiaAtivo = hoje;
         updates.questoesRespondidasHoje = [];
         updates.questoesErradasHoje = [];
-        updates["progressoMissoes.questoesHoje"] = 0;
+        updates["progressoMissoes.quizzesHoje"] = 0;
         updates["progressoMissoes.acertosHoje"] = 0;
+
+        // Limpa ID de missões diárias já concluídas para poderem ser refeitas
+        const idsDiarios = DEFAULT_MISSIONS.filter(m => m.tipo === 'Diária').map(m => m.id);
+        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsDiarios.includes(id));
 
         data.ultimoDiaAtivo = hoje;
         data.questoesRespondidasHoje = [];
         data.questoesErradasHoje = [];
-        data.progressoMissoes = {
-          ...(data.progressoMissoes || {}),
-          questoesHoje: 0,
-          acertosHoje: 0
-        };
       }
 
-      // Garante que o objeto progressoMissoes exista para contas legadas
+      // 2. Reset Semanal (Virada da semana / Domingos à meia-noite)
+      if (ultimaSemanaAtiva !== semanaAtual) {
+        updates.ultimaSemanaAtiva = semanaAtual;
+        updates["progressoMissoes.quizzesSemana"] = 0;
+        updates["progressoMissoes.acertosSemana"] = 0;
+        updates["progressoMissoes.quizzesPerfeitosSemana"] = 0;
+
+        const idsSemanais = DEFAULT_MISSIONS.filter(m => m.tipo === 'Semanal').map(m => m.id);
+        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsSemanais.includes(id));
+
+        data.ultimaSemanaAtiva = semanaAtual;
+      }
+
+      // 3. Reset Mensal (Virada do Mês)
+      if (ultimoMesAtivo !== mesAtual) {
+        updates.ultimoMesAtivo = mesAtual;
+        updates.questoesRespondidasMes = 0;
+        updates.questoesAcertadasMes = 0;
+        updates.quizzesRealizadosMes = 0;
+        updates.diasAtivosMes = [hoje];
+        updates["progressoMissoes.quizzesPerfeitosMes"] = 0;
+
+        const idsMensais = DEFAULT_MISSIONS.filter(m => m.tipo === 'Mensal').map(m => m.id);
+        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsMensais.includes(id));
+
+        data.ultimoMesAtivo = mesAtual;
+      }
+
+      updates.missoesConcluidas = missoesConcluidasAtualizadas;
+      data.missoesConcluidas = missoesConcluidasAtualizadas;
+
+      // Garante estrutura completa no Firestore
       if (!data.progressoMissoes) {
         updates.progressoMissoes = {
-          questoesHoje: 0,
+          quizzesHoje: 0,
           acertosHoje: 0,
-          questoesSemana: 0,
-          quizzes70pctSemana: 0,
-          categoriasSemana: [],
-          quizzes10CategoriasMes: []
+          quizzesSemana: 0,
+          acertosSemana: 0,
+          quizzesPerfeitosSemana: 0,
+          quizzesPerfeitosMes: 0
         };
         data.progressoMissoes = updates.progressoMissoes;
       }
@@ -290,7 +347,7 @@ export default function App() {
     const missoesConcluidasAtuais = dadosAtualizados.missoesConcluidas || [];
     const novasMissoesCompletas = [];
 
-    MISSOES_SISTEMA.forEach((missao) => {
+    DEFAULT_MISSIONS.forEach((missao) => {
       if (!missoesConcluidasAtuais.includes(missao.id)) {
         const valorAtual = missao.progresso(dadosAtualizados);
         if (valorAtual >= missao.alvo) {
@@ -338,7 +395,10 @@ export default function App() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const newUser = userCredential.user;
-      const hoje = new Date().toISOString().split('T')[0];
+      const agora = new Date();
+      const hoje = agora.toISOString().split('T')[0];
+      const mesAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`;
+      const semanaAtual = getChaveSemanaAtual(agora);
 
       const newUserData = {
         uid: newUser.uid,
@@ -363,17 +423,19 @@ export default function App() {
         missoesConcluidas: [],
         diasAtivosMes: [hoje],
         ultimoDiaAtivo: hoje,
+        ultimaSemanaAtiva: semanaAtual,
+        ultimoMesAtivo: mesAtual,
         questoesRespondidasHoje: [],
         questoesErradasHoje: [],
         temporadaAtual: "SETEMBRO/2026",
 
         progressoMissoes: {
-          questoesHoje: 0,
+          quizzesHoje: 0,
           acertosHoje: 0,
-          questoesSemana: 0,
-          quizzes70pctSemana: 0,
-          categoriasSemana: [],
-          quizzes10CategoriasMes: []
+          quizzesSemana: 0,
+          acertosSemana: 0,
+          quizzesPerfeitosSemana: 0,
+          quizzesPerfeitosMes: 0
         },
 
         isAdmin: email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase()
@@ -549,7 +611,7 @@ export default function App() {
             missoesConcluidas: [],
             diasAtivosMes: [],
             temporadaAtual: nomeNovaTemporada,
-            "progressoMissoes.quizzes10CategoriasMes": []
+            "progressoMissoes.quizzesPerfeitosMes": 0
           })
         );
 
@@ -660,9 +722,6 @@ export default function App() {
     const contagemCategorias = { ...(userData?.categoriasRespondidas || {}) };
     contagemCategorias[discAtual] = (contagemCategorias[discAtual] || 0) + 1;
 
-    const catSemanaAtual = userData?.progressoMissoes?.categoriasSemana || [];
-    const novasCatSemana = catSemanaAtual.includes(discAtual) ? catSemanaAtual : [...catSemanaAtual, discAtual];
-
     const novasRespondidasHoje = jaRespondidaHoje ? respondidasHoje : [...respondidasHoje, qId];
     let novasErradasHoje = [...erradasHoje];
 
@@ -670,10 +729,7 @@ export default function App() {
       questoesRespondidas: increment(1),
       questoesRespondidasMes: increment(1),
       categoriasRespondidas: contagemCategorias,
-      questoesRespondidasHoje: novasRespondidasHoje,
-      "progressoMissoes.questoesHoje": increment(1),
-      "progressoMissoes.questoesSemana": increment(1),
-      "progressoMissoes.categoriasSemana": novasCatSemana
+      questoesRespondidasHoje: novasRespondidasHoje
     };
 
     if (acertou && tempoRestante > 0) {
@@ -681,6 +737,7 @@ export default function App() {
       updatesUsuario.questoesAcertadas = increment(1);
       updatesUsuario.questoesAcertadasMes = increment(1);
       updatesUsuario["progressoMissoes.acertosHoje"] = increment(1);
+      updatesUsuario["progressoMissoes.acertosSemana"] = increment(1);
 
       novasErradasHoje = novasErradasHoje.filter(id => id !== qId);
 
@@ -749,11 +806,13 @@ export default function App() {
       setMensagemBonus('');
     } else {
       const userRef = doc(db, 'users', user.uid);
-      const aproveitamentoQuiz = (acertosSessao / perguntasSessao.length) * 100;
+      const ePerfeito = acertosSessao === perguntasSessao.length;
 
       let payloadFinalQuiz = { 
         quizzesRealizados: increment(1),
-        quizzesRealizadosMes: increment(1)
+        quizzesRealizadosMes: increment(1),
+        "progressoMissoes.quizzesHoje": increment(1),
+        "progressoMissoes.quizzesSemana": increment(1)
       };
 
       if (!isModoRefazer) {
@@ -762,13 +821,9 @@ export default function App() {
         payloadFinalQuiz.pontuacaoGeral = increment(bonusConclusao);
         payloadFinalQuiz.xpTemporada = increment(bonusConclusao);
 
-        if (aproveitamentoQuiz >= 70) {
-          payloadFinalQuiz["progressoMissoes.quizzes70pctSemana"] = increment(1);
-        }
-
-        const cat10Mes = userData?.progressoMissoes?.quizzes10CategoriasMes || [];
-        if (disciplinaSelecionada && disciplinaSelecionada !== 'Todas' && !cat10Mes.includes(disciplinaSelecionada)) {
-          payloadFinalQuiz["progressoMissoes.quizzes10CategoriasMes"] = [...cat10Mes, disciplinaSelecionada];
+        if (ePerfeito) {
+          payloadFinalQuiz["progressoMissoes.quizzesPerfeitosSemana"] = increment(1);
+          payloadFinalQuiz["progressoMissoes.quizzesPerfeitosMes"] = increment(1);
         }
       }
 
@@ -965,6 +1020,8 @@ export default function App() {
     const conquistasDesbloqueadas = userData.conquistasDesbloqueadas || [];
     const missoesConcluidas = userData.missoesConcluidas || [];
 
+    const missoesExibidas = DEFAULT_MISSIONS.filter(m => filtroMissao === 'Todas' || m.tipo === filtroMissao);
+
     return (
       <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center p-4">
         <div className="w-full max-w-xl bg-slate-800 rounded-2xl p-6 shadow-xl border border-slate-700 my-4">
@@ -1063,50 +1120,81 @@ export default function App() {
           )}
 
           {abaAtiva === 'missoes' && (
-            <div className="space-y-6">
-              {['Diária', 'Semanal', 'Mensal'].map((categoriaTipo) => (
-                <div key={categoriaTipo} className="bg-slate-900 p-4 rounded-xl border border-slate-700">
-                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-indigo-400 mb-3 flex items-center gap-1.5">
-                    {categoriaTipo === 'Diária' ? '🟢 Missões Diárias' : categoriaTipo === 'Semanal' ? '🔵 Missões Semanais' : '🔴 Missões Mensais'}
-                  </h4>
+            <div className="space-y-4">
+              {/* Filtro de Abas de Missões */}
+              <div className="flex gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-700">
+                {['Todas', 'Diária', 'Semanal', 'Mensal'].map((tipo) => (
+                  <button
+                    key={tipo}
+                    onClick={() => setFiltroMissao(tipo)}
+                    className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition ${
+                      filtroMissao === tipo 
+                        ? 'bg-indigo-600 text-white shadow-md' 
+                        : 'text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    {tipo === 'Todas' ? '🌐 Todas' : tipo === 'Diária' ? '🟢 Diárias' : tipo === 'Semanal' ? '🔵 Semanais' : '🔴 Mensais'}
+                  </button>
+                ))}
+              </div>
 
-                  <div className="space-y-2.5">
-                    {MISSOES_SISTEMA.filter(m => m.tipo === categoriaTipo).map((missao) => {
-                      const concluida = missoesConcluidas.includes(missao.id);
-                      const valorProgresso = Math.min(missao.progresso(userData), missao.alvo);
-                      const pct = Math.round((valorProgresso / missao.alvo) * 100);
+              {/* Lista de Missões Filtradas */}
+              <div className="space-y-2.5 max-h-[420px] overflow-y-auto pr-1">
+                {missoesExibidas.map((missao) => {
+                  const concluida = missoesConcluidas.includes(missao.id);
+                  const valorProgresso = Math.min(missao.progresso(userData), missao.alvo);
+                  const pct = Math.round((valorProgresso / missao.alvo) * 100);
 
-                      return (
-                        <div key={missao.id} className={`p-3 rounded-lg border text-xs ${concluida ? 'bg-emerald-950/40 border-emerald-500/40' : 'bg-slate-800/80 border-slate-700'}`}>
-                          <div className="flex justify-between items-start mb-1.5">
-                            <div>
-                              <span className={`font-bold block ${concluida ? 'text-emerald-300 line-through' : 'text-slate-200'}`}>
-                                {concluida ? '☑' : '☐'} {missao.nome}
-                              </span>
-                              <p className="text-[11px] text-slate-400">{missao.desc}</p>
-                            </div>
-                            <span className="font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                              +{missao.xp} XP
+                  return (
+                    <div 
+                      key={missao.id} 
+                      className={`p-3.5 rounded-xl border transition ${
+                        concluida 
+                          ? 'bg-emerald-950/30 border-emerald-500/40 text-slate-300' 
+                          : 'bg-slate-900 border-slate-700 text-slate-200'
+                      }`}
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded border ${
+                              missao.tipo === 'Diária' 
+                                ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+                                : missao.tipo === 'Semanal' 
+                                ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' 
+                                : 'bg-red-500/10 text-red-400 border-red-500/20'
+                            }`}>
+                              {missao.tipo}
+                            </span>
+                            <span className={`text-sm font-bold ${concluida ? 'text-emerald-400 line-through' : 'text-slate-100'}`}>
+                              {concluida ? '☑' : '☐'} {missao.nome}
                             </span>
                           </div>
-
-                          {!concluida && (
-                            <div className="mt-2">
-                              <div className="flex justify-between text-[10px] text-slate-400 mb-1">
-                                <span>Progresso</span>
-                                <span>{valorProgresso} / {missao.alvo}</span>
-                              </div>
-                              <div className="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                                <div className="bg-indigo-500 h-full transition-all duration-500" style={{ width: `${pct}%` }}></div>
-                              </div>
-                            </div>
-                          )}
+                          <p className="text-xs text-slate-400 leading-snug">{missao.desc}</p>
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
+                        <span className="font-black text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20 text-xs shrink-0">
+                          +{missao.xp} XP
+                        </span>
+                      </div>
+
+                      {!concluida && (
+                        <div className="mt-3">
+                          <div className="flex justify-between text-[11px] text-slate-400 mb-1">
+                            <span>Progresso</span>
+                            <span className="font-semibold text-slate-300">{valorProgresso} / {missao.alvo} ({pct}%)</span>
+                          </div>
+                          <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden border border-slate-700/50">
+                            <div 
+                              className="bg-indigo-500 h-full transition-all duration-500 rounded-full" 
+                              style={{ width: `${pct}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 

@@ -1,0 +1,714 @@
+{
+  "labels": [
+    "anonymous denied",
+    "student can read questions",
+    "own profile readable",
+    "other private profile denied",
+    "admin reads profiles",
+    "student reads ranking",
+    "valid signup",
+    "signup with admin role denied",
+    "signup with XP denied",
+    "self escalation denied",
+    "identity change denied",
+    "valid progression",
+    "negative XP denied",
+    "unexpected field denied",
+    "student cannot edit season",
+    "admin can edit season",
+    "student cannot add questions",
+    "admin can add valid question",
+    "admin malformed question denied",
+    "ranking matches private profile",
+    "ranking cannot leak email"
+  ],
+  "testCases": [
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/questions/q",
+        "method": "get",
+        "auth": null,
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/questions/q",
+        "method": "get",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "get",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/other",
+        "method": "get",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "get",
+        "auth": {
+          "uid": "ktCddjGUigN8Spm6x9wrdFgzBZy2",
+          "token": {
+            "email": "ofeitosa94@gmail.com"
+          }
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/rankings/other",
+        "method": "get",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 0,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 0,
+            "isAdmin": true,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 999,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 0,
+            "isAdmin": true,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "other",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 0,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 30,
+            "xpTemporada": 30,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": -1,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/student",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "email": "student@example.invalid",
+            "pontuacaoGeral": 0,
+            "xpTemporada": 0,
+            "isAdmin": false,
+            "temporadaAtual": "SETEMBRO/2026",
+            "admin": true
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/settings/season",
+        "method": "update",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "name": "NEW"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/settings/season",
+        "method": "update",
+        "auth": {
+          "uid": "ktCddjGUigN8Spm6x9wrdFgzBZy2",
+          "token": {
+            "email": "ofeitosa94@gmail.com"
+          }
+        },
+        "resource": {
+          "data": {
+            "name": "NEW"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "uid": "student",
+          "nome": "Aluno Teste",
+          "email": "student@example.invalid",
+          "pontuacaoGeral": 0,
+          "xpTemporada": 0,
+          "isAdmin": false,
+          "temporadaAtual": "SETEMBRO/2026"
+        }
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/questions/q",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "disciplina": "Gestão de Pessoas",
+            "dificuldade": "Médio",
+            "tipo": "Teste",
+            "pergunta": "Pergunta?",
+            "alternativas": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "respostaCorreta": 0,
+            "explicacao": "Explicação"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/questions/q",
+        "method": "create",
+        "auth": {
+          "uid": "ktCddjGUigN8Spm6x9wrdFgzBZy2",
+          "token": {
+            "email": "ofeitosa94@gmail.com"
+          }
+        },
+        "resource": {
+          "data": {
+            "disciplina": "Gestão de Pessoas",
+            "dificuldade": "Médio",
+            "tipo": "Teste",
+            "pergunta": "Pergunta?",
+            "alternativas": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "respostaCorreta": 0,
+            "explicacao": "Explicação"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/questions/q",
+        "method": "create",
+        "auth": {
+          "uid": "ktCddjGUigN8Spm6x9wrdFgzBZy2",
+          "token": {
+            "email": "ofeitosa94@gmail.com"
+          }
+        },
+        "resource": {
+          "data": {
+            "disciplina": "Gestão de Pessoas",
+            "dificuldade": "Médio",
+            "tipo": "Teste",
+            "pergunta": "Pergunta?",
+            "alternativas": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e"
+            ],
+            "respostaCorreta": 5,
+            "explicacao": "Explicação"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": []
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/rankings/student",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "xpTemporada": 0,
+            "pontuacaoGeral": 0,
+            "temporadaAtual": "SETEMBRO/2026"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": [
+        {
+          "function": "getAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": {
+              "data": {
+                "uid": "student",
+                "nome": "Aluno Teste",
+                "email": "student@example.invalid",
+                "pontuacaoGeral": 0,
+                "xpTemporada": 0,
+                "isAdmin": false,
+                "temporadaAtual": "SETEMBRO/2026"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/rankings/student",
+        "method": "create",
+        "auth": {
+          "uid": "student",
+          "token": {
+            "email": "student@example.invalid"
+          }
+        },
+        "resource": {
+          "data": {
+            "uid": "student",
+            "nome": "Aluno Teste",
+            "xpTemporada": 0,
+            "pontuacaoGeral": 0,
+            "temporadaAtual": "SETEMBRO/2026",
+            "email": "student@example.invalid"
+          }
+        }
+      },
+      "resource": {
+        "data": {}
+      },
+      "functionMocks": [
+        {
+          "function": "getAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": {
+              "data": {
+                "uid": "student",
+                "nome": "Aluno Teste",
+                "email": "student@example.invalid",
+                "pontuacaoGeral": 0,
+                "xpTemporada": 0,
+                "isAdmin": false,
+                "temporadaAtual": "SETEMBRO/2026"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

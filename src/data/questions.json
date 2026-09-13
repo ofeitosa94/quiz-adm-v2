@@ -1,0 +1,3002 @@
+[
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Funções da Administração",
+    "pergunta": "Qual função administrativa consiste em definir objetivos e estabelecer os caminhos necessários para alcançá-los?",
+    "alternativas": [
+      "Controle",
+      "Planejamento",
+      "Organização",
+      "Direção",
+      "Avaliação"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O planejamento consiste em estabelecer objetivos e definir as ações e recursos necessários para alcançá-los."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Organização",
+    "pergunta": "Uma empresa distribui tarefas entre seus funcionários e define as responsabilidades de cada setor. Essa atividade está relacionada principalmente à:",
+    "alternativas": [
+      "Direção",
+      "Avaliação",
+      "Organização",
+      "Motivação",
+      "Controle"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A organização envolve distribuir atividades, responsabilidades e recursos de maneira estruturada para que os objetivos da empresa sejam alcançados."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Objetivos Organizacionais",
+    "pergunta": "Qual é uma das principais finalidades de estabelecer objetivos dentro de uma organização?",
+    "alternativas": [
+      "Orientar as ações da organização",
+      "Eliminar a necessidade de planejamento",
+      "Impedir mudanças nos processos",
+      "Reduzir obrigatoriamente o número de funcionários",
+      "Evitar a utilização de indicadores"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Os objetivos direcionam os esforços da organização e servem como referência para o planejamento e para a avaliação dos resultados."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Controle",
+    "pergunta": "Uma empresa acompanha seus resultados e compara o que foi realizado com o que havia sido planejado. Essa atividade corresponde à função de:",
+    "alternativas": [
+      "Organização",
+      "Planejamento",
+      "Direção",
+      "Controle",
+      "Delegação"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "O controle permite acompanhar os resultados, compará-los com o planejamento e identificar possíveis desvios que necessitem de correção."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Tomada de Decisão",
+    "pergunta": "No contexto administrativo, tomar uma decisão significa principalmente:",
+    "alternativas": [
+      "Escolher uma alternativa diante de determinada situação",
+      "Evitar qualquer tipo de risco",
+      "Transferir todas as responsabilidades para os funcionários",
+      "Eliminar a necessidade de planejamento",
+      "Executar atividades sem analisar informações"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A tomada de decisão envolve analisar uma situação e escolher uma alternativa entre as possibilidades disponíveis, considerando os objetivos da organização."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Eficiência e Eficácia",
+    "pergunta": "Uma empresa conseguiu atingir sua meta de produção, mas utilizou uma quantidade de recursos muito superior à planejada. Nesse caso, é correto afirmar que a empresa foi:",
+    "alternativas": [
+      "Eficiente e ineficaz",
+      "Ineficiente e ineficaz",
+      "Eficaz, mas pode ter sido ineficiente",
+      "Ineficiente, mas necessariamente eficaz",
+      "Improdutiva e eficiente"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A empresa atingiu o objetivo estabelecido, caracterizando eficácia. Entretanto, o consumo excessivo de recursos indica possível falta de eficiência."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Níveis Organizacionais",
+    "pergunta": "Qual nível da organização está normalmente mais relacionado à definição de estratégias e objetivos de longo prazo?",
+    "alternativas": [
+      "Nível operacional",
+      "Nível estratégico",
+      "Nível técnico",
+      "Nível de execução",
+      "Nível auxiliar"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O nível estratégico está relacionado às decisões de maior abrangência da organização, incluindo objetivos, estratégias e direcionamentos de longo prazo."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Processo Administrativo",
+    "pergunta": "Um gestor estabelece uma meta, define as atividades necessárias, distribui responsabilidades, acompanha a execução e corrige desvios. Qual alternativa representa melhor esse processo?",
+    "alternativas": [
+      "Apenas controle financeiro",
+      "Somente organização estrutural",
+      "Processo administrativo integrado",
+      "Processo exclusivamente operacional",
+      "Atividade exclusivamente comercial"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O exemplo apresenta diferentes funções administrativas atuando de forma integrada, envolvendo planejamento, organização, direção e controle."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Difícil",
+    "tipo": "Análise e Tomada de Decisão",
+    "pergunta": "Uma organização apresenta queda nas vendas. Antes de tomar uma decisão, o gestor analisa dados de vendas, comportamento dos clientes, atuação dos concorrentes e condições do mercado. Qual é a principal vantagem dessa abordagem?",
+    "alternativas": [
+      "Permitir que a decisão seja baseada exclusivamente na experiência pessoal do gestor",
+      "Eliminar completamente os riscos envolvidos na decisão",
+      "Garantir que qualquer alternativa escolhida produzirá lucro",
+      "Reduzir a necessidade de estabelecer objetivos organizacionais",
+      "Aumentar a qualidade da decisão por meio da análise de informações relevantes"
+    ],
+    "respostaCorreta": 4,
+    "explicacao": "A análise de informações relevantes permite compreender melhor o problema, avaliar alternativas e tomar decisões mais fundamentadas. Ela não elimina os riscos, mas reduz a possibilidade de decisões baseadas apenas em suposições."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Difícil",
+    "tipo": "Eficiência, Eficácia e Resultados",
+    "pergunta": "Duas empresas alcançaram a mesma meta de produção. A primeira utilizou os recursos previstos no planejamento, enquanto a segunda utilizou o dobro dos recursos para alcançar o mesmo resultado. Considerando os conceitos de eficiência e eficácia, qual análise é mais adequada?",
+    "alternativas": [
+      "As duas empresas foram ineficazes porque utilizaram recursos diferentes",
+      "A primeira foi eficaz e a segunda necessariamente ineficaz",
+      "A segunda foi mais eficiente porque utilizou mais recursos para atingir a meta",
+      "As duas foram eficazes, mas a primeira apresentou maior eficiência",
+      "A primeira foi eficiente, mas não foi eficaz"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "As duas empresas atingiram a meta, portanto foram eficazes. A primeira, porém, alcançou o resultado utilizando os recursos previstos, apresentando melhor eficiência."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Planejamento",
+    "pergunta": "Qual é a principal finalidade do planejamento dentro de uma organização?",
+    "alternativas": [
+      "Definir ações e objetivos que orientem a organização em determinado período",
+      "Eliminar completamente os riscos envolvidos nas atividades empresariais",
+      "Substituir a necessidade de acompanhamento dos resultados",
+      "Concentrar todas as decisões exclusivamente na direção",
+      "Reduzir a quantidade de funcionários da organização"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O planejamento estabelece objetivos e define ações e recursos necessários para orientar a organização na busca pelos resultados desejados."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Organização",
+    "pergunta": "Em Administração, organizar significa principalmente:",
+    "alternativas": [
+      "Avaliar somente o desempenho financeiro da empresa",
+      "Distribuir recursos, atividades e responsabilidades de forma estruturada",
+      "Aumentar obrigatoriamente a quantidade de funcionários",
+      "Criar campanhas para divulgar os produtos da empresa",
+      "Definir exclusivamente os preços dos produtos"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A função organização envolve estruturar recursos, atividades, responsabilidades e autoridade para que os objetivos possam ser alcançados."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Direção",
+    "pergunta": "Qual função administrativa está diretamente relacionada à liderança e à orientação das pessoas para a execução das atividades?",
+    "alternativas": [
+      "Controle",
+      "Planejamento",
+      "Direção",
+      "Organização",
+      "Auditoria"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A direção está relacionada à condução das pessoas, envolvendo liderança, comunicação, motivação e orientação para o alcance dos objetivos."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Recursos Organizacionais",
+    "pergunta": "Qual alternativa apresenta um exemplo de recurso humano de uma organização?",
+    "alternativas": [
+      "Máquina utilizada na produção",
+      "Sistema de gestão empresarial",
+      "Capital disponível em caixa",
+      "Funcionários responsáveis pelas atividades da empresa",
+      "Estoque de matérias-primas"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "Os recursos humanos são representados pelas pessoas que atuam na organização e contribuem para a realização de suas atividades."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Fácil",
+    "tipo": "Hierarquia Organizacional",
+    "pergunta": "Em uma estrutura organizacional, qual nível geralmente está relacionado às decisões estratégicas de longo prazo?",
+    "alternativas": [
+      "Nível operacional",
+      "Nível estratégico",
+      "Nível técnico",
+      "Nível auxiliar",
+      "Nível de execução"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O nível estratégico concentra decisões de maior abrangência, normalmente relacionadas aos objetivos gerais e ao direcionamento de longo prazo da organização."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Eficiência e Eficácia",
+    "pergunta": "Uma empresa conseguiu produzir a quantidade planejada de produtos, mas utilizou muito mais matéria-prima e horas de trabalho do que o previsto. Como essa situação pode ser interpretada?",
+    "alternativas": [
+      "A empresa foi eficiente e eficaz, pois atingiu o resultado esperado",
+      "A empresa foi eficiente, mas não eficaz, pois utilizou poucos recursos",
+      "A empresa foi eficaz, mas apresentou baixa eficiência na utilização dos recursos",
+      "A empresa não foi eficaz porque utilizou recursos acima do planejado",
+      "Não é possível avaliar eficiência e eficácia a partir dessa situação"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A empresa foi eficaz porque alcançou o resultado planejado, mas apresentou baixa eficiência porque utilizou mais recursos do que o necessário para atingir esse resultado."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Centralização e Descentralização",
+    "pergunta": "Uma empresa decide permitir que os gerentes de cada filial tomem determinadas decisões sem precisar consultar constantemente a direção central. Essa prática representa:",
+    "alternativas": [
+      "Centralização das decisões",
+      "Descentralização das decisões",
+      "Eliminação da autoridade",
+      "Redução da estrutura hierárquica a um único nível",
+      "Controle exclusivamente financeiro"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A descentralização ocorre quando parte da autoridade para tomar decisões é distribuída entre diferentes níveis ou unidades da organização."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Médio",
+    "tipo": "Controle Administrativo",
+    "pergunta": "Após estabelecer uma meta de redução de custos, uma empresa acompanha mensalmente os resultados e compara os valores obtidos com a meta estabelecida. Qual função administrativa está sendo aplicada?",
+    "alternativas": [
+      "Direção",
+      "Organização",
+      "Planejamento",
+      "Controle",
+      "Recrutamento"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "O controle envolve acompanhar os resultados, compará-los com os padrões ou objetivos estabelecidos e, quando necessário, adotar medidas corretivas."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Difícil",
+    "tipo": "Tomada de Decisão",
+    "pergunta": "Uma empresa precisa escolher entre dois fornecedores. O primeiro oferece menor preço, mas apresenta histórico de atrasos. O segundo possui preço maior, porém apresenta maior confiabilidade nas entregas. Qual abordagem administrativa é mais adequada para essa decisão?",
+    "alternativas": [
+      "Escolher sempre o fornecedor de menor preço, independentemente dos demais fatores",
+      "Escolher o fornecedor mais antigo do mercado sem analisar outras informações",
+      "Avaliar apenas o impacto imediato da decisão sobre o caixa da empresa",
+      "Considerar somente a opinião do responsável pelas compras",
+      "Analisar custos, riscos, confiabilidade e impactos da decisão antes de escolher"
+    ],
+    "respostaCorreta": 4,
+    "explicacao": "Uma decisão administrativa adequada deve considerar diferentes critérios e os possíveis impactos de cada alternativa, evitando que a escolha seja baseada exclusivamente no preço."
+  },
+  {
+    "disciplina": "Administração e Gestão",
+    "dificuldade": "Difícil",
+    "tipo": "Indicadores de Desempenho",
+    "pergunta": "Uma organização atingiu sua meta de vendas, porém apresentou aumento significativo nos custos e queda na margem de lucro. Qual análise administrativa é mais adequada?",
+    "alternativas": [
+      "Considerar o resultado positivo apenas porque a meta de vendas foi atingida",
+      "Avaliar simultaneamente vendas, custos, margem e demais indicadores relacionados ao resultado",
+      "Desconsiderar os custos, pois eles não interferem diretamente nas vendas",
+      "Concluir que a empresa apresentou excelente desempenho sem necessidade de outros indicadores",
+      "Avaliar somente a quantidade de produtos vendidos no período"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O alcance de uma meta isolada não representa necessariamente um bom desempenho global. A análise deve considerar indicadores financeiros e operacionais para verificar a qualidade do resultado obtido."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Constituição e Hierarquia das Leis",
+    "pergunta": "Na pirâmide normativa do ordenamento jurídico brasileiro, qual norma ocupa o topo e serve de fundamento de validade para todas as demais leis?",
+    "alternativas": [
+      "Lei Ordinária",
+      "Decreto Presidencial",
+      "Constituição Federal",
+      "Portaria Ministerial",
+      "Medida Provisória"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Constituição Federal é a norma suprema do Estado, devendo todas as demais normas inferiores estar em conformidade com o seu texto."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Conceitos de Ética e Moral",
+    "pergunta": "Qual das alternativas diferencia corretamente os conceitos de Ética e Moral no âmbito da filosofia do direito?",
+    "alternativas": [
+      "A ética é a reflexão teórica e filosófica sobre os costumes, enquanto a moral refere-se às práticas e regras de conduta estabelecidas por um grupo social.",
+      "A moral é imutável e universal, ao passo que a ética altera-se a cada século.",
+      "A ética depende exclusivamente de sanções penais estatais para ser cumprida.",
+      "A moral é de aplicação estritamente jurídica e coercitiva pela polícia.",
+      "Não há distinção conceitual entre ética e moral, pois ambos os termos são sinônimos perfeitos em qualquer contexto."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A ética tem caráter teórico e reflexivo sobre os princípios do agir humano, enquanto a moral diz respeito aos hábitos, costumes e normas de conduta práticos adotados em determinado contexto social."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito Administrativo",
+    "pergunta": "Qual dos princípios expressos no artigo 37 da Constituição Federal exige que a Administração Pública atue sem favorecimentos ou perseguições pessoais aos administrados?",
+    "alternativas": [
+      "Princípio da Impessoalidade",
+      "Princípio da Publicidade",
+      "Princípio da Autotutela",
+      "Princípio da Continuidade",
+      "Princípio da Especialidade"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O princípio da impessoalidade estabelece o dever de neutralidade da administração, vedando que o interesse particular de agentes ou terceiros prevaleça sobre o interesse público."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito do Trabalho",
+    "pergunta": "No âmbito do Direito do Trabalho brasileiro (CLT), a jornada normal padrão de trabalho para empregados regidos sob o regime geral não deve exceder a:",
+    "alternativas": [
+      "12 horas diárias e 60 horas semanais.",
+      "8 horas diárias e 44 horas semanais.",
+      "6 horas diárias e 30 horas semanais.",
+      "10 horas diárias e 48 horas semanais.",
+      "8 horas diárias e 36 horas semanais."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Constituição Federal de 1988 (Art. 7º, XIII) fixa a duração do trabalho normal em até 8 horas diárias e 44 horas semanais."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito do Consumidor",
+    "pergunta": "Conforme o Código de Defesa do Consumidor (CDC), qual é o prazo do direito de arrependimento para compras efetuadas fora do estabelecimento comercial (por exemplo, na internet)?",
+    "alternativas": [
+      "15 dias contados da data do pagamento.",
+      "30 dias contados da postagem nos correios.",
+      "7 dias contados da assinatura do contrato ou do recebimento do produto.",
+      "24 horas contadas da emissão da nota fiscal.",
+      "10 dias contados da autorização do cartão de crédito."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O artigo 49 do CDC garante o prazo de 7 dias para desistência sem ônus em contratantes realizadas fora do estabelecimento físico."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito Civil",
+    "pergunta": "Em relação à capacidade civil das pessoas naturais, com qual idade a pessoa atinge a plena capacidade civil e a maioridade legal no Brasil?",
+    "alternativas": [
+      "16 anos completos",
+      "21 anos completos",
+      "18 anos completos",
+      "25 anos completos",
+      "15 anos completos"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "De acordo com o Art. 5º do Código Civil, a menoridade cessa aos 18 anos completos, quando a pessoa fica habilitada à prática de todos os atos da vida civil."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "LGPD e Proteção de Dados",
+    "pergunta": "Qual é o principal objetivo da Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018)?",
+    "alternativas": [
+      "Proibir todo e qualquer uso de computadores por empresas privadas.",
+      "Regular o tratamento de dados pessoais de indivíduos para proteger os direitos fundamentais de liberdade e privacidade.",
+      "Obrigatório o compartilhamento público de dados bancários de todos os cidadãos.",
+      "Eliminar a necessidade de senhas corporativas em órgãos governamentais.",
+      "Fiscalizar o cumprimento de jornadas de trabalho em regime remoto."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A LGPD disciplina a coleta, armazenamento e processamento de dados pessoais para garantir a privacidade, a autodeterminação informativa e a transparência."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Ética Profissional",
+    "pergunta": "O dever de guardar segredo sobre fatos ou informações confidenciais conhecidos em razão do exercício da atividade profissional denomina-se:",
+    "alternativas": [
+      "Transparência Administrativa",
+      "Direito de Resposta",
+      "Sigilo Profissional",
+      "Publicidade Obrigatória",
+      "Propaganda Institucional"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O sigilo profissional é um dever ético e jurídico fundamental imposto a diversas carreiras para resguardar a confiança e a privacidade das partes atendidas."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito Ambiental",
+    "pergunta": "O princípio do Direito Ambiental que determina que aquele que causa poluição ou degradação ao meio ambiente deve arcar com os custos de reparação ou prevenção é o:",
+    "alternativas": [
+      "Princípio da Precaução",
+      "Princípio do Poluidor-Pague",
+      "Princípio do Protetor-Recebedor",
+      "Princípio da Ubiquidade",
+      "Princípio do Desenvolvimento Nulo"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O princípio do poluidor-pague obriga a internalização dos custos ambientais pelo agente responsável por potenciais ou efetivos impactos ecológicos."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Fácil",
+    "tipo": "Direito Penal",
+    "pergunta": "Qual princípio do Direito Penal estabelece que 'não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal'?",
+    "alternativas": [
+      "Princípio da Insignificância",
+      "Princípio da Legalidade (ou Anterioridade)",
+      "Princípio da Proporcionalidade",
+      "Princípio do In Dubio Pro Reo",
+      "Princípio da Culpabilidade"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Previsto no inciso XXXIX do Art. 5º da CF, o princípio da legalidade/anterioridade impede a punição penal por fatos que não eram formalmente previstos como crime na data do ato."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "Direito Administrativo",
+    "pergunta": "No que tange aos atos administrativos, qual das alternativas apresenta corretamente os atributos inerentes ao ato administrativo?",
+    "alternativas": [
+      "Imperatividade, Presunção de Legitimidade, Autoexecutoriadade e Tipicidade.",
+      "Anulabilidade, Sigilo, Retroatividade e Discricionariedade absoluta.",
+      "Irrevogabilidade, Universalidade, Gratuidade e Pessoalidade.",
+      "Impenhorabilidade, Unilateralidade, Informalidade e Opcionalidade.",
+      "Bilateralidade, Inviolabilidade, Efemeridade e Coatividade ilimitada."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Os atributos clássicos que diferenciam os atos administrativos são a presunção de legitimidade/veracidade, a imperatividade, a autoexecutoriadade e a tipicidade."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "Licitações e Contratos",
+    "pergunta": "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), qual modalidade licitatória é voltada para a aquisição de bens e serviços comuns, cujo critério de julgamento é o menor preço ou o maior desconto?",
+    "alternativas": [
+      "Diálogo Competitivo",
+      "Pregão",
+      "Concurso",
+      "Leilão",
+      "Tomada de Preços"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Pregão é a modalidade obrigatória para aquisição de bens e serviços comuns, com disputa de lances voltada prioritariamente ao menor preço ou maior desconto."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "Responsabilidade Civil",
+    "pergunta": "Qual é o elemento essencial que caracteriza a Responsabilidade Civil Objetiva (prevista na Teoria do Risco) em contraposição à Responsabilidade Civil Subjetiva?",
+    "alternativas": [
+      "A comprovação de dolo direto ou culpa grave do causador do dano.",
+      "A obrigação de indenizar independentemente da comprovação de culpa do agente, bastando a prova do dano e do nexo causal.",
+      "A exigência de condenação penal prévia do réu antes de buscar o ressarcimento cível.",
+      "A necessidade de que o ato tenha sido praticado por mais de duas pessoas em conluio.",
+      "A obrigatoriedade de haver testemunhas presenciais no momento da ocorrência do ato ilícito."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A responsabilidade objetiva dispensa a verificação do elemento subjetivo (culpa ou dolo), exigindo apenas a ação/omissão, o dano e a relação de causalidade entre eles."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "Compliance e Anticorrupção",
+    "pergunta": "A Lei Anticorrupção brasileira (Lei nº 12.846/2013) inovou no ordenamento jurídico ao prever a responsabilização de pessoas jurídicas por atos lesivos contra a administração pública nacional ou estrangeira. Essa lei adota a responsabilidade:",
+    "alternativas": [
+      "Subjetiva, exigindo provar intenção dolosa de todos os diretores da empresa.",
+      "Objetiva, de natureza administrativa e civil.",
+      "Exclusivamente criminal dos empregados de nível operacional.",
+      "Trabalhista solidária entre concorrentes licitantes.",
+      "Tributária subsidiária condicionada à recuperação judicial."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Lei nº 12.846/2013 estabeleceu a responsabilidade objetiva das empresas por atos de corrupção cometidos em seu interesse ou benefício."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "Direito Constitucional",
+    "pergunta": "No remédio constitucional do Mandado de Segurança (MS), qual é a sua finalidade precípua?",
+    "alternativas": [
+      "Garantir a liberdade de locomoção contra prisão ilegal ou abuso de poder.",
+      "Assegurar o conhecimento ou retificação de informações pessoais em bancos de dados governamentais.",
+      "Proteger direito líquido e certo não amparado por habeas corpus ou habeas data, diante de ilegalidade cometida por autoridade pública.",
+      "Anular ato lesivo ao patrimônio público impetrado por qualquer cidadão ativo.",
+      "Sanar a omissão legislativa que inviabilize o exercício de direitos constitucionais."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O Mandado de Segurança destina-se a proteger direito líquido e certo (provado documentalmente de plano) não coberto por habeas corpus ou habeas data."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Médio",
+    "tipo": "LGPD e Tratamento de Dados",
+    "pergunta": "Conforme a Lei Geral de Proteção de Dados (LGPD), como são classificados os dados pessoais relativos à origem racial, convicção religiosa, opinião política e dados genéticos ou biométricos?",
+    "alternativas": [
+      "Dados Pessoais Anônimos",
+      "Dados Pessoais Sensíveis",
+      "Dados de Acesso Público Irrestrito",
+      "Dados Corporativos Privados",
+      "Dados Estatísticos Genéricos"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A LGPD conceitua esses dados como 'sensíveis' devido ao elevado potencial discriminatório, impondo regras de tratamento mais rigorosas."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Difícil",
+    "tipo": "Direito Empresarial e Societário",
+    "pergunta": "Qual é o efeito do instituto da 'Desconsideração da Personalidade Jurídica' (disposto no Art. 50 do Código Civil) quando deferido pelo juiz?",
+    "alternativas": [
+      "A extinção imediata da empresa com liquidação de todas as suas marcas registrada no INPI.",
+      "A ineficácia episódica da autonomia patrimonial da empresa para atingir bens particulares dos sócios/administradores que praticaram abuso por desvio de finalidade ou confusão patrimonial.",
+      "A transferência automática de todas as cotas sociais para a União sem indenização prévia.",
+      "A fusão compulsória da sociedade com uma empresa estatal do mesmo ramo econômico.",
+      "A conversão de obrigações tributárias da empresa em títulos de dívida pública de emissão bancária."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A desconsideração não extingue a pessoa jurídica, apenas afasta pontualmente a separação patrimonial para responsabilizar pessoalmente os sócios em casos de abuso."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Difícil",
+    "tipo": "Filosofia e Teoria Geral do Direito",
+    "pergunta": "No debate da Filosofia do Direito entre Positivismo Jurídico (Hans Kelsen) e Jusnaturalismo, qual é a proposição fundamental da teoria pura do direito kelseniana?",
+    "alternativas": [
+      "O direito é válido unicamente quando fundamentado na lei moral divina revelada pelos costumes.",
+      "A validade de uma norma jurídica decorre da sua integração em um sistema hierárquico formal (norma fundamental), independentemente do seu valor moral ou conteúdo ético.",
+      "As decisões judiciais devem basear-se exclusivamente no senso comum de justiça do magistrado singular.",
+      "O direito positivo deve ser anulado caso infrinja preceitos econômicos de livre mercado.",
+      "Normas jurídicas escritas possuem eficácia condicional dependente de consulta popular direta."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Hans Kelsen propôs uma ciência jurídica purificada de elementos sociológicos e éticos, sustentando que a validade do direito positivado deriva do próprio sistema normativo."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Difícil",
+    "tipo": "Propriedade Intelectual",
+    "pergunta": "No âmbito da Lei de Propriedade Industrial (Lei nº 9.279/1996), qual é a principal distinção técnica entre a concessão de uma Patente de Invenção (PI) e a de um Modelo de Utilidade (MU)?",
+    "alternativas": [
+      "A Patente de Invenção aplica-se apenas a softwares corporativos, enquanto o Modelo de Utilidade protege slogans comerciais.",
+      "A Patente de Invenção exige novidade, atividade inventiva e aplicação industrial; o Modelo de Utilidade exige ato inventivo aplicado à melhoria funcional de objeto de uso prático.",
+      "O Modelo de Utilidade possui vigência de 50 anos, enquanto a Patente de Invenção expira após 5 anos sem prorrogação.",
+      "Patentes de Invenção são registradas no Ministério do Trabalho, ao passo que Modelos de Utilidade são registrados em juntas comerciais estaduais.",
+      "O Modelo de Utilidade não exige novidade nem aplicação industrial, dependendo apenas do depósito do desenho técnico."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Patente de Invenção cria algo inédito com 'atividade inventiva' ampla; o Modelo de Utilidade exige 'ato inventivo' menor focado na melhoria prática ou funcional de objeto já existente."
+  },
+  {
+    "disciplina": "Direito, Legislação e Ética",
+    "dificuldade": "Difícil",
+    "tipo": "Improbidade Administrativa",
+    "pergunta": "Após as alterações promovidas pela Lei nº 14.230/2021 na Lei de Improbidade Administrativa (Lei nº 8.429/1992), qual passou a ser o requisito indispensável para a caracterização de qualquer ato de improbidade administrativa?",
+    "alternativas": [
+      "A existência de comprovação de culpa grave ou negligência do agente público na gestão do erário.",
+      "A presença de dolo específico, ou seja, a vontade livre e consciente de alcançar o resultado ilícito tipificado na lei.",
+      "A prévia condenação do servidor em processo administrativo disciplinar sem direito a recurso.",
+      "O valor do dano financeiro causado ao patrimônio público ser superior a mil salários mínimos.",
+      "A demonstração de que o ato praticado beneficiou diretamente parentes de até terceiro grau."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A reforma operada pela Lei nº 14.230/2021 revogou a modalidade culposa de improbidade administrativa, exigindo a comprovação de dolo em todas as hipóteses do diploma legal."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Conceitos de Empreendedorismo",
+    "pergunta": "Como é chamado o tipo de empreendedorismo que busca solucionar problemas sociais e ambientais, gerando impacto positivo para a comunidade aliado à sustentabilidade financeira?",
+    "alternativas": [
+      "Empreendedorismo Corporativo (Intraempreendedorismo)",
+      "Empreendedorismo Social",
+      "Empreendedorismo Digital",
+      "Empreendedorismo Franqueado",
+      "Empreendedorismo de Oportunidade Pura"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O empreendedorismo social tem como foco principal a criação de soluções inovadoras para problemas sociais ou ambientais, utilizando modelos de negócios sustentáveis."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Modelagem de Negócios",
+    "pergunta": "No modelo de quadros Canvas (Business Model Canvas), qual bloco descreve o valor único que a empresa entrega ao seu cliente para resolver um problema ou satisfazer uma necessidade?",
+    "alternativas": [
+      "Estrutura de Custos",
+      "Canais de Distribuição",
+      "Proposta de Valor",
+      "Segmentos de Clientes",
+      "Recursos Principais"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Proposta de Valor é o elemento central do Business Model Canvas, definindo o conjunto de produtos e serviços que geram valor para um segmento específico de clientes."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Perfis Empreendedores",
+    "pergunta": "Qual das características abaixo é frequentemente associada a um perfil empreendedor de sucesso?",
+    "alternativas": [
+      "Aversão total ao risco em qualquer cenário financeiro.",
+      "Iniciativa e busca constante por novas oportunidades.",
+      "Dependência exclusiva de ordens e supervisão externa.",
+      "Resistência à inovação e mudanças de mercado.",
+      "Foco único no curto prazo sem planejamento futuro."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A proatividade, iniciativa e capacidade de identificar e aproveitar oportunidades são comportamentos chave do perfil empreendedor."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Metodologia Startup Enxuta",
+    "pergunta": "O que significa a sigla MVP no contexto do desenvolvimento de produtos e startups enxutas (Lean Startup)?",
+    "alternativas": [
+      "Produto Mínimo Viável",
+      "Maior Valor Percebido",
+      "Modelo Positivo de Produção",
+      "Meta Mínima de Performance",
+      "Plano Mínimo de Vendas"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "MVP vem do inglês 'Minimum Viable Product' (Produto Mínimo Viável), que é a versão mais simples de um produto usada para testar e validar hipóteses de mercado."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Fontes de Financiamento",
+    "pergunta": "Como são chamados os investidores individuais que aplicam capital próprio em empresas nascentes com alto potencial de crescimento em troca de participação acionária?",
+    "alternativas": [
+      "Bancos Comerciais",
+      "Fornecedores de Mercadoria",
+      "Investidores Anjo",
+      "Credores de Debêntures",
+      "Auditores Independentes"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Investidores Anjo são pessoas físicas que aplicam seu capital e conhecimento (smart money) em startups e empresas em fase inicial."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Intraempreendedorismo",
+    "pergunta": "O empreendedorismo corporativo (intraempreendedorismo) diferencia-se do empreendedorismo tradicional principalmente por:",
+    "alternativas": [
+      "Desenvolver projetos inovadores e novos negócios dentro de uma organização já existente.",
+      "Ocorrer exclusivamente em empresas do terceiro setor e ONGs sem fins lucrativos.",
+      "Não exigir o uso de qualquer tecnologia ou processos de inovação.",
+      "Dispensar completamente a necessidade de validação ou planejamento prévio.",
+      "Ser praticado obrigatoriamente por profissionais autônomos sem vínculo empregatício."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O intraempreendedorismo é a atitude empreendedora exercida por colaboradores dentro das estruturas de uma empresa já estabelecida."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Metodologia Startup Enxuta",
+    "pergunta": "Dentro do ciclo de feedback 'Construir-Medir-Aprender' da Startup Enxuta, o que significa realizar um 'Pivot' (pivotar)?",
+    "alternativas": [
+      "Encerrar definitivamente as atividades da empresa após a primeira falha de produto.",
+      "Mudar um elemento fundamental da estratégia do negócio após aprender com os testes com clientes.",
+      "Manter a estratégia original inalterada independentemente dos resultados obtidos.",
+      "Demitir toda a equipe de fundadores para contratar novos gestores externos.",
+      "Duplicar o investimento em marketing sem alterar o produto oferecido."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Pivotar significa mudar de rumo estruturado, testando uma nova hipótese fundamental sobre o produto, modelo de negócios ou público-alvo a partir do aprendizado validado."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Design Thinking",
+    "pergunta": "No processo de Design Thinking voltado ao desenvolvimento de novos negócios, qual das sequências apresenta corretamente as fases do método?",
+    "alternativas": [
+      "Vender, Produzir, Testar, Idear e Fechar.",
+      "Empatizar, Definir, Idear, Prototipar e Testar.",
+      "Investir, Registrar, Lançar, Analisar e Vender.",
+      "Pesquisar, Patentear, Divulgar, Cobrar e Expandir.",
+      "Contratar, Financiar, Estruturar, Executar e Medir."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Design Thinking é composto por 5 etapas não-lineares: Empatia (compreender o usuário), Definição (do problema), Ideação (gerar soluções), Prototipagem e Teste."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Difícil",
+    "tipo": "Abordagem de Tomada de Decisão",
+    "pergunta": "A teoria de 'Effectuation' (Saras Sarasvathy) opõe-se ao modelo tradicional de planejamento (Causal). Qual é a lógica central do pensamento Effectual utilizado por empreendedores experientes em cenários de alta incerteza?",
+    "alternativas": [
+      "Definir metas fixas de longo prazo e buscar os recursos exatos necessários para alcançá-las.",
+      "Iniciar a partir dos meios disponíveis (quem sou, o que sei, quem conheço) e criar efeitos possíveis com perda aceitável.",
+      "Realizar extensas pesquisas estatísticas de mercado antes de tomar qualquer decisão inicial.",
+      "Buscar a maximização do retorno financeiro esperado em vez de limitar as perdas potenciais.",
+      "Evitar parcerias estratégicas para manter o controle total do negócio sem interferência de terceiros."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A lógica do Effectuation foca em agir com base nos recursos atuais (meios), focar na perda aceitável em vez do retorno esperado, e construir parcerias para co-criar o futuro em ambientes incertos."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Difícil",
+    "tipo": "Estratégia de Validação de Mercado",
+    "pergunta": "Ao buscar o 'Product-Market Fit' (Encaixe Produto-Mercado), qual indicador qualitativo/quantitativo indica de forma mais consistente que uma startup atingiu essa fase?",
+    "alternativas": [
+      "Número absoluto de downloads do aplicativo na primeira semana de lançamento.",
+      "Volume de menções positivas e curtidas em postagens de redes sociais.",
+      "Alta retenção orgânica aliada à forte insatisfação dos usuários caso o produto deixasse de existir.",
+      "Aprovação do plano de negócios por bancadas de concursos de startups.",
+      "Quantidade de prêmios de inovação recebidos em feiras do setor."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O Product-Market Fit ocorre quando o produto satisfaz uma forte demanda de mercado, demonstrado por alta retenção e uso recorrente, onde os clientes sentem que o produto é indispensável (regra dos 40% de insatisfação se o produto sumisse)."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Planos de Negócio",
+    "pergunta": "Qual é a principal finalidade de um Plano de Negócios para uma empresa em fase de planejamento?",
+    "alternativas": [
+      "Substituir a necessidade de obtenção de registros legais e licenças de funcionamento.",
+      "Mapear a viabilidade do negócio, orientar a gestão e atrair investidores ou parceiros.",
+      "Garantir lucro imediato a partir do primeiro mês de operação da empresa.",
+      "Eliminar totalmente os riscos operacionais inerentes ao mercado consumidor.",
+      "Definir unicamente a identidade visual e o logotipo da marca."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Plano de Negócios orienta o empreendedor ao analisar a viabilidade mercadológica, financeira e operacional, reduzindo incertezas antes da execução."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Tipos de Empreendimento",
+    "pergunta": "O empreendedorismo motivado pela identificação de uma demanda não atendida no mercado, e não por falta de opção de renda, é denominado:",
+    "alternativas": [
+      "Empreendedorismo por Necessidade",
+      "Empreendedorismo de Oportunidade",
+      "Empreendedorismo Informal",
+      "Empreendedorismo Involuntário",
+      "Empreendedorismo de Sobrevivência"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O empreendedorismo por oportunidade ocorre quando o indivíduo percebe uma brecha ou necessidade no mercado e decide criar um negócio planejado para supri-la."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Ecossistema Empreendedor",
+    "pergunta": "Como são chamadas as organizações que oferecem suporte, infraestrutura e mentoria para startups e empresas nascentes em suas primeiras fases de desenvolvimento?",
+    "alternativas": [
+      "Incubadoras e Aceleradoras de Empresas",
+      "Cartórios de Registro Comercial",
+      "Sindicatos Patronais de Indústria",
+      "Agências de Checagem de Crédito",
+      "Bolsas de Valores Regionais"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Incubadoras e aceleradoras fornecem mentoria, espaço, redes de contato e capacitação para estruturar e impulsionar negócios em estágio inicial."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Validacao e Testes",
+    "pergunta": "Na fase inicial de criação de uma startup, qual é o principal objetivo de se realizar entrevistas e pesquisas com potenciais clientes?",
+    "alternativas": [
+      "Validar se o problema identificado realmente existe e se a solução proposta atende ao público.",
+      "Forçar o cliente a assinar um contrato prévio de compra imediata.",
+      "Convencer o cliente de que o preço cobrado será o mais alto do mercado.",
+      "Definir os salários definitivos da equipe de fundadores.",
+      "Garantir o registro imediato da patente do produto."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Entrevistar clientes permite entender suas dores reais e confirmar se a hipótese de problema e solução faz sentido antes de investir grandes recursos."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Fácil",
+    "tipo": "Financiamento Coletivo",
+    "pergunta": "Qual é a modalidade de captação de recursos na qual diversos indivíduos contribuem com pequenas quantias por meio de plataformas online para financiar um projeto ou negócio?",
+    "alternativas": [
+      "Empréstimo Consignado",
+      "Financiamento Bancário Tradicional",
+      "Crowdfunding (Vaquinha Virtual)",
+      "Factoring",
+      "Debêntures Conversíveis"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O Crowdfunding (financiamento coletivo) conecta idealizadores a apoiadores na internet para viabilizar projetos mediante recompensas ou participação."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Estratégia de Inovação",
+    "pergunta": "A estratégia do 'Oceano Azul' propõe que as empresas busquem o crescimento sustentável por meio de:",
+    "alternativas": [
+      "Criação de novos espaços de mercado inexplorados, tornando a concorrência irrelevante.",
+      "Disputa direta de preços em mercados saturados e altamente competitivos.",
+      "Redução drástica do quadro de funcionários para maximizar margens operacionais.",
+      "Aquisição sistemática dos concorrentes menores para dominar o setor existente.",
+      "Manutenção contínua do mesmo portfólio de produtos sem alterações operacionais."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A estratégia do Oceano Azul foca na inovação de valor para abrir novos mercados sem concorrência direta (oceanos azuis), fugindo dos mercados saturados (oceanos vermelhos)."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Modelos de Receita",
+    "pergunta": "Um modelo de negócio que disponibiliza uma versão básica e gratuita do serviço aos usuários, cobrando apenas por recursos avançados ou adicionais, é classificado como:",
+    "alternativas": [
+      "Freemium",
+      "Franquia (Franchising)",
+      "Atacado Direto",
+      "Licenciamento Exclusivo",
+      "Consignação"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O modelo Freemium (Free + Premium) atrai grande volume de usuários com acesso gratuito básico e monetiza convertendo uma parcela para planos pagos com funcionalidades extras."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Médio",
+    "tipo": "Pitch de Negócios",
+    "pergunta": "O que caracteriza um 'Elevator Pitch' no ambiente de negócios e startups?",
+    "alternativas": [
+      "Uma apresentação objetiva e concisa do negócio, projetada para despertar interesse em poucos minutos.",
+      "Um documento técnico de contabilidade contendo todas as demonstrações financeiras dos últimos 5 anos.",
+      "Um manual interno detalhado com as rotinas operacionais dos colaboradores.",
+      "Uma reunião formal de negociação salarial entre diretores e sindicatos.",
+      "Uma campanha publicitária veiculada exclusivamente em mídias impressas."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Elevator Pitch é um discurso sucinto (geralmente de 30 segundos a 3 minutos) focado em transmitir a essência da oportunidade de negócio para potenciais investidores ou clientes."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Difícil",
+    "tipo": "Métricas de Crescimento e Valuation",
+    "pergunta": "Ao calcular o 'Burn Rate' de uma startup que captou investimento, o que esse indicador mede especificamente?",
+    "alternativas": [
+      "O ritmo mensal em que a empresa consome seu capital em caixa antes de gerar fluxo positivo.",
+      "A taxa de crescimento anual no número de patentes registradas pela equipe técnica.",
+      "O percentual de produtos defeituosos devolvidos pelos consumidores finais.",
+      "A depreciação acumulada dos equipamentos fabris ao longo do ano fiscal.",
+      "A quantidade média de horas de treinamento concedidas aos novos funcionários."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Burn Rate (taxa de queima) indica a velocidade com que a empresa gasta seu caixa disponível para manter as operações antes de atingir a autossustentabilidade financeira."
+  },
+  {
+    "disciplina": "Empreendedorismo",
+    "dificuldade": "Difícil",
+    "tipo": "Governança e Estruturação de Startups",
+    "pergunta": "Em acordos entre fundadores de startups, qual é a função da cláusula de 'Vesting' acompanhada de um período de 'Cliff'?",
+    "alternativas": [
+      "Garantir a aquisição gradual do direito à participação acionária ao longo do tempo, mediante o cumprimento de uma carência inicial.",
+      "Obrigar os sócios a venderem a empresa imediatamente após a primeira oferta de compra recebida.",
+      "Permitir que os investidores retirem todo o capital aplicado a qualquer momento sem aviso prévio.",
+      "Definir a divisão imediata de 100% das ações da empresa antes do início dos trabalhos operacionais.",
+      "Fixar o valor da taxa de juros a ser cobrada sobre empréstimos concedidos pelos fundadores."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Vesting transfere ações gradualmente aos fundadores/membros da equipe conforme tempo de trabalho ou metas. O Cliff é o período mínimo de carência (ex: 1 ano) para começar a ter direito a essa fatia."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Análise Estratégica",
+    "pergunta": "Na Matriz SWOT (FOFA), quais elementos correspondem à análise do ambiente interno da organização?",
+    "alternativas": [
+      "Oportunidades e Ameaças",
+      "Forças e Oportunidades",
+      "Forças e Fraquezas",
+      "Fraquezas e Ameaças",
+      "Estratégias e Metas"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "As Forças e Fraquezas representam aspectos internos controláveis pela empresa, enquanto Oportunidades e Ameaças referem-se ao ambiente externo."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Modelagem de Processos",
+    "pergunta": "Qual é a notação padrão amplamente utilizada na gestão de processos de negócio para mapear e desenhar fluxogramas operacionais?",
+    "alternativas": [
+      "UML",
+      "BPMN",
+      "ITIL",
+      "COBIT",
+      "SCRUM"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A notação BPMN (Business Process Model and Notation) é o padrão internacional para modelagem gráfica de processos de negócio."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Mapeamento de Processos",
+    "pergunta": "Em projetos de gestão de processos (BPM), como é chamada a representação gráfica do estado atual do processo, ou seja, como ele realmente funciona no presente?",
+    "alternativas": [
+      "Processo TO-BE",
+      "Processo AS-IS",
+      "Processo SHOULD-BE",
+      "Processo BENCHMARK",
+      "Processo KAIZEN"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O mapeamento AS-IS documenta a situação atual do processo, enquanto o TO-BE projeta a situação futura desejada."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Níveis de Planejamento",
+    "pergunta": "O planejamento corporativo elaborado pela alta direção, focado no longo prazo e na organização como um todo, é classificado como:",
+    "alternativas": [
+      "Operacional",
+      "Tático",
+      "Estratégico",
+      "Normativo",
+      "Apoiador"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O planejamento estratégico é de responsabilidade do nível institucional (alta gestão) e define as diretrizes gerais de longo prazo."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Matriz de Portfólio",
+    "pergunta": "Na Matriz BCG, um produto que possui alta participação de mercado em um setor de baixo crescimento, gerando forte fluxo de caixa sem exigir grandes investimentos, é classificado como:",
+    "alternativas": [
+      "Estrela",
+      "Vaca Leiteira",
+      "Empreendimento",
+      "Ponto de Interrogação",
+      "Cão (ou Abacaxi)"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Produtos 'Vaca Leiteira' possuem alta participação em mercados maduros e estáveis, gerando receitas consistentes e previsíveis."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Estratégias Genéricas",
+    "pergunta": "Segundo Michael Porter, quais são as três estratégias genéricas fundamentais que uma organização pode adotar para obter vantagem competitiva?",
+    "alternativas": [
+      "Liderança em Custo, Diferenciação e Foco (ou Enfoque)",
+      "Inovação Disruptiva, Aquisição e Diversificação",
+      "Penetração de Mercado, Desenvolvimento de Produto e Integração Vertical",
+      "Liderança em Preço, Fusão Corporativa e Internacionalização",
+      "Flexibilidade, Automação Operacional e Reengenharia"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Michael Porter definiu que a vantagem competitiva sustentável é alcançada por meio de Liderança em Custo, Diferenciação ou Foco."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Gestão por Processos",
+    "pergunta": "Qual é a principal diferença entre uma estrutura organizacional tradicional por funções e uma gestão por processos?",
+    "alternativas": [
+      "A gestão por processos elimina completamente a necessidade de líderes e gerentes de departamento.",
+      "A gestão por processos organiza o trabalho de forma horizontal e ponta a ponta, cruzando diferentes departamentos funcionais para entregar valor ao cliente.",
+      "A estrutura por funções foca exclusivamente no ambiente externo da empresa, enquanto a por processos foca apenas na redução de custos de folha.",
+      "A gestão por processos é restrita a empresas industriais, sendo inviável em organizações de serviços.",
+      "A estrutura funcional prioriza a velocidade na execução das tarefas operacionais, enquanto a por processos prioriza o controle rígido da hierarquia."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A gestão por processos adota uma visão horizontal que rompe os silos departamentais, acompanhando o fluxo contínuo do trabalho desde a entrada até o cliente final."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Execução e Medição de Estratégia",
+    "pergunta": "A metodologia Balanced Scorecard (BSC), desenvolvida por Kaplan e Norton, propõe a gestão estratégica fundamentada em quatro perspectivas. Quais são elas?",
+    "alternativas": [
+      "Financeira, Clientes, Processos Internos, e Aprendizado e Crescimento",
+      "Marketing, Vendas, Produção e Recursos Humanos",
+      "Estratégica, Tática, Operacional e Financeira",
+      "Forças, Fraquezas, Oportunidades e Ameaças",
+      "Qualidade, Custo, Prazo e Inovação tecnológica"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O BSC traduz a estratégia em objetivos operacionais organizados nas perspectivas Financeira, do Cliente, dos Processos Internos e de Aprendizado/Crescimento."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Difícil",
+    "tipo": "Redesenho e Mudança de Processos",
+    "pergunta": "Em relação às abordagens de melhoria de processos de negócio, como a Reengenharia (BPR) se diferencia do processo de Melhoria Contínua (como o Kaizen)?",
+    "alternativas": [
+      "A Reengenharia busca redesenhar radicalmente os processos do zero para alcançar saltos quânticos de desempenho, enquanto a Melhoria Contínua promove mudanças graduais e incrementais.",
+      "A Melhoria Contínua exige grandes investimentos em tecnologia da informação, ao passo que a Reengenharia utiliza apenas métodos manuais e visuais.",
+      "A Reengenharia é focada na valorização da cultura organizacional existente, enquanto a Melhoria Contínua visa reformular a missão da empresa.",
+      "A Melhoria Contínua é aplicada exclusivamente por consultorias externas, enquanto a Reengenharia é conduzida pelos próprios operários.",
+      "Não há distinção prática entre elas, ambas tratam de metodologias idênticas sob nomes comerciais diferentes."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A Reengenharia envolve a reconstrução radical (top-down) dos processos existentes, enquanto a Melhoria Contínua foca em aprimoramentos constantes e graduais mantendo a estrutura base."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Difícil",
+    "tipo": "Análise da Indústria",
+    "pergunta": "Ao analisar a estrutura competitiva de um setor por meio do Modelo das Cinco Forças de Porter, qual das seguintes cenários representa um AUMENTO na ameaça de novos entrantes em um mercado?",
+    "alternativas": [
+      "Alta necessidade de capital inicial exigida para operar no setor.",
+      "Elevada lealdade dos clientes às marcas já consolidadas no mercado.",
+      "Existência de fortes economias de escala usufruídas pelas empresas incumbentes.",
+      "Baixo custo de troca (switching cost) enfrentado pelos compradores ao mudar de fornecedor.",
+      "Rígidas restrições regulatórias impostas pelo governo para a concessão de licenças operacionais."
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "Quando o custo de troca do cliente é baixo, fica muito mais fácil para uma nova empresa entrar no mercado e atrair a base de clientes já existente, reduzindo as barreiras de entrada."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Visão e Missão",
+    "pergunta": "Qual declaração organizacional descreve a razão de ser de uma empresa, definindo seu propósito fundamental e o papel que desempenha no mercado?",
+    "alternativas": [
+      "Visão",
+      "Valores",
+      "Missão",
+      "Meta SMART",
+      "Matriz Operacional"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Missão representa a razão de existir da organização no presente, definindo o que ela faz, para quem faz e qual valor entrega ao mercado."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Mapeamento de Processos",
+    "pergunta": "Em um fluxograma ou modelo de processo, qual figura geométrica é universalmente utilizada para indicar um ponto de decisão (onde o fluxo toma caminhos distintos com base em uma condição)?",
+    "alternativas": [
+      "Retângulo",
+      "Círculo",
+      "Losango",
+      "Triângulo",
+      "Seta reta"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O losango representa pontos de decisão em fluxogramas e modelagens (como no BPMN), indicando alternativas como 'Sim/Não' ou desvios condicionais."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Classificação de Processos",
+    "pergunta": "Como são denominados os processos de negócio que estão diretamente ligados ao produto final e à entrega de valor ao cliente externo (ex.: vendas e produção)?",
+    "alternativas": [
+      "Processos Primários (ou Finalísticos)",
+      "Processos de Suporte (ou de Apoio)",
+      "Processos Gerenciais",
+      "Processos Terceirizados",
+      "Processos Críticos Passivos"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Os processos primários (ou finalísticos) compõem a cadeia de valor principal da empresa, relacionando-se diretamente com o cliente e o produto final."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Análise Estratégica",
+    "pergunta": "Qual das alternativas representa um fator do Macroambiente analisado na ferramenta PESTEL?",
+    "alternativas": [
+      "Poder de negociação dos fornecedores de matéria-prima",
+      "Ameaça de produtos substitutos",
+      "Fatores Políticos e Econômicos",
+      "Gargalos de produção no setor de montagem",
+      "Rotatividade de funcionários (Turnover)"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A análise PESTEL estuda fatores do macroambiente: Políticos, Econômicos, Sociais, Tecnológicos, Ambientais (Environmental) e Legais."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Fácil",
+    "tipo": "Definição de Objetivos",
+    "pergunta": "O acrônimo SMART é utilizado para estruturar metas e objetivos eficientes. A letra 'M' nessa metodologia significa que a meta deve ser:",
+    "alternativas": [
+      "Multidisciplinar",
+      "Mensurável",
+      "Manual",
+      "Monetária",
+      "Minuciosa"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Na metodologia SMART, a meta deve ser Mensurável (Measurable), permitindo acompanhar seu atingimento por meio de indicadores claros."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Cadeia de Valor",
+    "pergunta": "Na Teoria da Cadeia de Valor proposta por Michael Porter, qual das seguintes opções representa uma Atividade de Suporte (e não uma atividade primária)?",
+    "alternativas": [
+      "Logística Interna",
+      "Marketing e Vendas",
+      "Desenvolvimento de Tecnologia (P&D)",
+      "Serviços Pós-venda",
+      "Operações e Produção"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Desenvolvimento de Tecnologia, Infraestrutura da Empresa, Gestão de RH e Aquisição são atividades de suporte que sustentam as atividades primárias."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Gestão e Cultura de Processos",
+    "pergunta": "O que é o 'Silo Organizacional' e por que ele é visto como um obstáculo para a Gestão por Processos (BPM)?",
+    "alternativas": [
+      "É um software de automação obsoleto que impede a integração de bancos de dados da empresa.",
+      "É a divisão da empresa em departamentos isolados que focam em metas locais e não no fluxo ponta a ponta.",
+      "É um depósito físico de materiais que atrasa a movimentação da cadeia de suprimentos.",
+      "É a resistência dos colaboradores operacionais em aprender novas notações de fluxograma.",
+      "É a falta de verba orçamentária dedicada à contratação de consultorias estratégicas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Silos organizacionais ocorrem quando departamentos trabalham de forma isolada e egocêntrica, prejudicando a visão sistêmica e o fluxo contínuo dos processos."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Médio",
+    "tipo": "Tipos de Mudança em Processos",
+    "pergunta": "Na disciplina de BPM, qual é a diferença entre Padronização de Processos e Otimização de Processos?",
+    "alternativas": [
+      "Padronização estabelece uma forma única e consistente de executar a tarefa; Otimização elimina desperdícios e melhora o desempenho do fluxo.",
+      "Otimização trata apenas do corte de funcionários, enquanto Padronização trata de comprar novos sistemas computacionais.",
+      "Padronização aplica-se exclusivamente a processos fabris, enquanto Otimização aplica-se somente ao setor de serviços.",
+      "Otimização é o mapeamento da situação atual (AS-IS), e Padronização é o projeto do modelo futuro (TO-BE).",
+      "Ambos os termos representam exatamente a mesma atividade, sem distinção metodológica."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Padronizar consiste em formalizar e uniformizar a execução de um processo; Otimizar envolve analisar e redesenhar o processo para torna-o mais rápido, barato ou eficiente."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Difícil",
+    "tipo": "Visão Baseada em Recursos (VBR / VRIO)",
+    "pergunta": "De acordo com o modelo VRIO (Visão Baseada em Recursos), um recurso ou capacidade que seja Valioso, Raro e Difícil de Imitar, mas para o qual a empresa NÃO esteja devidamente Organizada para explorar, resulta em:",
+    "alternativas": [
+      "Vantagem Competitiva Sustentável",
+      "Vantagem Competitiva Unilateral",
+      "Desvantagem Competitiva Crítica",
+      "Vantagem Competitiva Não Explorada (ou Potencial)",
+      "Paridade Competitiva Absoluta"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "Se o recurso possui V, R e I, mas falta a estrutura Organizacional (O) para aproveitá-lo, a empresa possui uma vantagem competitiva não aproveitada/não realizada plenamente."
+  },
+  {
+    "disciplina": "Estratégia e Processos",
+    "dificuldade": "Difícil",
+    "tipo": "Estratégia do Oceano Azul",
+    "pergunta": "Na metodologia do Oceano Azul (Chan Kim e Renée Mauborgne), qual é a lógica da 'Inovação de Valor' para se esquivar da concorrência tradicional?",
+    "alternativas": [
+      "Aumentar o preço dos produtos continuamente para criar uma percepção de status e luxo superior ao do mercado.",
+      "Reduzir custos e aumentar a eficiência operacional sem alterar a proposta de valor original do setor.",
+      "Buscar simultaneamente a diferenciação do produto e o baixo custo, quebrando o 'trade-off' tradicional de mercado.",
+      "Investir a totalidade do orçamento corporativo em campanhas publicitárias agressivas contra os concorrentes líderes.",
+      "Adquirir empresas concorrentes menores para monopolizar a oferta de preços na indústria."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Inovação de Valor busca quebrar a troca tradicional entre diferenciação e custo baixo, criando novas curvas de valor que tornam a concorrência irrelevante."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Recrutamento e Seleção",
+    "pergunta": "Qual é o principal objetivo do processo de recrutamento?",
+    "alternativas": [
+      "Aplicar avaliações de desempenho aos funcionários",
+      "Identificar e atrair candidatos para uma vaga",
+      "Definir o salário de todos os funcionários",
+      "Controlar a jornada de trabalho",
+      "Elaborar o planejamento financeiro da empresa"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O recrutamento tem como objetivo identificar e atrair pessoas que possam ocupar as vagas disponíveis na organização."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Treinamento e Desenvolvimento",
+    "pergunta": "Qual é uma das principais finalidades do treinamento de funcionários?",
+    "alternativas": [
+      "Desenvolver conhecimentos e habilidades necessários para o trabalho",
+      "Substituir todos os processos de seleção da empresa",
+      "Reduzir automaticamente os custos operacionais",
+      "Eliminar a necessidade de supervisão",
+      "Definir os objetivos financeiros da organização"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O treinamento busca desenvolver ou aperfeiçoar conhecimentos, habilidades e atitudes que contribuam para o desempenho das atividades profissionais."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Motivação",
+    "pergunta": "No ambiente organizacional, a motivação dos colaboradores está relacionada principalmente:",
+    "alternativas": [
+      "À quantidade de equipamentos disponíveis",
+      "Ao controle dos estoques",
+      "Aos fatores que estimulam o indivíduo a agir em busca de determinados objetivos",
+      "À definição dos preços dos produtos",
+      "À elaboração dos relatórios contábeis"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A motivação está relacionada aos fatores que influenciam o comportamento e estimulam as pessoas a direcionar seus esforços para alcançar objetivos."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Avaliação de Desempenho",
+    "pergunta": "Para que serve uma avaliação de desempenho dentro de uma organização?",
+    "alternativas": [
+      "Determinar automaticamente quem será demitido",
+      "Substituir os treinamentos realizados pela empresa",
+      "Controlar exclusivamente os horários de entrada e saída",
+      "Analisar o desempenho do colaborador em relação às suas atividades e objetivos",
+      "Definir os preços dos produtos comercializados"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "A avaliação de desempenho permite analisar como o colaborador está realizando suas atividades e identificar pontos positivos e oportunidades de desenvolvimento."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Comunicação Organizacional",
+    "pergunta": "Qual característica contribui para uma comunicação eficiente no ambiente de trabalho?",
+    "alternativas": [
+      "Evitar qualquer tipo de feedback",
+      "Utilizar informações claras e adequadas ao público",
+      "Transmitir informações somente por meio de documentos formais",
+      "Concentrar todas as informações em uma única pessoa",
+      "Reduzir o contato entre os membros da equipe"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Uma comunicação eficiente depende de clareza, objetividade e adequação da mensagem ao público que irá recebê-la."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Clima Organizacional",
+    "pergunta": "Uma empresa percebe aumento nas reclamações dos funcionários, dificuldades de relacionamento entre equipes e queda no comprometimento. Qual ferramenta pode ajudar a identificar a percepção dos colaboradores sobre o ambiente de trabalho?",
+    "alternativas": [
+      "Pesquisa de clima organizacional",
+      "Inventário patrimonial",
+      "Fluxo de caixa",
+      "Curva ABC",
+      "Plano de produção"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A pesquisa de clima organizacional permite identificar como os colaboradores percebem diferentes aspectos do ambiente de trabalho, ajudando a identificar problemas e oportunidades de melhoria."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Liderança",
+    "pergunta": "Um gestor consulta sua equipe antes de tomar decisões, incentiva a participação dos colaboradores e considera diferentes opiniões. Esse comportamento está associado principalmente a qual estilo de liderança?",
+    "alternativas": [
+      "Liderança autocrática",
+      "Liderança coercitiva",
+      "Liderança democrática",
+      "Liderança exclusivamente operacional",
+      "Liderança centralizadora"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A liderança democrática valoriza a participação dos membros da equipe no processo decisório, promovendo diálogo e compartilhamento de ideias."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Remuneração e Benefícios",
+    "pergunta": "Uma empresa oferece vale-alimentação, plano de saúde e auxílio-transporte aos seus funcionários. Esses itens são exemplos de:",
+    "alternativas": [
+      "Metas de produtividade",
+      "Indicadores de desempenho",
+      "Processos de recrutamento",
+      "Benefícios oferecidos aos colaboradores",
+      "Métodos de avaliação psicológica"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "Vale-alimentação, plano de saúde e auxílio-transporte são exemplos de benefícios concedidos aos colaboradores como parte da política de remuneração e gestão de pessoas."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Difícil",
+    "tipo": "Gestão por Competências",
+    "pergunta": "Uma organização identifica as competências necessárias para cada cargo e, posteriormente, compara essas exigências com as competências apresentadas pelos seus colaboradores. Qual é a principal finalidade dessa prática?",
+    "alternativas": [
+      "Reduzir a quantidade de cargos existentes na empresa",
+      "Substituir o planejamento estratégico da organização",
+      "Identificar lacunas de competências e orientar ações de desenvolvimento",
+      "Eliminar a necessidade de avaliação de desempenho",
+      "Concentrar todas as decisões de pessoal na diretoria"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A gestão por competências permite identificar diferenças entre as competências necessárias e as disponíveis, possibilitando direcionar treinamentos, desenvolvimento e outras ações de gestão de pessoas."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Difícil",
+    "tipo": "Gestão Estratégica de Pessoas",
+    "pergunta": "Uma empresa pretende expandir suas operações para outras cidades e, antes de iniciar a expansão, analisa a quantidade de profissionais necessária, as competências exigidas e os possíveis programas de desenvolvimento. Essa prática demonstra:",
+    "alternativas": [
+      "Uma atuação estratégica da Gestão de Pessoas alinhada aos objetivos organizacionais",
+      "Uma atividade exclusivamente relacionada ao controle de ponto",
+      "Um processo destinado apenas à redução da folha de pagamento",
+      "Uma ação independente do planejamento da organização",
+      "Um procedimento voltado somente para o recrutamento de candidatos"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A Gestão de Pessoas atua de forma estratégica quando planeja necessidades de profissionais e competências considerando os objetivos e os planos futuros da organização."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Integração de Funcionários",
+    "pergunta": "Qual é uma finalidade importante do processo de integração de um novo funcionário?",
+    "alternativas": [
+      "Apresentar a organização, suas normas, atividades e ambiente de trabalho",
+      "Definir imediatamente todas as metas financeiras da empresa",
+      "Substituir o processo de recrutamento",
+      "Avaliar somente os resultados do funcionário anterior",
+      "Determinar os preços dos produtos da organização"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A integração ajuda o novo colaborador a conhecer a organização, suas normas, responsabilidades, colegas e ambiente de trabalho, facilitando sua adaptação."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Feedback",
+    "pergunta": "No contexto da Gestão de Pessoas, o feedback é utilizado principalmente para:",
+    "alternativas": [
+      "Controlar exclusivamente a frequência dos funcionários",
+      "Comunicar percepções sobre o desempenho e orientar melhorias",
+      "Definir os investimentos financeiros da empresa",
+      "Substituir todas as avaliações de desempenho",
+      "Determinar a estrutura física da organização"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O feedback permite comunicar ao colaborador informações sobre seu desempenho, destacando aspectos positivos e pontos que podem ser aprimorados."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Rotatividade",
+    "pergunta": "O que significa rotatividade de funcionários em uma organização?",
+    "alternativas": [
+      "Aumento da produtividade das equipes",
+      "Distribuição das tarefas entre os setores",
+      "Entrada e saída de colaboradores da organização",
+      "Mudança dos horários de trabalho",
+      "Ampliação da estrutura hierárquica"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A rotatividade, também conhecida como turnover, representa a movimentação de entrada e saída de funcionários da organização."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Cultura Organizacional",
+    "pergunta": "A cultura organizacional pode ser entendida como:",
+    "alternativas": [
+      "O conjunto de valores, crenças, normas e comportamentos compartilhados na organização",
+      "O registro contábil das despesas com funcionários",
+      "A relação de equipamentos pertencentes à empresa",
+      "O controle diário das vendas realizadas",
+      "O planejamento dos investimentos financeiros"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A cultura organizacional envolve valores, crenças, normas, práticas e comportamentos que influenciam a forma como as pessoas atuam dentro da organização."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Fácil",
+    "tipo": "Trabalho em Equipe",
+    "pergunta": "Qual comportamento contribui para o bom funcionamento de uma equipe de trabalho?",
+    "alternativas": [
+      "Evitar compartilhar informações com os colegas",
+      "Concentrar todas as tarefas em uma única pessoa",
+      "Ignorar opiniões diferentes",
+      "Cooperar com os colegas e compartilhar informações relevantes",
+      "Evitar qualquer tipo de responsabilidade individual"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "A cooperação, o compartilhamento de informações e a disposição para contribuir com os colegas favorecem o alcance dos objetivos coletivos."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Recrutamento Interno e Externo",
+    "pergunta": "Uma empresa possui uma vaga de supervisão e decide selecionar um funcionário que já trabalha na organização para ocupá-la. Qual vantagem está diretamente relacionada a essa escolha?",
+    "alternativas": [
+      "Elimina completamente os custos do processo de seleção",
+      "Permite aproveitar conhecimentos que o funcionário já possui sobre a organização",
+      "Garante que o funcionário terá desempenho superior ao de qualquer candidato externo",
+      "Impede a necessidade de treinamento para a nova função",
+      "Elimina a possibilidade de conflitos entre funcionários"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O recrutamento interno permite aproveitar profissionais que já conhecem a organização, sua cultura e seus processos, embora a mudança de função ainda possa exigir desenvolvimento e adaptação."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Treinamento e Desenvolvimento",
+    "pergunta": "Uma empresa identificou que seus vendedores apresentam dificuldade na utilização de um novo sistema de vendas. Qual ação de Gestão de Pessoas é mais adequada?",
+    "alternativas": [
+      "Realizar um treinamento direcionado às necessidades identificadas",
+      "Substituir imediatamente todos os vendedores",
+      "Suspender o uso do sistema definitivamente",
+      "Reduzir os salários dos funcionários envolvidos",
+      "Transferir o problema exclusivamente para o setor financeiro"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Quando uma deficiência de conhecimento ou habilidade é identificada, um treinamento específico pode preparar os colaboradores para utilizar adequadamente a nova ferramenta."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Médio",
+    "tipo": "Conflitos Organizacionais",
+    "pergunta": "Dois funcionários apresentam opiniões diferentes sobre a execução de uma atividade e o conflito começa a prejudicar o trabalho da equipe. Qual atitude do gestor tende a ser mais adequada?",
+    "alternativas": [
+      "Ignorar a situação até que os funcionários resolvam sozinhos",
+      "Punir os dois funcionários sem analisar o ocorrido",
+      "Ouvir as partes envolvidas e buscar uma solução que preserve o trabalho da equipe",
+      "Transferir imediatamente um dos funcionários para outro setor",
+      "Impedir que os funcionários participem de novas atividades"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A gestão adequada de conflitos envolve compreender as diferentes perspectivas, promover o diálogo e buscar uma solução que reduza os impactos negativos sobre a equipe e a organização."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Difícil",
+    "tipo": "Planejamento de Recursos Humanos",
+    "pergunta": "Uma empresa prevê crescimento de 30% nas vendas para o próximo ano e identifica que seus atuais funcionários não serão suficientes para atender à nova demanda. Qual ação demonstra maior alinhamento entre o planejamento de pessoas e a estratégia organizacional?",
+    "alternativas": [
+      "Esperar o aumento das vendas para somente depois contratar funcionários",
+      "Contratar pessoas sem considerar as competências necessárias",
+      "Reduzir as atividades da empresa para manter o quadro atual",
+      "Planejar antecipadamente a quantidade e as competências dos profissionais necessários para sustentar o crescimento",
+      "Manter o planejamento de pessoas separado das metas de crescimento"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "O planejamento estratégico de pessoas deve considerar os objetivos futuros da organização, antecipando necessidades de quantidade e competências para apoiar o crescimento planejado."
+  },
+  {
+    "disciplina": "Gestão de Pessoas",
+    "dificuldade": "Difícil",
+    "tipo": "Desempenho e Indicadores",
+    "pergunta": "Uma empresa percebeu que a rotatividade de funcionários aumentou justamente nos setores que apresentam baixa satisfação dos colaboradores e maior número de reclamações sobre liderança. Qual análise pode contribuir para uma decisão mais adequada?",
+    "alternativas": [
+      "Analisar conjuntamente indicadores de rotatividade, satisfação, clima e liderança para identificar possíveis relações",
+      "Considerar somente a quantidade de funcionários que deixaram a empresa",
+      "Concluir que todos os desligamentos ocorreram por motivos salariais",
+      "Ignorar os dados de satisfação porque são informações subjetivas",
+      "Avaliar apenas o faturamento da empresa para explicar a rotatividade"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A análise conjunta de diferentes indicadores permite identificar relações entre fatores do ambiente de trabalho e a rotatividade, proporcionando uma visão mais completa para a tomada de decisão."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Balanço Patrimonial",
+    "pergunta": "No Balanço Patrimonial, qual grupo de contas representa os bens e direitos de propriedade da empresa?",
+    "alternativas": [
+      "Passivo Circulante",
+      "Ativo",
+      "Patrimônio Líquido",
+      "Resultado do Exercício",
+      "Passivo Não Circulante"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Ativo engloba todos os bens e direitos que a empresa possui e que podem gerar benefícios econômicos futuros."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "DRE",
+    "pergunta": "Qual demonstração contábil tem como objetivo apurar se a empresa obteve lucro ou prejuízo em um determinado período?",
+    "alternativas": [
+      "Balanço Patrimonial",
+      "Demonstração dos Lucros ou Prejuízos Acumulados",
+      "Demonstração do Resultado do Exercício (DRE)",
+      "Demonstração do Fluxo de Caixa (DFC)",
+      "Balanço Financeiro"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A DRE confronta receitas, custos e despesas ao longo de um período para apurar o resultado líquido (lucro ou prejuízo)."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Regime Contábil",
+    "pergunta": "Qual regime contábil reconhece receitas e despesas no momento em que ocorrem os fatos geradores, independentemente do recebimento ou pagamento em dinheiro?",
+    "alternativas": [
+      "Regime de Competência",
+      "Regime de Caixa",
+      "Regime Mixto",
+      "Regime Financeiro",
+      "Regime de Desembolso"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Pelo Regime de Competência, os efeitos das transações são reconhecidos nos períodos a que se referem, ocorrendo ou não a entrada/saída de caixa."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Capital de Giro",
+    "pergunta": "Como é conceitualmente definido o Capital de Giro Líquido (CGL)?",
+    "alternativas": [
+      "Diferença entre Ativo Total e Passivo Total",
+      "Multiplicação do Ativo Circulante pelas Vendas",
+      "Soma das Receitas com os Custos Operacionais",
+      "Diferença entre o Ativo Circulante e o Passivo Circulante",
+      "Soma do Patrimônio Líquido com o Passivo Não Circulante"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "O Capital de Giro Líquido é obtido pela subtração do Passivo Circulante em relação ao Ativo Circulante (CGL = AC - PC)."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Fluxo de Caixa",
+    "pergunta": "O relatório que evidencia as entradas e saídas de recursos financeiros no caixa da organização ao longo de um período chama-se:",
+    "alternativas": [
+      "Demonstração do Valor Adicionado (DVA)",
+      "Balanço Social",
+      "Demonstração do Fluxo de Caixa (DFC)",
+      "Balancete de Verificação",
+      "Notas Explicativas"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A DFC apresenta as movimentações financeiras de entradas e saídas de caixa e equivalentes de caixa divididas nas atividades operacionais, de investimento e de financiamento."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Análise de Indicadores",
+    "pergunta": "Uma empresa apresenta Ativo Circulante de R$ 150.000, Estoques de R$ 30.000 e Passivo Circulante de R$ 100.000. Qual é o Índice de Liquidez Seca dessa empresa?",
+    "alternativas": [
+      "1,5",
+      "1,8",
+      "1,2",
+      "0,8",
+      "2,0"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Liquidez Seca é calculada por (Ativo Circulante - Estoques) / Passivo Circulante. Assim: (150.000 - 30.000) / 100.000 = 120.000 / 100.000 = 1,2."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Análise de Investimentos",
+    "pergunta": "A Taxa Interna de Retorno (TIR) é um método utilizado em análise de investimentos. Qual das afirmações abaixo descreve corretamente a TIR?",
+    "alternativas": [
+      "É o período de tempo necessário para recuperar o capital investido.",
+      "É o valor presente dos fluxos de caixa futuros descontados a zero.",
+      "É a taxa de desconto que faz com que o Valor Presente Líquido (VPL) de um projeto seja igual a zero.",
+      "É a taxa de juros praticada pelo mercado financeiro no momento da apuração do projeto.",
+      "É a margem bruta de lucro gerada pelas operações operacionais diretas."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A TIR é a taxa de desconto implícita do projeto que equaliza o valor presente das entradas de caixa ao valor presente das saídas de caixa, igualando o VPL a zero."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Ponto de Equilíbrio",
+    "pergunta": "Uma empresa vende seu produto por R$ 50,00 a unidade. Os custos e despesas variáveis somam R$ 30,00 por unidade e os custos fixos totais são de R$ 40.000,00 por mês. Quantas unidades a empresa precisa vender mensalmente para atingir o Ponto de Equilíbrio Contábil?",
+    "alternativas": [
+      "800 unidades",
+      "1.333 unidades",
+      "2.000 unidades",
+      "4.000 unidades",
+      "1.000 unidades"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Margem de Contribuição Unidade = Preço - Custos Variáveis = 50 - 30 = R$ 20. Ponto de Equilíbrio = Custos Fixos / Margem de Contribuição = 40.000 / 20 = 2.000 unidades."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Difícil",
+    "tipo": "Ciclos Operacional e Financeiro",
+    "pergunta": "Uma empresa tem Prazo Médio de Estocagem (PME) de 45 dias, Prazo Médio de Recebimento (PMR) de 30 dias e Prazo Médio de Pagamento a Fornecedores (PMP) de 40 dias. Qual é o Ciclo Operacional e o Ciclo Financeiro dessa empresa, respectivamente?",
+    "alternativas": [
+      "Ciclo Operacional: 75 dias; Ciclo Financeiro: 35 dias",
+      "Ciclo Operacional: 75 dias; Ciclo Financeiro: 115 dias",
+      "Ciclo Operacional: 85 dias; Ciclo Financeiro: 45 dias",
+      "Ciclo Operacional: 35 dias; Ciclo Financeiro: 75 dias",
+      "Ciclo Operacional: 40 dias; Ciclo Financeiro: 35 dias"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Ciclo Operacional = PME + PMR = 45 + 30 = 75 dias. Ciclo Financeiro (Ciclo de Caixa) = Ciclo Operacional - PMP = 75 - 40 = 35 dias."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Difícil",
+    "tipo": "Custo de Capital e Estrutura Financeira",
+    "pergunta": "O Custo Médio Ponderado de Capital (WACC/CMPC) reflete o custo de oportunidade dos provedores de capital de uma empresa. O que ocorre com o custo de capital de terceiros ao calcular o WACC em empresas tributadas pelo Lucro Real?",
+    "alternativas": [
+      "É multiplicado pelo valor total das dívidas de longo prazo.",
+      "Deve ser ajustado deduzindo-se o benefício fiscal do imposto de renda, pois os juros são despesas dedutíveis.",
+      "É acrescido da taxa de inflação do período para refletir o custo real.",
+      "Deve ser desconsiderado do cálculo, permanecendo apenas o custo do capital próprio.",
+      "É mantido idêntico ao custo nominal das dívidas, sem qualquer tipo de dedução ou ajuste fiscal."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "No cálculo do WACC, o custo da dívida (capital de terceiros) é ajustado pelo benefício fiscal (1 - t), onde 't' é a alíquota de impostos sobre o lucro, devido à dedutibilidade fiscal das despesas financeiras."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Conceitos Fundamentais",
+    "pergunta": "O que representa o Passivo no Balanço Patrimonial de uma entidade?",
+    "alternativas": [
+      "Os bens e direitos de propriedade da empresa.",
+      "As obrigações e dívidas com terceiros.",
+      "Os recursos próprios investidos pelos sócios.",
+      "As receitas operacionais líquidas do período.",
+      "Os lucros acumulados pendentes de distribuição."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Passivo evidencia as obrigações presentes da entidade, derivadas de eventos já ocorridos, cuja liquidação se espera que resulte na saída de recursos."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Custos e Despesas",
+    "pergunta": "Como são classificados os gastos diretamente vinculados à produção de bens ou prestação de serviços de uma empresa?",
+    "alternativas": [
+      "Despesas Administrativas",
+      "Perdas Operacionais",
+      "Custos",
+      "Investimentos Financeiros",
+      "Despesas de Vendas"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Custos são os gastos diretamente ligados à produção de bens ou à prestação de serviços. Despesas são gastos associados à administração, vendas e estrutura geral."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Depreciação",
+    "pergunta": "Qual é o objetivo do registro contábil da depreciação?",
+    "alternativas": [
+      "Aumentar o valor de mercado dos bens do ativo imobilizado.",
+      "Registrar a perda de valor dos bens do ativo imobilizado pelo uso, ação da natureza ou obsolescência.",
+      "Apurar o montante de impostos a pagar sobre as vendas de mercadorias.",
+      "Calcular a rentabilidade dos investimentos financeiros de curto prazo.",
+      "Garantir o pagamento de dividendos aos acionistas preferenciais."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A depreciação reconhece a perda de capacidade operacional ou valor dos ativos imobilizados tangíveis ao longo de sua vida útil econômica."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Patrimônio Líquido",
+    "pergunta": "Qual é a fórmula da Equação Fundamental da Contabilidade?",
+    "alternativas": [
+      "Ativo = Passivo - Patrimônio Líquido",
+      "Patrimônio Líquido = Ativo + Passivo",
+      "Ativo = Passivo + Patrimônio Líquido",
+      "Passivo = Ativo + Patrimônio Líquido",
+      "Patrimônio Líquido = Receitas - Despesas"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Equação Fundamental estabelece que o total de bens e direitos (Ativo) deve ser igual à soma das obrigações com terceiros (Passivo) e dos recursos próprios (Patrimônio Líquido)."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Fácil",
+    "tipo": "Indicadores de Liquidez",
+    "pergunta": "O Índice de Liquidez Corrente mede a capacidade da empresa de cumprir suas obrigações de curto prazo. Como ele é calculado?",
+    "alternativas": [
+      "Ativo Circulante dividido pelo Passivo Circulante",
+      "Passivo Circulante dividido pelo Ativo Total",
+      "Ativo Total menos o Passivo Total",
+      "Ativo Circulante subtraído dos Estoques",
+      "Patrimônio Líquido dividido pelo Ativo Não Circulante"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Liquidez Corrente = Ativo Circulante / Passivo Circulante. Mede quantos reais de ativo realizável a curto prazo a empresa possui para cada real de dívida de curto prazo."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Alavancagem Financeira",
+    "pergunta": "Qual das opções a seguir descreve corretamente o conceito de Alavancagem Financeira em uma empresa?",
+    "alternativas": [
+      "Uso exclusivo de capital próprio para financiar projetos de expansão sem assumir dívidas bancárias.",
+      "Uso de capital de terceiros (dívidas) na estrutura de capital para tentar elevar o retorno sobre o capital próprio.",
+      "Capacidade de reduzir custos fixos por meio de ganhos de escala na produção de bens.",
+      "Estratégia de manter 100% dos ativos em aplicações financeiras de liquidez imediata.",
+      "Aumento das vendas gerado pela diminuição dos preços unitários dos produtos oferecidos."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A alavancagem financeira ocorre quando a empresa utiliza recursos de terceiros a um custo fixo no intuito de aumentar o retorno dos acionistas (ROE)."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Análise de Investimentos",
+    "pergunta": "Um analista avalia dois projetos pelo método do Valor Presente Líquido (VPL). O Projeto A apresenta VPL de R$ 50.000 e o Projeto B apresenta VPL de R$ -12.000, considerando a mesma taxa de desconto. Qual a decisão recomendada?",
+    "alternativas": [
+      "Aceitar o Projeto B, pois apresenta VPL negativo indicando menor exposição ao risco de mercado.",
+      "Rejeitar ambos os projetos, pois o VPL deveria ser exatamente zero para garantir a viabilidade.",
+      "Aceitar o Projeto A e rejeitar o Projeto B, pois o Projeto A agrega valor à empresa e o B destrói valor.",
+      "Aceitar o Projeto B, pois requererá menor volume de capital operacional ao longo da execução.",
+      "Escolher qualquer um dos dois, visto que o VPL sozinho não permite tomadas de decisão."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Projetos com VPL positivo geram valor acima da taxa de retorno exigida e devem ser aceitos, enquanto projetos com VPL negativo destroem valor econômico e devem ser rejeitados."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Médio",
+    "tipo": "Margem de Contribuição",
+    "pergunta": "Uma empresa vende determinado produto por R$ 120,00 a unidade. Sabendo que os custos variáveis unitários são R$ 70,00 e as despesas variáveis representam 10% do preço de venda, qual é a Margem de Contribuição Unitária em reais?",
+    "alternativas": [
+      "R$ 50,00",
+      "R$ 38,00",
+      "R$ 62,00",
+      "R$ 42,00",
+      "R$ 28,00"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Despesas variáveis = 10% de R$ 120,00 = R$ 12,00. Total de deduções variáveis = R$ 70,00 + R$ 12,00 = R$ 82,00. Margem de Contribuição Unitária = R$ 120,00 - R$ 82,00 = R$ 38,00."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Difícil",
+    "tipo": "Análise de Rentabilidade e Modelo DuPont",
+    "pergunta": "Pela decomposição do Retorno sobre o Patrimônio Líquido (ROE) pelo sistema DuPont, o ROE pode ser desmembrado em três componentes principais. Quais são esses três elementos?",
+    "alternativas": [
+      "Margem Líquida, Giro do Ativo e Alavancagem Financeira (Multiplicador do PL).",
+      "Margem Bruta, Liquidez Seca e Ponto de Equilíbrio Operacional.",
+      "Custo do Capital Próprio, Taxa Interna de Retorno e Capital de Giro.",
+      "Giro do Estoque, Prazo Médio de Recebimento e Margem de Contribuição.",
+      "EBITDA, Custo de Terceiros e Retorno sobre o Ativo (ROA)."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "A fórmula DuPont desmembra o ROE em: ROE = (Lucro Líquido / Vendas) × (Vendas / Ativo) × (Ativo / Patrimônio Líquido), correspondendo a Margem Líquida × Giro do Ativo × Multiplicador do PL."
+  },
+  {
+    "disciplina": "Gestão Financeira e Contábil",
+    "dificuldade": "Difícil",
+    "tipo": "EBITDA e Fluxo de Caixa",
+    "pergunta": "Apesar de ser amplamente utilizado como métrica de geração de caixa operacional, o EBITDA (LAJIDA) possui limitações significativas em relação ao fluxo de caixa real da empresa. Qual alternativa apresenta uma razão correta para essa limitação?",
+    "alternativas": [
+      "O EBITDA deduz antecipadamente o montante investido em bens do Ativo Imobilizado (Capex).",
+      "O EBITDA não considera as variações na necessidade de capital de giro nem os investimentos em bens de capital (Capex).",
+      "O EBITDA ajusta os valores do resultado operacional com base nas entradas e saídas efetivas do caixa bancário.",
+      "O EBITDA exclui as despesas de depreciação e amortização, as quais representam desembolsos financeiros diretos de caixa.",
+      "O EBITDA considera apenas as receitas recebidas à vista, ignorando as vendas a prazo efetuadas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O EBITDA é baseado no regime de competência e não reflete variações de capital de giro (como prazos de clientes e fornecedores), nem inclui desembolsos com investimentos em ativos imobilizados/intangíveis (Capex)."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Composto de Marketing (4 Ps)",
+    "pergunta": "Qual dos elementos do composto de marketing (4 Ps) diz respeito às estratégias de comunicação, publicidade e relações públicas de uma marca?",
+    "alternativas": [
+      "Preço",
+      "Praça",
+      "Produto",
+      "Promoção",
+      "Processo"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "A Promoção envolve todas as ferramentas de comunicação utilizadas para informar, persuadir e lembrar os clientes sobre os produtos ou serviços da empresa."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Funil de Vendas",
+    "pergunta": "No contexto do funil de vendas, como é chamado um visitante que forneceu suas informações de contato em troca de algum conteúdo ou oferta, demonstrando interesse inicial?",
+    "alternativas": [
+      "Lead",
+      "Prospect qualificado",
+      "Promotor de marca",
+      "Stakeholder",
+      "Buyer Persona"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Um Lead é uma oportunidade de negócio potencial que demonstrou interesse na empresa e forneceu seus dados de contato (como e-mail ou telefone)."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Segmentação de Mercado",
+    "pergunta": "Quando uma empresa divide o mercado com base em variáveis como idade, gênero, renda e nível de escolaridade, ela está utilizando qual tipo de segmentação?",
+    "alternativas": [
+      "Segmentação Psicográfica",
+      "Segmentação Demográfica",
+      "Segmentação Geográfica",
+      "Segmentação Comportamental",
+      "Segmentação Tecnográfica"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A segmentação demográfica agrupa o público-alvo a partir de dados estatísticos da população, tais como idade, gênero, renda, ocupação e grau de instrução."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Comportamento do Consumidor",
+    "pergunta": "O que representa o conceito de 'Buyer Persona' dentro de uma estratégia de marketing?",
+    "alternativas": [
+      "O concorrente direto com maior fatia de mercado.",
+      "A representação semi-fictícia do cliente ideal fundamentada em dados reais e pesquisas.",
+      "O perfil dos colaboradores que atuam diretamente na área de vendas.",
+      "O conjunto de diretores responsáveis pela tomada de decisão de compras da empresa.",
+      "O segmento total de consumidores que rejeitam o produto da marca."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Buyer Persona é o perfil arquetípico do cliente ideal, construído com base em dados demográficos, comportamentais, motivações e dores reais."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Canais de Distribuição",
+    "pergunta": "Qual das opções a seguir exemplifica uma estratégia de venda direta?",
+    "alternativas": [
+      "Venda de produtos por meio de grandes redes de supermercados.",
+      "Comercialização feita por distribuidores regionais e atacadistas.",
+      "Venda realizada pelo próprio fabricante em seu e-commerce oficial.",
+      "Distribuição de mercadorias via corretores autônomos e franquias.",
+      "Parceria comercial de licenciamento de marca para terceiros."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A venda direta ocorre quando o fabricante vende seus produtos ao consumidor final sem a intermediação de atacadistas, varejistas ou distribuidores."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Métricas de Desempenho",
+    "pergunta": "Uma empresa investiu R$ 20.000,00 em campanhas de marketing durante um mês e conseguiu conquistar 200 novos clientes. Qual foi o Custo de Aquisição de Clientes (CAC) dessa campanha?",
+    "alternativas": [
+      "R$ 200,00",
+      "R$ 50,00",
+      "R$ 100,00",
+      "R$ 400,00",
+      "R$ 10,00"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O CAC é calculado dividindo-se o investimento total na atração de clientes pelo número de novos clientes conquistados: R$ 20.000 / 200 = R$ 100,00."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Técnicas de Vendas",
+    "pergunta": "Qual é o principal foco da metodologia de vendas complexas conhecida como SPIN Selling?",
+    "alternativas": [
+      "Pressionar o cliente para o fechamento imediato com descontos progressivos.",
+      "Investir prioritariamente em anúncios visuais de alta frequência.",
+      "Fazer perguntas estratégicas divididas em Situação, Problema, Implicação e Necessidade de Solução.",
+      "Automatizar o envio de e-mails de prospecção em massa para listas compradas.",
+      "Oferecer amostras grátis para que o consumidor experimente o produto antes de comprar."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O SPIN Selling é baseado na realização de perguntas estruturadas (Situação, Problema, Implicação e Necessidade de Solução) para diagnosticar o cenário do cliente e propor a solução adequada."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Estratégia de Produto",
+    "pergunta": "Na Matriz BCG, como é classificado um produto que possui alta participação de mercado em um setor de baixo crescimento, gerando forte fluxo de caixa sem exigir grandes investimentos?",
+    "alternativas": [
+      "Empreendimento",
+      "Vaca Leiteira",
+      "Estrela",
+      "Abacaxi (ou Cão)",
+      "Ponto de Interrogação"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Na Matriz BCG, os produtos 'Vaca Leiteira' possuem alta participação em mercados maduros (baixo crescimento) e geram lucros e caixa consistentes sem exigir grandes aportes."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Difícil",
+    "tipo": "Indicadores Financeiros de Vendas",
+    "pergunta": "Em modelos de negócios por assinatura (SaaS), o que indica a relação entre o LTV (Lifetime Value) e o CAC (Custo de Aquisição de Clientes) ser igual a 1 (LTV/CAC = 1)?",
+    "alternativas": [
+      "A empresa tem margem de lucro operacional altamente saudável acima de 50%.",
+      "O valor gerado pelo cliente ao longo do tempo cobre apenas o custo gasto para adquiri-lo, sem gerar lucro líquido.",
+      "A empresa recupera o investimento de aquisição em menos de um mês de contrato.",
+      "O custo de aquisição é três vezes maior do que a receita média produzida pelo cliente.",
+      "A taxa de cancelamento (Churn Rate) do negócio foi reduzida a zero."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Quando o LTV/CAC equivale a 1, a receita líquida gerada pelo cliente durante seu ciclo de vida é exatamente igual ao custo para atraí-lo, o que significa que a operação não produz valor financeiro real e opera no ponto de equilíbrio pontual desse cliente."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Difícil",
+    "tipo": "Trade Marketing e Posicionamento",
+    "pergunta": "O que caracteriza a prática de Trade Marketing na gestão de canais de distribuição?",
+    "alternativas": [
+      "O foco exclusivo na veiculação de anúncios em redes sociais voltados ao consumidor final (B2C).",
+      "A substituição do time de vendas interno por plataformas de autoatendimento online.",
+      "O conjunto de ações estratégicas voltadas aos canais de distribuição para otimizar o posicionamento e a exposição dos produtos nos pontos de venda (PDV).",
+      "O uso de táticas de precificação dinâmica baseadas exclusivamente em algoritmos de concorrência digital.",
+      "A terceirização completa da produção para fornecedores internacionais de menor custo."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O Trade Marketing visa otimizar a relação entre fabricantes e canais de distribuição (varejistas/atacadistas), focando no domínio do ponto de venda, na exposição adequada e no incentivo ao consumo imediato."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Inbound Marketing",
+    "pergunta": "Qual é a principal premissa do Inbound Marketing (Marketing de Atração)?",
+    "alternativas": [
+      "Interromper o consumidor com anúncios de rádio e TV em horários de pico.",
+      "Atrair potenciais clientes por meio de conteúdos relevantes e de valor.",
+      "Comprar listas de e-mails para realizar disparos em massa não solicitados.",
+      "Focar exclusivamente no atendimento presencial em lojas físicas.",
+      "Realizar chamadas telefônicas de telemarketing ativo sem autorização prévia."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Inbound Marketing busca atrair e engajar o público consumidor por meio do fornecimento de conteúdos relevantes que solucionam suas dúvidas e necessidades."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão de Vendas",
+    "pergunta": "Qual indicador mede o percentual de clientes que cancelam a assinatura ou deixam de comprar de uma empresa em um determinado período?",
+    "alternativas": [
+      "Net Promoter Score (NPS)",
+      "Custo de Aquisição de Clientes (CAC)",
+      "Taxa de Churn (Churn Rate)",
+      "Ticket Médio",
+      "Taxa de Conversão"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Taxa de Churn mede o cancelamento ou evasão de clientes em um intervalo de tempo determinado."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Branding",
+    "pergunta": "O que define a identidade de marca (Branding) de uma empresa?",
+    "alternativas": [
+      "Apenas o preço praticado em relação aos concorrentes do setor.",
+      "O conjunto de elementos visuais, valores, voz e percepções que definem quem a empresa é no mercado.",
+      "O volume total de vendas registrado no encerramento do ano fiscal.",
+      "O número de seguidores que a empresa possui em suas redes sociais.",
+      "O orçamento anual investido em eventos corporativos."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Branding abrange o posicionamento, a proposta de valor, a identidade visual e o conjunto de percepções que o público constrói sobre uma marca."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Pesquisa de Mercado",
+    "pergunta": "O indicador NPS (Net Promoter Score) é amplamente utilizado para mensurar qual aspecto do negócio?",
+    "alternativas": [
+      "A eficiência dos processos logísticos e de entrega.",
+      "O nível de satisfação e lealdade dos clientes com a empresa.",
+      "A rentabilidade das campanhas patrocinadas no Google.",
+      "A quantidade de produtos estocados nos depósitos centrais.",
+      "A rotatividade de funcionários no setor de vendas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O NPS mensura o grau de lealdade e satisfação dos clientes perguntando o quão provável eles recomendariam a empresa a um amigo ou colega."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Fácil",
+    "tipo": "Estratégia de Precificação",
+    "pergunta": "A estratégia de precificação conhecida como 'Skimming' ou 'Desnatamento de Mercado' consiste em:",
+    "alternativas": [
+      "Fixar um preço inicial elevado para extrair receita máxima dos segmentos dispostos a pagar mais, reduzindo-o gradativamente.",
+      "Definir o preço exatamente igual ao do principal concorrente para evitar disputas de mercado.",
+      "Praticar preços abaixo do custo de fabricação para eliminar pequenos concorrentes locais.",
+      "Oferecer o produto gratuitamente por tempo indeterminado e cobrar apenas pelo suporte técnico.",
+      "Estabelecer um preço inicial extremamente baixo para penetrar rapidamente no mercado."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "No desnatamento (skimming), lança-se o produto com preço alto para capturar o consumidor que valoriza a novidade, reduzindo o preço posteriormente para atingir outros públicos."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Jornada do Cliente",
+    "pergunta": "Em relação à jornada de compra do consumidor, o que caracteriza a etapa de 'Consideração da Solução'?",
+    "alternativas": [
+      "O consumidor ainda não percebeu que tem um problema ou necessidade específica.",
+      "O consumidor já assinou o contrato de compra e avalia o atendimento pós-venda.",
+      "O comprador identificou seu problema e pesquisa as opções e alternativas disponíveis para resolvê-lo.",
+      "O cliente escolheu o fornecedor e negocia as condições finais de pagamento.",
+      "O consumidor atua como promotor espontâneo recomendando a marca para terceiros."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Na etapa de consideração, o cliente já reconheceu sua necessidade/problema e busca avaliar as diferentes soluções presentes no mercado antes de decidir."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Métricas de Marketing Digital",
+    "pergunta": "Uma landing page recebeu 5.000 visitantes em um mês e gerou 250 novos cadastros de formulário (leads). Qual foi a taxa de conversão dessa página?",
+    "alternativas": [
+      "2,5%",
+      "10,0%",
+      "5,0%",
+      "0,5%",
+      "12,5%"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A taxa de conversão é calculada dividindo o número de conversões pelo total de visitantes: (250 / 5.000) * 100 = 5,0%."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Médio",
+    "tipo": "Técnicas de Negociação",
+    "pergunta": "Na técnica de vendas e negociação, qual o significado e a função do conceito conhecido como 'Objeção'?",
+    "alternativas": [
+      "A aceitação imediata e incondicional da proposta comercial por parte do comprador.",
+      "A assinatura formal do contrato antes da apresentação detalhada do produto.",
+      "Uma dúvida, hesitação ou barreira apresentada pelo cliente que impede a evolução imediata da venda.",
+      "O cancelamento do pedido por falha no controle de estoque do fornecedor.",
+      "A concessão automática de desconto de tabela concedida pelo vendedor."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Uma objeção representa uma barreira ou questionamento imposto pelo cliente (como preço, tempo ou confiança) que precisa ser contornada pelo vendedor durante a negociação."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Difícil",
+    "tipo": "Estratégia de Crescimento (Matriz Ansoff)",
+    "pergunta": "De acordo com a Matriz de Ansoff, qual quadrante representa a estratégia de maior risco para uma organização, por envolver o lançamento de novos produtos em mercados onde a empresa ainda não atua?",
+    "alternativas": [
+      "Penetração de Mercado",
+      "Desenvolvimento de Mercado",
+      "Desenvolvimento de Produto",
+      "Diversificação",
+      "Consolidação Operacional"
+    ],
+    "respostaCorreta": 3,
+    "explicacao": "A estratégia de Diversificação envolve atuar simultaneamente com novos produtos em novos mercados, sendo o quadrante da Matriz Ansoff com o maior nível de incerteza e risco."
+  },
+  {
+    "disciplina": "Marketing e Vendas",
+    "dificuldade": "Difícil",
+    "tipo": "Métricas Avançadas de Vendas",
+    "pergunta": "Uma empresa B2B possui um Ticket Médio de R$ 5.000,00 por cliente ao ano. Se o seu churn anual é de 10% e a margem bruta é de 80%, qual é o Lifetime Value (LTV) estimado de um cliente considerando apenas o tempo médio de retenção (1/churn)?",
+    "alternativas": [
+      "R$ 50.000,00",
+      "R$ 4.000,00",
+      "R$ 40.000,00",
+      "R$ 25.000,00",
+      "R$ 32.000,00"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Tempo médio de retenção = 1 / Churn = 1 / 0,10 = 10 anos. Receita total do ciclo de vida = R$ 5.000 x 10 = R$ 50.000. Considerando a margem de 80%, o LTV em valor de margem é R$ 50.000 x 0,80 = R$ 40.000,00."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Classificação de Materiais",
+    "pergunta": "Qual é a principal finalidade da Curva ABC (ou Análise de Pareto) na gestão de estoques?",
+    "alternativas": [
+      "Determinar o prazo exato de validade dos produtos alimentícios.",
+      "Categorizar os itens do estoque de acordo com sua importância financeira e valor consumido.",
+      "Calcular a taxa de depreciação anual das máquinas e equipamentos.",
+      "Medir a velocidade máxima de transporte em rotas de distribuição urbana.",
+      "Eliminar a necessidade de inventários físicos periódicos."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Curva ABC classifica os estoques com base no impacto financeiro de cada item, permitindo que a gestão foque o controle rigoroso sobre os itens de maior valor (Classe A)."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Transportes",
+    "pergunta": "Qual modal de transporte é historicamente o mais utilizado para a movimentação de cargas no Brasil?",
+    "alternativas": [
+      "Ferroviário",
+      "Aquaviário",
+      "Rodoviário",
+      "Aéreo",
+      "Dutoviário"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O modal rodoviário é o predominante na matriz de transporte brasileira, oferecendo alta flexibilidade e integração porta a porta."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão de Estoques",
+    "pergunta": "Como é chamado o volume extra de estoque mantido pela empresa para mitigar riscos de atraso de fornecedores ou oscilações inesperadas na demanda?",
+    "alternativas": [
+      "Estoque de Segurança",
+      "Estoque Morto",
+      "Estoque Mínimo Operacional de Descarte",
+      "Estoque de Trânsito Exclusivo",
+      "Estoque Consignado"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O estoque de segurança visa proteger a operação contra incertezas no prazo de entrega (lead time) ou picos imprevistos no consumo."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Armazenagem",
+    "pergunta": "O método de movimentação de estoque conhecidamente associado à sigla PEPS (Primeiro que Entra, Primeiro que Sai) garante que:",
+    "alternativas": [
+      "Os itens mais caros sejam vendidos em primeiro lugar para gerar caixa rápido.",
+      "As mercadorias estocadas há mais tempo sejam movimentadas e expedidas prioritariamente.",
+      "Os lotes mais recentes sejam despachados antes dos lotes antigos.",
+      "Os materiais defeituosos fiquem guardados permanentemente no almoxarifado.",
+      "O custo médio unitário seja recalculado a cada nova entrada de nota fiscal."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O método PEPS (FIFO) prioriza a saída dos itens mais antigos do estoque, sendo fundamental para evitar a perda de produtos perecíveis ou com prazo de validade."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Conceitos de Logística",
+    "pergunta": "A atividade logística responsável pela movimentação de produtos do consumidor final de volta ao fabricante para reaproveitamento, reciclagem ou descarte adequado é a:",
+    "alternativas": [
+      "Logística Internacional",
+      "Logística Integrada",
+      "Logística Reversa",
+      "Logística de Suprimentos",
+      "Logística de Produção"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A Logística Reversa gerencia o fluxo inverso de bens e materiais, cuidando de devoluções, reciclagem, descarte sustentável e pós-venda."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Gestão de Estoques",
+    "pergunta": "Uma empresa apresenta consumo anual de 12.000 unidades de uma peça e mantém um estoque médio de 1.000 unidades. Qual é o Giro de Estoque (rotatividade) dessa peça no ano?",
+    "alternativas": [
+      "6 vezes",
+      "12 vezes",
+      "24 vezes",
+      "10 vezes",
+      "18 vezes"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Giro de Estoque é calculado dividindo o consumo total pelo estoque médio: 12.000 / 1.000 = 12 vezes ao ano."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Operadores Logísticos",
+    "pergunta": "Qual das seguintes frases define corretamente o conceito de 'Just in Time' (JIT) na gestão de materiais?",
+    "alternativas": [
+      "Manter os estoques no nível máximo possível para aproveitar descontos comerciais em compras de grande porte.",
+      "Comprar e produzir apenas a quantidade necessária, no momento certo e no local exato, reduzindo ao mínimo os estoques.",
+      "Privilegiar sempre o transporte hidroviário pela garantia de prazos previsíveis sem variações.",
+      "Armazenar mercadorias em depósitos terceirizados situados ao lado de cada cliente final.",
+      "Priorizar o atendimento de pedidos via frete aéreo internacional para zerar o tempo de trânsito."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A filosofia Just in Time foca na eliminação de desperdícios e na redução drástica de estoques, produzindo e fornecendo matérias-primas na quantidade exata e no momento em que são necessárias."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Multimodalidade",
+    "pergunta": "Qual é a diferença fundamental entre transporte Intermodal e transporte Multimodal de cargas?",
+    "alternativas": [
+      "O transporte Intermodal utiliza apenas modais terrestres, enquanto o Multimodal utiliza modais aquáticos e aéreos.",
+      "O transporte Multimodal exige a emissão de contratos individuais com cada transportador envolvido.",
+      "O transporte Multimodal é regido por um único Contrato de Transporte (CTM) emitido por um Operador de Transporte Multimodal (OTM), cobrindo todo o percurso.",
+      "O transporte Intermodal não permite o uso de contêineres padronizados durante o transbordo.",
+      "O transporte Intermodal é restrito a operações dentro de um mesmo estado brasileiro."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Na multimodalidade, utiliza-se dois ou mais modais sob a responsabilidade de um único Operador de Transporte Multimodal (OTM) sob contrato único, diferentemente da intermodalidade, onde há contratos separados por modal."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Difícil",
+    "tipo": "Lote Econômico de Compra (LEC)",
+    "pergunta": "O modelo do Lote Econômico de Compra (LEC) busca encontrar a quantidade ideal de pedido que minimiza o custo total de estoque. O ponto mínimo da curva do Custo Total ocorre quando:",
+    "alternativas": [
+      "O Custo de Armazenagem (carregamento) é exatamente igual ao Custo de Pedido (aquisição).",
+      "O Custo de Armazenagem chega a zero e a empresa deixa de pagar aluguel de galpão.",
+      "O Custo de Falta de Estoque se torna maior que o Custo de Transporte Rodoviário.",
+      "A taxa de giro de estoque ultrapassa o limite de 50 renovações anuais.",
+      "O preço unitário de compra sofre um aumento equivalente ao dobro da taxa de inflação."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "Graficamente e matematicamente, o Lote Econômico de Compra (LEC) ocorre no ponto de intersecção onde a curva do custo de pedido cruza a curva do custo de armazenagem, ou seja, quando os dois custos se igualam."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Difícil",
+    "tipo": "Planejamento de Necessidades (MRP)",
+    "pergunta": "No planejamento da cadeia de suprimentos, a ferramenta MRP II (Manufacturing Resource Planning) diferencia-se do MRP I por incluir em seu escopo de cálculo:",
+    "alternativas": [
+      "Apenas a listagem de materiais necessários (Bill of Materials) para montagem de um produto simples.",
+      "A integração da necessidade de materiais com a capacidade das máquinas, recursos financeiros e mão de obra envolvida.",
+      "A automação da logística de entrega de produtos acabados aos varejistas sem uso de estoques intermediários.",
+      "O rastreamento via satélite GPS dos veículos de transporte em trânsito internacional.",
+      "O monitoramento das redes sociais para antecipar a preferência de marca dos consumidores."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Enquanto o MRP I foca no cálculo de necessidades de matérias-primas e componentes, o MRP II expande essa lógica para o planejamento global dos recursos de manufatura, incluindo capacidade produtiva, máquinas, mão de obra e viabilidade financeira."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Sistemas de Informação Logística",
+    "pergunta": "Qual sistema de software é amplamente utilizado em armazéns e depósitos para gerenciar e otimizar as operações diárias, como recebimento, estocagem, separação (picking) e expedição?",
+    "alternativas": [
+      "TMS (Transportation Management System)",
+      "WMS (Warehouse Management System)",
+      "CRM (Customer Relationship Management)",
+      "CAD (Computer-Aided Design)",
+      "PLM (Product Lifecycle Management)"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O WMS (Sistema de Gerenciamento de Armazém) é responsável por controlar e otimizar todas as movimentações e processos operacionais dentro de um centro de distribuição ou almoxarifado."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Cadeia de Suprimentos",
+    "pergunta": "O conceito de Supply Chain Management (Gestão da Cadeia de Suprimentos) engloba:",
+    "alternativas": [
+      "Apenas o controle das frotas de caminhões da própria empresa.",
+      "A integração dos processos de negócios desde os fornecedores iniciais até o consumidor final.",
+      "A gestão exclusiva das vendas e do atendimento pós-venda ao cliente.",
+      "O gerenciamento de recursos humanos e recrutamento de motoristas.",
+      "A contabilidade dos ativos imobilizados localizados nos armazéns."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A gestão da cadeia de suprimentos envolve a coordenação e integração de fluxos de materiais, informações e recursos do fornecedor de matéria-prima até o cliente final."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão de Compras",
+    "pergunta": "Qual é a principal função do setor de Compras (Procurement) em uma organização?",
+    "alternativas": [
+      "Fabricar os componentes internamente para evitar dependência de terceiros.",
+      "Adquirir materiais e serviços nas especificações corretas, nas quantidades certas e com as melhores condições comerciais.",
+      "Realizar a amostragem de qualidade no momento de descarte de resíduos.",
+      "Auditar o pagamento dos salários dos colaboradores do setor produtivo.",
+      "Definir a tabela de preços finais praticada pela equipe de vendas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O setor de compras busca suprir as necessidades da empresa com eficiência, garantindo qualidade, prazos adequados e custos competitivos."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Embalagem e Unitização",
+    "pergunta": "O processo de agrupar diversos volumes pequenos ou caixas sobre uma plataforma de madeira, plástico ou metal para facilitar a movimentação por empilhadeiras é denominado:",
+    "alternativas": [
+      "Cross-docking",
+      "Unitização em palete (Paletização)",
+      "Transbordo multimodal",
+      "Inventário cíclico",
+      "Triagem reversa"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A paletização reúne unidades de carga menores sobre um palete, padronizando o manuseio mecânico e acelerando o carregamento e descarregamento."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Fácil",
+    "tipo": "Inventário",
+    "pergunta": "Como é chamada a contagem contínua e periódica de partes do estoque ao longo do ano, em vez de interromper toda a operação em uma única data anual?",
+    "alternativas": [
+      "Inventário Cíclico (ou Rotativo)",
+      "Inventário Geral Anual",
+      "Inventário Extraordinário de Falência",
+      "Inventário Contábil Permanente",
+      "Inventário Fiscal por Amostragem"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O inventário cíclico distribui as contagens ao longo de dias ou semanas, garantindo alta acurácia sem a necessidade de paralisar as atividades da empresa."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Estratégia de Distribuição",
+    "pergunta": "A operação logística de Cross-docking caracteriza-se por:",
+    "alternativas": [
+      "Armazenar produtos por longos períodos em depósitos subterrâneos para garantir a conservação.",
+      "Receber mercadorias de múltiplos fornecedores e enviá-las diretamente aos clientes com pouco ou nenhum tempo de estocagem.",
+      "Consolidar produtos exclusivamente no modal hidroviário sem uso de galpões secos.",
+      "Separar e montar kits manuais de produtos danificados para descarte sanitário.",
+      "Substituir o uso de códigos de barras por identificação visual manual nos caminhões."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "No Cross-docking, os produtos recebidos nos docas de entrada são imediatamente redirecionados para as docas de saída, reduzindo custos de armazenagem e tempo de ciclo."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Nível de Serviço Logístico",
+    "pergunta": "O indicador OTIF (On-Time In-Full) é utilizado para avaliar a performance das entregas na cadeia de suprimentos. O que ele mensura especificamente?",
+    "alternativas": [
+      "O consumo médio de combustível e o gasto com pedágio por quilômetro rodado.",
+      "O percentual de pedidos entregues estritamente dentro do prazo combinado e com a quantidade/qualidade corretas.",
+      "A taxa de rotação do inventário dentro das prateleiras do almoxarifado.",
+      "O custo de frete fracionado em relação ao valor da nota fiscal emitida.",
+      "A distância em quilômetros percorrida pela frota em horário noturno."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "OTIF avalia se o pedido foi entregue no prazo (On-Time) e de forma completa/correta (In-Full), sendo um dos principais KPls de satisfação do cliente na logística."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Médio",
+    "tipo": "Incoterms",
+    "pergunta": "No comércio internacional, quando uma compra é realizada sob o termo FOB (Free on Board), a responsabilidade e os riscos sobre a carga são transferidos do vendedor para o comprador quando:",
+    "alternativas": [
+      "A mercadoria é fabricada e disponibilizada no chão da fábrica do vendedor.",
+      "A mercadoria é entregue diretamente no endereço de destino final estipulado pelo comprador.",
+      "A mercadoria é transposta e colocada a bordo do navio indicado pelo comprador no porto de embarque.",
+      "A mercadoria passa pela conferência da alfândega do país de destino final.",
+      "O contrato de venda é assinado por ambas as partes via meio digital."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "No termo FOB, o vendedor cumpre sua obrigação quando os bens estão a bordo do navio designado pelo comprador no porto de embarque, ponto no qual os riscos e custos são transferidos."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Difícil",
+    "tipo": "Gestão de Demanda e Dinâmica de Cadeia",
+    "pergunta": "O fenômeno conhecido como 'Efeito Chicote' (Bullwhip Effect) na cadeia de suprimentos gera graves ineficiências operacionais. Qual das alternativas abaixo descreve sua causa e comportamento?",
+    "alternativas": [
+      "Pequenas variações na demanda do consumidor final geram distorções e amplificações crescentes nos pedidos ao longo da cadeia, rumo aos fornecedores de matéria-prima.",
+      "A redução do custo de transporte rodoviário causa acúmulo excessivo de estoque exclusivamente nos pontos de venda varejistas.",
+      "A automação dos processos de expedição provoca diminuição progressiva da produtividade dos operadores de empilhadeira.",
+      "O aumento imprevisível no custo do petróleo zera instantaneamente a necessidade de estoques de segurança nas indústrias.",
+      "A falta de padronização nas dimensões dos paletes impede o transporte de produtos farmacêuticos em contêineres."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Efeito Chicote ocorre devido à falta de visibilidade e comunicação entre os elos da cadeia: pequenas oscilações na demanda do cliente final são amplificadas à medida que sobem na cadeia (varejo -> atacado -> fábrica -> fornecedores)."
+  },
+  {
+    "disciplina": "Materiais e Logística",
+    "dificuldade": "Difícil",
+    "tipo": "Ponto de Pedido (PP)",
+    "pergunta": "Uma empresa consome 50 unidades/dia de uma matéria-prima. O tempo de ressuprimento do fornecedor (lead time) é de 10 dias e a empresa adota um estoque de segurança equivalente a 200 unidades. Qual deve ser o Ponto de Pedido (PP) para disparar uma nova compra?",
+    "alternativas": [
+      "500 unidades",
+      "300 unidades",
+      "700 unidades",
+      "1.000 unidades",
+      "250 unidades"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Fórmula do Ponto de Pedido: PP = (Consumo Diário x Lead Time) + Estoque de Segurança. Calculando: (50 x 10) + 200 = 500 + 200 = 700 unidades."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Ferramentas da Qualidade",
+    "pergunta": "Qual ferramenta da qualidade é utilizada prioritariamente para identificar, explorar e mapear as causas raízes de um determinado problema?",
+    "alternativas": [
+      "Histograma",
+      "Diagrama de Ishikawa (Espinha de Peixe)",
+      "Gráfico de Dispersão",
+      "Carta de Controle",
+      "Fluxograma"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Diagrama de Ishikawa (ou Espinha de Peixe / Causa e Efeito) agrupa as causas de um problema em categorias (como os 6M) para localizar sua causa raiz."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Sistemas de Produção",
+    "pergunta": "O sistema de produção 'Kanban', desenvolvido no Sistema Toyota de Produção, utiliza cartões físicos ou sinalizadores visuais com o objetivo de:",
+    "alternativas": [
+      "Autorizar a produção ou movimentação de itens em um sistema puxado.",
+      "Aumentar o volume de estoque de segurança no almoxarifado.",
+      "Calcular a depreciação de máquinas e equipamentos da fábrica.",
+      "Substituir os programas de treinamento de novos colaboradores.",
+      "Definir os salários operacionais do chão de fábrica."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Kanban é um sinalizador visual de controle que autoriza a produção e o transporte apenas quando há demanda consumida (sistema puxado)."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Ciclo PDCA",
+    "pergunta": "No ciclo de melhoria contínua PDCA, o que representa a etapa correspondente à letra 'C' (Check)?",
+    "alternativas": [
+      "Planejar as metas e métodos de trabalho.",
+      "Executar as tarefas conforme o treinamento.",
+      "Verificar e avaliar os resultados alcançados em relação ao planejado.",
+      "Padronizar as ações corretivas que deram certo.",
+      "Comprar novos equipamentos de medição."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A etapa 'Check' (Checar/Verificar) consiste em comparar os resultados obtidos na execução com as metas e indicadores estabelecidos no planejamento."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Metodologia 5S",
+    "pergunta": "Na metodologia 5S, o senso responsável pelo descarte de itens desnecessários e liberação de espaço na área de trabalho é o:",
+    "alternativas": [
+      "Senso de Limpeza (Seiso)",
+      "Senso de Utilização (Seiri)",
+      "Senso de Ordenação (Seiton)",
+      "Senso de Saúde (Seiketsu)",
+      "Senso de Autodisciplina (Shitsuke)"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Seiri (Senso de Utilização/Utilidade) foca em separar o que é útil do que é inútil, descartando ou reallocando o desnecessário."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Layout de Produção",
+    "pergunta": "Como é denominado o arranjo físico (layout) em que máquinas e postos de trabalho são organizados em uma sequência fixa de operações, comum em linhas de montagem de grande volume?",
+    "alternativas": [
+      "Layout Por Processo (Funcional)",
+      "Layout Posicional (Fixação)",
+      "Layout Por Produto (Em Linha)",
+      "Layout Celular",
+      "Layout Estático"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O layout por produto organiza recursos e máquinas na sequência exata de fabricação do item, ideal para alta padronização e grande volume."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Manufatura Enxuta (Lean Manufacturing)",
+    "pergunta": "Qual é a função do dispositivo conhecido como 'Poka-Yoke' na gestão da qualidade e processos produtivos?",
+    "alternativas": [
+      "Controlar o nível de poluição emitida pelos motores dos veículos da empresa.",
+      "Evitar a ocorrência de erros humanos por meio de mecanismos à prova de falhas.",
+      "Substituir o planejamento das necessidades de materiais (MRP) no chão de fábrica.",
+      "Calcular o custo unitário de cada peça produzida em regime de horas extras.",
+      "Aumentar o tempo de setup entre diferentes lotes de fabricação."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Poka-Yoke é um mecanismo à prova de erros projetado para prevenir falhas humanas operacionais ou sinalizar falhas imediatamente antes que virem defeitos."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Indicadores de Produção",
+    "pergunta": "Uma linha de produção opera com um ritmo no qual uma nova unidade finalizada sai da esteira a cada 45 segundos para atender perfeitamente à taxa de demanda do cliente. Esse tempo do ritmo de demanda é denominado:",
+    "alternativas": [
+      "Tempo de Setup",
+      "Lead Time",
+      "Takt Time",
+      "Tempo de Faturamento",
+      "Tempo de Ciclo Ocioso"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Takt Time é o ritmo de produção necessário para atender exatamente à taxa de demanda do mercado (Tempo Operacional Disponível / Demanda do Cliente)."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Controle Estatístico de Processo (CEP)",
+    "pergunta": "Em um gráfico ou Carta de Controle de processo, quando dizemos que um processo está 'sob controle estatístico'?",
+    "alternativas": [
+      "Quando não apresenta nenhuma variação nos dados coletados durante o turno.",
+      "Quando a produção atinge o limite máximo de capacidade da fábrica.",
+      "Quando as variações observadas decorrem apenas de causas comuns (aleatórias) e os pontos estão dentro dos limites de controle.",
+      "Quando os custos fixos operacionais ficam abaixo da média do setor.",
+      "Quando todas as amostras coletadas possuem exatamente o mesmo valor nominal."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Um processo está sob controle estatístico quando apresenta estabilidade e suas variações são motivadas apenas por causas comuns inerentes ao próprio sistema."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Difícil",
+    "tipo": "Eficiência Global de Equipamentos (OEE)",
+    "pergunta": "O indicador OEE (Overall Equipment Effectiveness) avalia a eficiência global dos equipamentos produtivos multiplicando três fatores. Quais são esses três fatores?",
+    "alternativas": [
+      "Disponibilidade, Desempenho (Performance) e Qualidade.",
+      "Produtividade, Lucratividade e Rendimento de Matéria-Prima.",
+      "Capacidade Instalada, Horas Pagas e Nível de Refugo.",
+      "Manutenibilidade, Confiabilidade e Vida Útil das Peças.",
+      "Giro de Estoque, Tempo de Setup e Custo Amortizado."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "OEE = Disponibilidade × Desempenho × Qualidade. Ele mede a porcentagem de tempo em que o equipamento produz itens bons na velocidade planejada sem paradas não programadas."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Difícil",
+    "tipo": "Seis Sigma (Six Sigma)",
+    "pergunta": "No contexto da metodologia Seis Sigma, alcançar um nível de qualidade equivalente a 6 Sigma em um processo produtivo significa operar com uma taxa de defeitos máxima de aproximadamente:",
+    "alternativas": [
+      "3,4 defeitos por milhão de oportunidades (DPMO).",
+      "6,0 defeitos por mil oportunidades (DPO).",
+      "340 defeitos por milhão de oportunidades (DPMO).",
+      "0,6% de rejeição em relação ao total de itens inspecionados.",
+      "66.807 defeitos por milhão de oportunidades (DPMO)."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O nível 6 Sigma corresponde a uma margem de variação tão restrita que gera no máximo 3,4 DPMO (Defeitos Por Milhão de Oportunidades), alcançando 99,99966% de conformidade."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Ferramentas da Qualidade",
+    "pergunta": "Qual ferramenta da qualidade utiliza o princípio de que 80% dos problemas são originados por 20% das causas principais?",
+    "alternativas": [
+      "Diagrama de Pareto",
+      "Matriz GUT",
+      "Carta de Controle",
+      "Diagrama de Dispersão",
+      "Folha de Verificação"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Diagrama de Pareto baseia-se no princípio 80/20 para priorizar os problemas de maior impacto ou frequência."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão da Qualidade",
+    "pergunta": "Qual das alternativas define o conceito de Kaizen no contexto da produção enxuta?",
+    "alternativas": [
+      "Substituição completa do maquinário a cada cinco anos.",
+      "Melhoria contínua envolvendo todos os colaboradores da empresa.",
+      "Redução imediata do quadro de funcionários operacionais.",
+      "Terceirização de todas as etapas do controle de qualidade.",
+      "Inspeção final de 100% dos lotes produzidos."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Kaizen é uma filosofia japonesa que significa 'mudar para melhor', focada na melhoria contínua gradual e participativa."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Ferramentas da Qualidade",
+    "pergunta": "Qual ferramenta é estruturada em sete perguntas essenciais para construir um plano de ação claro e objetivo?",
+    "alternativas": [
+      "Benchmarking",
+      "Análise SWOT",
+      "5W2H",
+      "Design Thinking",
+      "FMEA"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O 5W2H mapeia O que, Por que, Onde, Quando, Quem, Como e Quanto custará a execução de uma ação."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Manutenção Industrial",
+    "pergunta": "Qual tipo de manutenção é realizada com periodicidade planejada para prevenir a ocorrência de falhas ou quebras em equipamentos?",
+    "alternativas": [
+      "Manutenção Corretiva Não Planejada",
+      "Manutenção Preventiva",
+      "Manutenção Emergencial",
+      "Manutenção Reativa",
+      "Manutenção de Restauração"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Manutenção Preventiva ocorre em intervalos programados para mitigar o desgaste e evitar paradas não planejadas."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Fácil",
+    "tipo": "Sistemas de Produção",
+    "pergunta": "Qual é a característica marcante de uma produção sob encomenda (unitária ou por projeto)?",
+    "alternativas": [
+      "Fabricação de itens altamente padronizados em grande volume.",
+      "Uso de esteiras automatizadas de alta velocidade contínua.",
+      "Produção personalizada para atender às especificações de um cliente específico.",
+      "Acúmulo de estoques volumosos de produtos acabados no almoxarifado.",
+      "Tempo de ciclo idêntico para todos os produtos fabricados."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "A produção sob encomenda cria produtos exclusivos com base nas exigências únicas solicitadas pelo cliente."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Gestão de Gargalos (OPT)",
+    "pergunta": "Segundo a Teoria das Restrições (TOC) de Eliyahu Goldratt, como a gestão da produção deve tratar o gargalo da fábrica?",
+    "alternativas": [
+      "Adquirir máquinas extras para eliminar todos os recursos da fábrica simultaneamente.",
+      "Identificar o gargalo e subordinar todo o ritmo de produção da fábrica à capacidade desse recurso limitado.",
+      "Paralisar as máquinas antes do gargalo para economizar custos de energia.",
+      "Operar os recursos não-gargalos na capacidade máxima para criar estoques intermediários.",
+      "Reduzir o tempo de manutenção preventiva apenas nas máquinas não-gargalo."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A TOC estabelece que a capacidade total do sistema é ditada pelo gargalo; portanto, o ritmo de toda a fábrica deve ser sincronizado à capacidade dele."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Troca Rápida de Ferramentas (TRF/SMED)",
+    "pergunta": "A metodologia SMED (Single-Minute Exchange of Die) tem como objetivo reduzir o tempo de setup. Qual das ações abaixo é fundamental para sua aplicação?",
+    "alternativas": [
+      "Converter o máximo possível de operações de setup interno em setup externo.",
+      "Aumentar o tamanho do lote de fabricação para diluir o tempo de parada da máquina.",
+      "Substituir todos os operadores qualificados por sistemas totalmente automatizados.",
+      "Realizar a troca de ferramentas apenas ao final do expediente de trabalho.",
+      "Aumentar a velocidade das ferramentas para compensar o tempo perdido de setup."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O SMED foca em transformar tarefas de setup interno (feitas com a máquina parada) em tarefas de setup externo (preparadas com a máquina em funcionamento)."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Médio",
+    "tipo": "Controle de Processos",
+    "pergunta": "Qual é a principal diferença entre a Capacidade do Processo (Índices Cp/Cpk) e o Desempenho do Processo (Índices Pp/Ppk)?",
+    "alternativas": [
+      "Cp avalia apenas custos financeiros, enquanto Pp avalia tempos de entrega.",
+      "Cp/Cpk utilizam a variação de curto prazo (potencial), enquanto Pp/Ppk utilizam o desvio padrão de longo prazo (desempenho real).",
+      "Pp/Ppk só podem ser calculados caso a amostra coletada seja inferior a 5 peças.",
+      "Cp indica processos fora de controle, enquanto Pp indica processos totalmente aprovados.",
+      "Não há diferença conceitual, sendo siglas utilizadas de forma intercambiável."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Cp e Cpk analisam a capacidade potencial de curto prazo sem considerar causas especiais de longo prazo, enquanto Pp e Ppk utilizam dados globais de longo prazo."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Difícil",
+    "tipo": "Gestão de Riscos na Qualidade (FMEA)",
+    "pergunta": "No FMEA de Processo (PFMEA), o Número de Prioridade de Risco (NPR ou RPN) é obtido pela multiplicação de três fatores. Quais são eles?",
+    "alternativas": [
+      "Gravidade (Severidade), Ocorrência e Detecção.",
+      "Custo, Tempo de Reparo e Frequência.",
+      "Capacidade, Disponibilidade e Qualidade.",
+      "Urgência, Tendência e Impacto.",
+      "Probabilidade, Desvio Padrão e Amplitude."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O NPR é calculado multiplicando os índices de Severidade (S) do efeito, Ocorrência (O) da causa e Detecção (D) da falha antes do cliente ser afetado."
+  },
+  {
+    "disciplina": "Produção e Qualidade",
+    "dificuldade": "Difícil",
+    "tipo": "Seis Sigma e Metodologia DMAIC",
+    "pergunta": "Na metodologia DMAIC (Define, Measure, Analyze, Improve, Control) do Seis Sigma, em qual etapa são identificadas e testadas estatisticamente as causas raízes de um problema?",
+    "alternativas": [
+      "Define (Definir)",
+      "Measure (Medir)",
+      "Analyze (Analisar)",
+      "Improve (Melhorar)",
+      "Control (Controlar)"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "Na etapa 'Analyze' (Analisar), os dados coletados na fase anterior são submetidos a testes de hipóteses e análises estatísticas para validar as causas raízes do problema."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Sistemas de Informação",
+    "pergunta": "Como é chamada a categoria de software de gestão integrada que unifica as operações de diferentes setores de uma empresa em um único banco de dados?",
+    "alternativas": [
+      "CRM (Customer Relationship Management)",
+      "ERP (Enterprise Resource Planning)",
+      "BI (Business Intelligence)",
+      "WMS (Warehouse Management System)",
+      "SCM (Supply Chain Management)"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O ERP é o sistema de gestão integrada que centraliza dados e conecta departamentos como finanças, compras, RH e vendas em uma única plataforma."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Planilhas Eletrônicas",
+    "pergunta": "Em programas de planilhas eletrônicas como o Microsoft Excel, qual função é utilizada para calcular a soma de um intervalo numérico de células?",
+    "alternativas": [
+      "=CONT.SE()",
+      "=SOMA()",
+      "=MÉDIA()",
+      "=PROCV()",
+      "=MULT()"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A função =SOMA() adiciona automaticamente todos os valores numéricos presentes no intervalo selecionado."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Sistemas de Informação",
+    "pergunta": "Qual ferramenta tecnológica é focada no gerenciamento do relacionamento com o cliente, cobrindo etapas de vendas, atendimento e marketing?",
+    "alternativas": [
+      "CRM",
+      "MRP",
+      "CAD",
+      "EDI",
+      "PDV"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O CRM (Customer Relationship Management) otimiza a interação com clientes, ajudando no controle de funil de vendas e suporte pós-venda."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Computação em Nuvem",
+    "pergunta": "O modelo de serviço em nuvem no qual o usuário utiliza um aplicativo completo via navegador web, sem precisar instalar ou manter o software localmente, é o:",
+    "alternativas": [
+      "IaaS (Infraestrutura como Serviço)",
+      "PaaS (Plataforma como Serviço)",
+      "SaaS (Software como Serviço)",
+      "DaaS (Dados como Serviço)",
+      "BaaS (Backend como Serviço)"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "No modelo SaaS (como Google Workspace ou Microsoft 365), o software é disponibilizado pronto pela internet sem necessidade de instalação local."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Segurança da Informação",
+    "pergunta": "Qual técnica de segurança exige dois fatores de identificação independentes para conceder acesso a uma conta ou sistema administrativo?",
+    "alternativas": [
+      "Criptografia simétrica",
+      "Autenticação em duas etapas (2FA)",
+      "Assinatura digital simples",
+      "Filtro de Spam",
+      "Backup incremental"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A autenticação de dois fatores (2FA) adiciona uma camada extra de proteção ao exigir uma senha combinada a um segundo código temporário."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão do Conhecimento",
+    "pergunta": "Como é chamada a rede privada de computadores restrita aos colaboradores de uma organização para compartilhamento de documentos e comunicações internas?",
+    "alternativas": [
+      "Internet",
+      "Intranet",
+      "Extranet",
+      "Ethernet",
+      "Arpanet"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Intranet é uma rede interna corporativa que utiliza tecnologia web para disponibilizar informações exclusivas aos funcionários."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Comunicação e Produtividade",
+    "pergunta": "Qual ferramenta administrativa visual utiliza quadros e cartões divididos em colunas para gerenciar o fluxo de tarefas (ex.: 'A Fazer', 'Em Andamento', 'Concluído')?",
+    "alternativas": [
+      "Diagrama de Gantt",
+      "Quadro Kanban",
+      "Matriz BCG",
+      "Histograma",
+      "Gráfico de Pizza"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A metodologia visual Kanban organiza atividades em cartões e colunas, facilitando o acompanhamento do fluxo de trabalho no dia a dia."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Segurança da Informação",
+    "pergunta": "O procedimento de criar uma cópia de segurança dos dados da empresa para recuperação em caso de falha no sistema ou ataque cibernético denomina-se:",
+    "alternativas": [
+      "Phishing",
+      "Firewall",
+      "Backup",
+      "Log de eventos",
+      "Download"
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "O backup é a cópia de segurança que permite restaurar informações vitais diante de perda, corrupção de arquivos ou incidentes tecnológicos."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Gestão de Projetos",
+    "pergunta": "O gráfico de colunas horizontais utilizado na gestão de projetos para ilustrar o cronograma de atividades ao longo do tempo é o:",
+    "alternativas": [
+      "Gráfico de Gantt",
+      "Gráfico de Pareto",
+      "Gráfico de Dispersão",
+      "Diagrama de Venn",
+      "Organograma"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O Gráfico de Gantt mapeia o tempo de duração, datas de início e término, e a sequência das tarefas de um projeto."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Fácil",
+    "tipo": "Planilhas Eletrônicas",
+    "pergunta": "No Microsoft Excel, a funcionalidade 'Tabela Dinâmica' é utilizada prioritariamente para:",
+    "alternativas": [
+      "Desenhar logotipos corporativos para relatórios.",
+      "Resumir, analisar, explorar e apresentar grandes volumes de dados de forma flexível.",
+      "Proteger a planilha com senha contra alterações externas.",
+      "Traduzir textos contidos em células para outros idiomas.",
+      "Formatador de texto para envio de e-mails em massa."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Tabela Dinâmica possibilita cruzar informações e consolidar grandes conjuntos de dados rapidamente sem alterar a tabela original."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Sistemas de Informação",
+    "pergunta": "Qual é a principal diferença funcional entre um Sistema de Processamento de Transações (SPT) e um Sistema de Suporte à Decisão (SSD)?",
+    "alternativas": [
+      "O SPT registra operações diárias e rotineiras, enquanto o SSD analisa dados consolidados para auxiliar gestores na tomada de decisões não estruturadas.",
+      "O SSD armazena dados em papel, enquanto o SPT funciona exclusivamente na nuvem corporativa.",
+      "O SPT substitui os diretores corporativos, enquanto o SSD atende apenas aos clientes externos da empresa.",
+      "O SSD controla o acesso físico às portas da empresa, enquanto o SPT emite relatórios fiscais ao governo.",
+      "Não há distinção entre eles, ambos processam exatamente os mesmos relatórios operacionais."
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "O SPT atua no nível operacional (ex.: vendas no caixa, emissão de notas), enquanto o SSD apoia a média e alta gestão com análises avançadas para cenários complexos."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Business Intelligence (BI)",
+    "pergunta": "No contexto de Business Intelligence, o processo conhecido pela sigla ETL compreende as etapas de:",
+    "alternativas": [
+      "Edição, Mapeamento e Liberação de relatórios.",
+      "Extração, Transformação e Carga (Load) de dados.",
+      "Encriptação, Transferência e Licenciamento de software.",
+      "Exportação, Tradução e Leitura gráfica.",
+      "Execução, Teste e Validação de sistemas."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "ETL (Extract, Transform, Load) é a sequência na qual os dados são extraídos de fontes originais, limpos e estruturados, para então serem carregados em um Data Warehouse."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Planilhas Eletrônicas",
+    "pergunta": "Em uma planilha eletrônica, ao arrastar a fórmula '=A$1+B1' da célula C1 para a célula C2, a fórmula ajustada na célula C2 resultará em:",
+    "alternativas": [
+      "=A$2+B2",
+      "=A$1+B2",
+      "=A$1+B1",
+      "=A2+B2",
+      "=#VALOR!"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O símbolo '$' antes do número '1' fixa a linha 1 da coluna A (referência mista). Já a célula B1 possui referência relativa e muda para B2 ao mover para a linha de baixo."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Governança de TI",
+    "pergunta": "O framework COBIT é amplamente adotado no ambiente empresarial para:",
+    "alternativas": [
+      "Desenvolver linhas de código em linguagem Python para bancos de dados.",
+      "Prover o alinhamento da Governança de Tecnologia da Informação com os objetivos de negócio da organização.",
+      "Gerenciar o cabeamento estruturado e roteadores de redes locais.",
+      "Monitorar o tráfego de redes sociais corporativas durante o expediente.",
+      "Automatizar a esteira de montagem em fábricas de grande porte."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O COBIT fornece um modelo focado em governança e gestão de TI, garantindo que a tecnologia gere valor e mitigue riscos estratégicos na organização."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Gestão de Processos e Automação",
+    "pergunta": "Qual das seguintes alternativas define a tecnologia de RPA (Robotic Process Automation) aplicada a tarefas administrativas?",
+    "alternativas": [
+      "O uso de robôs físicos para carga e descarga de paletes em armazéns.",
+      "A criação de softwares programados para automatizar tarefas virtuais repetitivas, baseadas em regras e executadas em computadores.",
+      "A substituição de redes de computadores por conexões via satélite de alta velocidade.",
+      "A eliminação de sistemas de armazenamento em nuvem para uso exclusivo de servidores locais.",
+      "A instalação de sensores de temperatura em servidores para evitar o superaquecimento."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "RPA refere-se a 'robôs de software' (bots) que imitam ações humanas no computador para executar fluxos repetitivos, como preencher formulários ou extrair dados."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Médio",
+    "tipo": "Segurança da Informação",
+    "pergunta": "Qual é a principal função de um sistema de Firewall na infraestrutura de TI de uma empresa?",
+    "alternativas": [
+      "Aumentar a velocidade do processamento de planilhas complexas.",
+      "Monitorar e filtrar o tráfego de dados que entra e sai da rede corporativa com base em regras de segurança.",
+      "Realizar a desfragmentação periódica do disco rígido dos servidores.",
+      "Converter arquivos de texto simples para extensões criptografadas de áudio.",
+      "Garantir o suprimento de energia para os computadores em caso de apagão elétrico."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O Firewall atua como uma barreira defensiva de rede que inspeciona pacotes de dados e bloqueia conexões não autorizadas."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Difícil",
+    "tipo": "Arquitetura de Dados",
+    "pergunta": "No contexto de armazenamento de Big Data, qual é a diferença fundamental entre um Data Warehouse e um Data Lake?",
+    "alternativas": [
+      "Data Warehouses guardam dados apenas em mídias físicas desconectadas da rede, enquanto Data Lakes utilizam obrigatoriamente discos rígidos externos.",
+      "Data Warehouses armazenam dados estruturados e previamente filtrados para relatórios analíticos, enquanto Data Lakes armazenam grandes volumes de dados brutos (estruturados e não estruturados) em seu formato nativo.",
+      "Data Lakes são destinados unicamente ao controle de folha de pagamento de pessoal, e Data Warehouses gerenciam contas a pagar e receber.",
+      "Data Warehouses são abertos para acesso público pela internet, ao passo que Data Lakes são totalmente restritos ao departamento de RH.",
+      "Não há distinção de arquitetura, sendo ambos termos sinônimos para servidores de arquivos em formato PDF."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Data Warehouses exigem esquema definido no carregamento (schema-on-write) para dados limpos/estruturados; Data Lakes armazenam tudo no estado bruto (schema-on-read) para posterior análise flexível."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Difícil",
+    "tipo": "Gerenciamento de Serviços de TI",
+    "pergunta": "Na biblioteca ITIL v4, como é conceituado o 'Sistema de Valor de Serviço' (Service Value System - SVS)?",
+    "alternativas": [
+      "Um módulo de software para calcular a margem de lucro na venda de peças de informática.",
+      "Uma estrutura que descreve como todos os componentes e atividades de uma organização trabalham juntos para facilitar a criação de valor por meio de serviços.",
+      "Um algoritmo de inteligência artificial voltado para a precificação dinâmica de fretes rodoviários.",
+      "Um protocolo de segurança de rede utilizado para bloquear ataques do tipo Denial of Service (DoS).",
+      "Um manual de normas fiscais focado na tributação de contratos de prestação de serviços."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O SVS na ITIL v4 apresenta uma visão holística de como governança, cadeia de valor de serviço, práticas e melhoria contínua se integram para gerar valor ao negócio."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Difícil",
+    "tipo": "Engenharia de Software e Modelagem",
+    "pergunta": "Em relação à integração de sistemas organizacionais, qual é o papel de uma arquitetura de microsserviços quando comparada a uma arquitetura monolítica?",
+    "alternativas": [
+      "Concentrar todo o código-fonte em um único servidor para simplificar a implantação inicial do sistema.",
+      "Dividir a aplicação em pequenos serviços independentes e desacoplados, permitindo que cada módulo seja desenvolvido, atualizado e escalado de forma autônoma.",
+      "Eliminar o uso de bancos de dados relacionais e APIs de comunicação.",
+      "Restringir a integração entre softwares de diferentes fornecedores comerciais.",
+      "Obrigar o uso de computadores com processadores de baixo custo nas estações de trabalho."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "Microsserviços desmembram o sistema em serviços menores e autônomos que se comunicam via APIs, garantindo maior flexibilidade, resiliência e facilidade de manutenção."
+  },
+  {
+    "disciplina": "Tecnologia e Ferramentas Administrativas",
+    "dificuldade": "Difícil",
+    "tipo": "Segurança e Assinatura Digital",
+    "pergunta": "Na infraestrutura de Chaves Públicas (PKI / ICP-Brasil), qual é a função exercida pela Autoridade Certificadora (AC) no processo de validação de documentos eletrônicos?",
+    "alternativas": [
+      "Armazenar a senha de acesso pessoal de todos os usuários cadastrados.",
+      "Emitir, vincular, renovar e revogar certificados digitais, atestando a identidade do titular da chave pública.",
+      "Garantir a velocidade da conexão de banda larga durante a assinatura dos arquivos.",
+      "Auditar o conteúdo do documento para verificar erros gramaticais ou fiscais.",
+      "Desenvolver computadores específicos para o uso exclusivo do Poder Judiciário."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "A Autoridade Certificadora funciona como uma entidade de confiança encarregada de associar uma chave pública à pessoa ou empresa titular por meio do certificado digital."
+  }
+]

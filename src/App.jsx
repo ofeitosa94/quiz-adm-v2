@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { auth, db } from './firebase';
 import { 
   createUserWithEmailAndPassword, 
@@ -9,118 +9,28 @@ import {
 } from 'firebase/auth';
 import { 
   doc, 
-  setDoc, 
-  getDoc, 
   collection, 
   getDocs, 
-  addDoc,
   deleteDoc,
   updateDoc, 
-  increment,
   query,
   orderBy,
   limit
 } from 'firebase/firestore';
-import { popularBancoPerguntas } from './seedDatabase';
-
-// As 10 Áreas Principais de Administração
-const AREAS_ADMINISTRACAO = [
-  'Administração e Gestão',
-  'Gestão de Pessoas',
-  'Gestão Financeira e Contábil',
-  'Marketing e Vendas',
-  'Empreendedorismo',
-  'Materiais e Logística',
-  'Produção e Qualidade',
-  'Estratégia e Processos',
-  'Direito, Legislação e Ética',
-  'Tecnologia e Ferramentas Administrativas'
-];
-
-// E-mail oficial do Administrador
-const ADMIN_EMAIL_AUTORIZADO = "ofeitosa94@gmail.com";
-
-// Tabela Oficial de Conquistas Mensais + Secretas
-const CONQUISTAS_SISTEMA = [
-  // 📚 Participação
-  { id: 'part_1', cat: 'Participação', nome: 'Primeiro Passo', desc: 'Responder 10 questões no mês', icone: '🎯', xp: 30, secreta: false, checar: (u) => (u.questoesRespondidasMes || 0) >= 10 },
-  { id: 'part_2', cat: 'Participação', nome: 'Participante', desc: 'Completar 3 quizzes no mês', icone: '📚', xp: 50, secreta: false, checar: (u) => (u.quizzesRealizadosMes || 0) >= 3 },
-  { id: 'part_3', cat: 'Participação', nome: 'Ativo', desc: 'Completar 6 quizzes no mês', icone: '⚡', secreta: false, xp: 75, checar: (u) => (u.quizzesRealizadosMes || 0) >= 6 },
-  { id: 'part_4', cat: 'Participação', nome: 'Dedicado', desc: 'Completar 10 quizzes no mês', icone: '🔥', secreta: false, xp: 100, checar: (u) => (u.quizzesRealizadosMes || 0) >= 10 },
-
-  // 🎯 Desempenho Geral
-  { id: 'des_1', cat: 'Desempenho', nome: 'Primeiro Acerto', desc: 'Acertar 1 questão no mês', icone: '✅', xp: 20, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 1 },
-  { id: 'des_2', cat: 'Desempenho', nome: 'Conhecedor', desc: '25 acertos no mês', icone: '🧠', xp: 50, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 25 },
-  { id: 'des_3', cat: 'Desempenho', nome: 'Bom Desempenho', desc: '50 acertos no mês', icone: '🌟', xp: 75, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 50 },
-  { id: 'des_4', cat: 'Desempenho', nome: 'Especialista', desc: '100 acertos no mês', icone: '🥇', xp: 150, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 100 },
-  { id: 'des_5', cat: 'Desempenho', nome: 'Mestre do Mês', desc: '150 acertos no mês', icone: '👑', xp: 250, secreta: false, checar: (u) => (u.questoesAcertadasMes || 0) >= 150 },
-
-  // 🔥 Desempenho no Quiz (Sessão Única)
-  { id: 'quiz_1', cat: 'Quiz', nome: 'Quiz Completo', desc: 'Finalizar um bloco de 10', icone: '🏁', xp: 20, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 0 },
-  { id: 'quiz_2', cat: 'Quiz', nome: 'Mão Cheia', desc: 'Acertar 5/10 em um quiz', icone: '✋', xp: 30, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 5 },
-  { id: 'quiz_3', cat: 'Quiz', nome: 'Bom Quiz', desc: 'Acertar 7/10 em um quiz', icone: '👍', xp: 50, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 7 },
-  { id: 'quiz_4', cat: 'Quiz', nome: 'Excelente', desc: 'Acertar 9/10 em um quiz', icone: '🚀', xp: 75, secreta: false, checar: (_, acertosQuiz) => acertosQuiz >= 9 },
-  { id: 'quiz_5', cat: 'Quiz', nome: 'Perfeito', desc: 'Acertar 10/10 em um quiz', icone: '💯', xp: 100, secreta: false, checar: (_, acertosQuiz) => acertosQuiz === 10 },
-
-  // 🏅 Categorias / Disciplinas
-  { id: 'cat_1', cat: 'Categorias', nome: 'Explorador', desc: 'Responder ≥10 questões em 3 categorias', icone: '🗺️', xp: 50, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).filter(k => u.categoriasRespondidas[k] >= 10).length >= 3 },
-  { id: 'cat_2', cat: 'Categorias', nome: 'Multidisciplinar', desc: 'Responder questões em 5 categorias', icone: '🧩', xp: 100, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).length >= 5 },
-  { id: 'cat_3', cat: 'Categorias', nome: 'Generalista', desc: 'Responder questões nas 10 categorias', icone: '🎓', xp: 200, secreta: false, checar: (u) => Object.keys(u.categoriasRespondidas || {}).length >= 10 },
-
-  // 🔒 Conquistas Secretas (Ocultas até desbloquear)
-  { id: 'sec_1', cat: 'Secreta', nome: 'Velocista ADM', desc: 'Respondeu e acertou uma questão em menos de 5s', icone: '⚡', xp: 100, secreta: true, checar: (_, __, tempoRestante) => tempoRestante >= 55 },
-  { id: 'sec_2', cat: 'Secreta', nome: 'Perfeição Absoluta', desc: 'Concluiu um quiz com 100% sem cometer erros', icone: '💎', xp: 200, secreta: true, checar: (_, acertosQuiz) => acertosQuiz === 10 },
-  { id: 'sec_3', cat: 'Secreta', nome: 'Coruja da Madrugada', desc: 'Estudou e concluiu um quiz no turno da noite/madrugada', icone: '🦉', xp: 80, secreta: true, checar: () => { const h = new Date().getHours(); return h >= 22 || h < 4; } }
-];
-
-// Array Completo de Missões (DEFAULT_MISSIONS) - 3 Diárias | 5 Semanais | 8 Mensais
-const DEFAULT_MISSIONS = [
-  // 🟢 Diárias (3)
-  { id: 'dia_1', tipo: 'Diária', nome: 'Primeiro Bloco', desc: 'Completar 1 quiz completo', alvo: 1, xp: 30, progresso: (u) => u.progressoMissoes?.quizzesHoje || 0 },
-  { id: 'dia_2', tipo: 'Diária', nome: 'Foco Diário', desc: 'Obter 3 acertos em questões hoje', alvo: 3, xp: 35, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
-  { id: 'dia_3', tipo: 'Diária', nome: 'Meta do Dia', desc: 'Obter 5 acertos em questões hoje', alvo: 5, xp: 50, progresso: (u) => u.progressoMissoes?.acertosHoje || 0 },
-
-  // 🔵 Semanais (5)
-  { id: 'sem_1', tipo: 'Semanal', nome: 'Maratona Semanal', desc: 'Completar 5 quizzes nesta semana', alvo: 5, xp: 100, progresso: (u) => u.progressoMissoes?.quizzesSemana || 0 },
-  { id: 'sem_2', tipo: 'Semanal', nome: 'Construindo Base', desc: 'Obter 15 acertos esta semana', alvo: 15, xp: 120, progresso: (u) => u.progressoMissoes?.acertosSemana || 0 },
-  { id: 'sem_3', tipo: 'Semanal', nome: 'Domínio Semanal', desc: 'Obter 30 acertos esta semana', alvo: 30, xp: 180, progresso: (u) => u.progressoMissoes?.acertosSemana || 0 },
-  { id: 'sem_4', tipo: 'Semanal', nome: 'Mestre da Semana', desc: 'Completar 10 quizzes nesta semana', alvo: 10, xp: 220, progresso: (u) => u.progressoMissoes?.quizzesSemana || 0 },
-  { id: 'sem_5', tipo: 'Semanal', nome: 'Precisão Cirúrgica', desc: 'Completar 1 quiz com 100% de precisão (10/10)', alvo: 1, xp: 200, progresso: (u) => u.progressoMissoes?.quizzesPerfeitosSemana || 0 },
-
-  // 🔴 Mensais (8)
-  { id: 'men_1', tipo: 'Mensal', nome: 'Ritmo Mensal', desc: 'Completar 20 quizzes durante o mês', alvo: 20, xp: 300, progresso: (u) => u.quizzesRealizadosMes || 0 },
-  { id: 'men_2', tipo: 'Mensal', nome: 'Meio Caminho', desc: 'Obter 50 acertos no mês', alvo: 50, xp: 250, progresso: (u) => u.questoesAcertadasMes || 0 },
-  { id: 'men_3', tipo: 'Mensal', nome: 'Centena', desc: 'Obter 100 acertos no mês', alvo: 100, xp: 400, progresso: (u) => u.questoesAcertadasMes || 0 },
-  { id: 'men_4', tipo: 'Mensal', nome: 'Acúmulo de XP', desc: 'Alcançar 2500 XP na temporada atual', alvo: 2500, xp: 500, progresso: (u) => u.xpTemporada || 0 },
-  { id: 'men_5', tipo: 'Mensal', nome: 'Consistência de Aço', desc: 'Completar 50 quizzes no mês', alvo: 50, xp: 600, progresso: (u) => u.quizzesRealizadosMes || 0 },
-  { id: 'men_6', tipo: 'Mensal', nome: 'Subindo de Nível', desc: 'Alcançar o Nível 5 de progresso', alvo: 5, xp: 350, progresso: (u) => Math.floor((u.pontuacaoGeral || 0) / 500) + 1 },
-  { id: 'men_7', tipo: 'Mensal', nome: 'Perfeição Constante', desc: 'Completar 5 quizzes sem errar nada (100% de precisão)', alvo: 5, xp: 500, progresso: (u) => u.progressoMissoes?.quizzesPerfeitosMes || 0 },
-  { id: 'men_8', tipo: 'Mensal', nome: 'Lenda do Mês', desc: 'Obter 300 acertos acumulados no mês', alvo: 300, xp: 800, progresso: (u) => u.questoesAcertadasMes || 0 }
-];
-
-// Auxiliar para obter a chave única da semana do ano (ex: "2026-W37")
-const getChaveSemanaAtual = (dateObj = new Date()) => {
-  const d = new Date(Date.UTC(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate()));
-  const dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-  return `${d.getUTCFullYear()}-W${weekNo}`;
-};
-
-// Algoritmo Fisher-Yates para embaralhar listas
-const shuffleArray = (array) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
+import { AREAS_ADMINISTRACAO, normalizeQuestion, prepareQuestions } from './domain/questions';
+import { getPeriods, resetPeriods, initialProgress } from './domain/periods';
+import { CONQUISTAS_SISTEMA, DEFAULT_MISSIONS } from './domain/gamification';
+import { saveQuizEvent, importQuestions, loadSeason, closeSeason, loadProfile, createProfile } from './services/quizService';
+const ADMIN_UID = 'ktCddjGUigN8Spm6x9wrdFgzBZy2';
 
 export default function App() {
+  const operationLock = useRef(false);
+  const sessionId = useRef('');
+  const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState('');
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
+  const [profileMissing, setProfileMissing] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [abaAtiva, setAbaAtiva] = useState('home');
@@ -175,17 +85,22 @@ export default function App() {
   const [altE, setAltE] = useState('');
   const [respostaCorretaIndex, setRespostaCorretaIndex] = useState(0);
   const [novaExplicacao, setNovaExplicacao] = useState('');
-  const [nomeNovaTemporada, setNomeNovaTemporada] = useState('OUTUBRO/2026');
+  const [nomeNovaTemporada, setNomeNovaTemporada] = useState('');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        await carregarDadosUsuario(currentUser.uid);
-        carregarPerguntas();
-        carregarRanking();
+        try {
+          await carregarDadosUsuario(currentUser.uid);
+          await Promise.all([carregarPerguntas(), carregarRanking()]);
+        } catch (err) { setError('Não foi possível carregar seu perfil. Verifique sua conexão e entre novamente.'); console.error(err); }
       } else {
         setUserData(null);
+        setDisciplinaSelecionada(null);
+        setAbaAtiva('home');
+        setPerguntas([]);
+        setRankingAlunos([]);
       }
     });
     return () => unsubscribe();
@@ -193,109 +108,20 @@ export default function App() {
 
   useEffect(() => {
     let timer;
-    if (disciplinaSelecionada && !respostaConfirmada && !quizFinalizado && tempoRestante > 0) {
+    if (disciplinaSelecionada && perguntasSessao.length > 0 && !saving && !saveError && !respostaConfirmada && !quizFinalizado && tempoRestante > 0) {
       timer = setInterval(() => {
         setTempoRestante((prev) => prev - 1);
       }, 1000);
-    } else if (tempoRestante === 0 && !respostaConfirmada && disciplinaSelecionada && !quizFinalizado) {
+    } else if (tempoRestante === 0 && perguntasSessao.length > 0 && !saving && !saveError && !respostaConfirmada && disciplinaSelecionada && !quizFinalizado) {
       handleConfirmarResposta();
     }
     return () => clearInterval(timer);
-  }, [disciplinaSelecionada, respostaConfirmada, quizFinalizado, tempoRestante]);
+  }, [disciplinaSelecionada, respostaConfirmada, quizFinalizado, tempoRestante, perguntasSessao.length, saving, saveError]);
 
   const carregarDadosUsuario = async (uid) => {
-    const docRef = doc(db, 'users', uid);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-
-      const agora = new Date();
-      const hoje = agora.toISOString().split('T')[0]; // AAA-MM-DD
-      const mesAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`;
-      const semanaAtual = getChaveSemanaAtual(agora);
-
-      const diasAtivos = data.diasAtivosMes || [];
-      const ultimoDiaAtivo = data.ultimoDiaAtivo || '';
-      const ultimaSemanaAtiva = data.ultimaSemanaAtiva || '';
-      const ultimoMesAtivo = data.ultimoMesAtivo || '';
-      
-      let updates = {};
-      let missoesConcluidasAtualizadas = [...(data.missoesConcluidas || [])];
-
-      if (!diasAtivos.includes(hoje)) {
-        updates.diasAtivosMes = [...diasAtivos, hoje];
-        data.diasAtivosMes = updates.diasAtivosMes;
-      }
-
-      // 1. Reset Diário (À meia-noite)
-      if (ultimoDiaAtivo !== hoje) {
-        updates.ultimoDiaAtivo = hoje;
-        updates.questoesRespondidasHoje = [];
-        updates.questoesErradasHoje = [];
-        updates["progressoMissoes.quizzesHoje"] = 0;
-        updates["progressoMissoes.acertosHoje"] = 0;
-
-        // Limpa ID de missões diárias já concluídas para poderem ser refeitas
-        const idsDiarios = DEFAULT_MISSIONS.filter(m => m.tipo === 'Diária').map(m => m.id);
-        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsDiarios.includes(id));
-
-        data.ultimoDiaAtivo = hoje;
-        data.questoesRespondidasHoje = [];
-        data.questoesErradasHoje = [];
-      }
-
-      // 2. Reset Semanal (Virada da semana / Domingos à meia-noite)
-      if (ultimaSemanaAtiva !== semanaAtual) {
-        updates.ultimaSemanaAtiva = semanaAtual;
-        updates["progressoMissoes.quizzesSemana"] = 0;
-        updates["progressoMissoes.acertosSemana"] = 0;
-        updates["progressoMissoes.quizzesPerfeitosSemana"] = 0;
-
-        const idsSemanais = DEFAULT_MISSIONS.filter(m => m.tipo === 'Semanal').map(m => m.id);
-        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsSemanais.includes(id));
-
-        data.ultimaSemanaAtiva = semanaAtual;
-      }
-
-      // 3. Reset Mensal (Virada do Mês)
-      if (ultimoMesAtivo !== mesAtual) {
-        updates.ultimoMesAtivo = mesAtual;
-        updates.questoesRespondidasMes = 0;
-        updates.questoesAcertadasMes = 0;
-        updates.quizzesRealizadosMes = 0;
-        updates.diasAtivosMes = [hoje];
-        updates["progressoMissoes.quizzesPerfeitosMes"] = 0;
-
-        const idsMensais = DEFAULT_MISSIONS.filter(m => m.tipo === 'Mensal').map(m => m.id);
-        missoesConcluidasAtualizadas = missoesConcluidasAtualizadas.filter(id => !idsMensais.includes(id));
-
-        data.ultimoMesAtivo = mesAtual;
-      }
-
-      updates.missoesConcluidas = missoesConcluidasAtualizadas;
-      data.missoesConcluidas = missoesConcluidasAtualizadas;
-
-      // Garante estrutura completa no Firestore
-      if (!data.progressoMissoes) {
-        updates.progressoMissoes = {
-          quizzesHoje: 0,
-          acertosHoje: 0,
-          quizzesSemana: 0,
-          acertosSemana: 0,
-          quizzesPerfeitosSemana: 0,
-          quizzesPerfeitosMes: 0
-        };
-        data.progressoMissoes = updates.progressoMissoes;
-      }
-
-      if (Object.keys(updates).length > 0) {
-        await updateDoc(docRef, updates);
-      }
-
-      setUserData(data);
-      return data;
-    }
-    return null;
+    const data = await loadProfile(uid);
+    if (auth.currentUser?.uid === uid) { setUserData(data); setProfileMissing(data === null); }
+    return data;
   };
 
   const carregarPerguntas = async () => {
@@ -304,7 +130,8 @@ export default function App() {
       const querySnapshot = await getDocs(collection(db, 'questions'));
       const lista = [];
       querySnapshot.forEach((doc) => {
-        lista.push({ id: doc.id, ...doc.data() });
+        try { lista.push({ ...normalizeQuestion(doc.data()), id: doc.id }); }
+        catch (error) { console.warn(`Questão ${doc.id} ignorada: ${error.message}`); }
       });
       setPerguntas(lista);
     } catch (err) {
@@ -315,7 +142,7 @@ export default function App() {
 
   const carregarRanking = async () => {
     try {
-      const q = query(collection(db, 'users'), orderBy('xpTemporada', 'desc'), limit(10));
+      const q = query(collection(db, 'rankings'), orderBy('xpTemporada', 'desc'), limit(10));
       const querySnapshot = await getDocs(q);
       const ranking = [];
       querySnapshot.forEach((doc) => {
@@ -327,122 +154,39 @@ export default function App() {
     }
   };
 
-  const checarEConcederConquistas = async (dadosAtualizados, acertosQuizAtual = -1, tempoDaQuestao = 0) => {
-    if (!user) return;
-    const userRef = doc(db, 'users', user.uid);
-    let xpGeralAdd = 0;
-
-    const conquistasAtuais = dadosAtualizados.conquistasDesbloqueadas || [];
-    const novasConquistas = [];
-
-    CONQUISTAS_SISTEMA.forEach((conquista) => {
-      if (!conquistasAtuais.includes(conquista.id)) {
-        if (conquista.checar(dadosAtualizados, acertosQuizAtual, tempoDaQuestao)) {
-          novasConquistas.push(conquista.id);
-          xpGeralAdd += conquista.xp;
-        }
-      }
-    });
-
-    const missoesConcluidasAtuais = dadosAtualizados.missoesConcluidas || [];
-    const novasMissoesCompletas = [];
-
-    DEFAULT_MISSIONS.forEach((missao) => {
-      if (!missoesConcluidasAtuais.includes(missao.id)) {
-        const valorAtual = missao.progresso(dadosAtualizados);
-        if (valorAtual >= missao.alvo) {
-          novasMissoesCompletas.push(missao.id);
-          xpGeralAdd += missao.xp;
-        }
-      }
-    });
-
-    if (novasConquistas.length > 0 || novasMissoesCompletas.length > 0) {
-      await updateDoc(userRef, {
-        conquistasDesbloqueadas: [...conquistasAtuais, ...novasConquistas],
-        missoesConcluidas: [...missoesConcluidasAtuais, ...novasMissoesCompletas],
-        xpTemporada: increment(xpGeralAdd),
-        pontuacaoGeral: increment(xpGeralAdd)
-      });
-
-      let msg = '🎉 PARABÉNS!\n';
-      if (novasMissoesCompletas.length > 0) msg += `🎯 ${novasMissoesCompletas.length} Missão(ões) Cumprida(s)!\n`;
-      if (novasConquistas.length > 0) msg += `🏆 ${novasConquistas.length} Conquista(s) Desbloqueada(s)!\n`;
-      msg += `+${xpGeralAdd} XP creditados!`;
-
-      alert(msg);
-      await carregarDadosUsuario(user.uid);
-    }
-  };
-
   const handleSeed = async () => {
+    if (user?.uid !== ADMIN_UID) return;
     setLoading(true);
-    const ok = await popularBancoPerguntas();
-    if (ok) {
-      alert("Perguntas de exemplo adicionadas com sucesso!");
-      carregarPerguntas();
-    } else {
-      alert("Erro ao popular banco de dados.");
-    }
-    setLoading(false);
+    try {
+      const { default: questions } = await import('./data/questions.json');
+      const result = await importQuestions(questions);
+      alert(`${result.imported} questões importadas; ${result.duplicates} já existentes.`);
+      await carregarPerguntas();
+    } catch (err) { alert(err.message); }
+    finally { setLoading(false); }
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
     setSuccessMessage('');
+    if (![nome, curso, turma, unidade].every(v => v.trim() && v.trim().length <= 200)) {
+      setError('Preencha os dados do cadastro, com até 200 caracteres por campo.'); return;
+    }
     setLoading(true);
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password);
       const newUser = userCredential.user;
-      const agora = new Date();
-      const hoje = agora.toISOString().split('T')[0];
-      const mesAtual = `${agora.getFullYear()}-${String(agora.getMonth() + 1).padStart(2, '0')}`;
-      const semanaAtual = getChaveSemanaAtual(agora);
-
+      const currentSeason = await loadSeason();
       const newUserData = {
-        uid: newUser.uid,
-        nome: nome,
-        email: email,
-        curso: curso,
-        turma: turma,
-        unidade: unidade,
-        
-        pontuacaoGeral: 0,
-        quizzesRealizados: 0,
-        questoesRespondidas: 0,
-        questoesAcertadas: 0,
-        maiorSequencia: 0,
-        
-        xpTemporada: 0,
-        quizzesRealizadosMes: 0,
-        questoesRespondidasMes: 0,
-        questoesAcertadasMes: 0,
-        categoriasRespondidas: {},
-        conquistasDesbloqueadas: [],
-        missoesConcluidas: [],
-        diasAtivosMes: [hoje],
-        ultimoDiaAtivo: hoje,
-        ultimaSemanaAtiva: semanaAtual,
-        ultimoMesAtivo: mesAtual,
-        questoesRespondidasHoje: [],
-        questoesErradasHoje: [],
-        temporadaAtual: "SETEMBRO/2026",
-
-        progressoMissoes: {
-          quizzesHoje: 0,
-          acertosHoje: 0,
-          quizzesSemana: 0,
-          acertosSemana: 0,
-          quizzesPerfeitosSemana: 0,
-          quizzesPerfeitosMes: 0
-        },
-
-        isAdmin: email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase()
+        uid: newUser.uid, nome: nome.trim(), email: newUser.email,
+        curso: curso.trim(), turma: turma.trim(), unidade: unidade.trim(),
+        isAdmin: newUser.uid === ADMIN_UID,
+        ...initialProgress(currentSeason.name)
       };
 
-      await setDoc(doc(db, 'users', newUser.uid), newUserData);
-      setUserData(newUserData);
+      const savedProfile = await createProfile(newUser.uid, newUserData);
+      setUserData(savedProfile);
     } catch (err) {
       setError('Erro ao criar conta: ' + err.message);
     }
@@ -489,7 +233,7 @@ export default function App() {
   const handleTornarAdmin = async () => {
     if (!user) return;
 
-    if (user.email.toLowerCase() !== ADMIN_EMAIL_AUTORIZADO.toLowerCase()) {
+    if (user.uid !== ADMIN_UID) {
       alert("Acesso negado: Apenas a conta oficial (ofeitosa94@gmail.com) tem permissão de Administrador.");
       return;
     }
@@ -504,46 +248,22 @@ export default function App() {
     }
   };
 
-  const handleImportarJSON = (event) => {
-    const fileReader = new FileReader();
-    const file = event.target.files[0];
-
-    if (!file) return;
-
-    fileReader.onload = async (e) => {
-      try {
-        const conteudo = JSON.parse(e.target.result);
-
-        if (!Array.isArray(conteudo)) {
-          alert("Erro: O arquivo enviado precisa conter uma lista (array) de questões.");
-          return;
-        }
-
-        setLoading(true);
-        let importadas = 0;
-        
-        for (const q of conteudo) {
-          if (q.pergunta && q.alternativas && q.disciplina) {
-            await addDoc(collection(db, 'questions'), q);
-            importadas++;
-          }
-        }
-        
-        alert(`Sucesso! ${importadas} questões foram importadas para o banco de dados.`);
-        carregarPerguntas();
-      } catch (err) {
-        alert("Erro ao ler arquivo JSON: " + err.message);
-      } finally {
-        setLoading(false);
-        event.target.value = '';
-      }
-    };
-
-    fileReader.readAsText(file);
+  const handleImportarJSON = async (event) => {
+    const input = event.target;
+    const file = input.files?.[0];
+    if (!file || user?.uid !== ADMIN_UID) return;
+    setLoading(true);
+    try {
+      const result = await importQuestions(JSON.parse(await file.text()));
+      alert(`${result.imported} questões importadas; ${result.duplicates} duplicadas ignoradas.`);
+      await carregarPerguntas();
+    } catch (err) { alert(`Importação não concluída: ${err.message}`); }
+    finally { setLoading(false); input.value = ''; }
   };
 
   const handleCadastrarPergunta = async (e) => {
     e.preventDefault();
+    if (user?.uid !== ADMIN_UID) return;
     if (!altA || !altB || !altC || !altD || !altE) {
       alert("Preencha todas as 5 alternativas.");
       return;
@@ -555,18 +275,19 @@ export default function App() {
       tipo: novoTipo || 'Geral',
       pergunta: novaPergunta,
       alternativas: [
-        `A) ${altA}`,
-        `B) ${altB}`,
-        `C) ${altC}`,
-        `D) ${altD}`,
-        `E) ${altE}`
+        altA,
+        altB,
+        altC,
+        altD,
+        altE
       ],
       respostaCorreta: Number(respostaCorretaIndex),
       explicacao: novaExplicacao
     };
 
     try {
-      await addDoc(collection(db, 'questions'), novaQ);
+      const result = await importQuestions([novaQ]);
+      if (!result.imported) { alert('Esta questão já está no banco.'); return; }
       alert("Questão cadastrada com sucesso!");
       setNovaPergunta('');
       setNovoTipo('');
@@ -579,6 +300,7 @@ export default function App() {
   };
 
   const handleDeletarPergunta = async (id) => {
+    if (user?.uid !== ADMIN_UID) return;
     if (window.confirm("Deseja realmente apagar esta pergunta?")) {
       try {
         await deleteDoc(doc(db, 'questions', id));
@@ -590,74 +312,20 @@ export default function App() {
   };
 
   const handleEncerrarTemporada = async () => {
-    if (!nomeNovaTemporada) {
-      alert("Informe o nome da nova temporada (Ex: OUTUBRO/2026).");
-      return;
-    }
-
-    if (window.confirm(`Tem certeza que deseja encerrar a temporada atual e iniciar a temporada ${nomeNovaTemporada}? O XP, missões e conquistas mensais de TODOS os alunos serão resetados.`)) {
-      setLoading(true);
-      try {
-        const querySnapshot = await getDocs(collection(db, 'users'));
-        
-        const promessas = querySnapshot.docs.map((userDoc) => 
-          updateDoc(doc(db, 'users', userDoc.id), {
-            xpTemporada: 0,
-            quizzesRealizadosMes: 0,
-            questoesRespondidasMes: 0,
-            questoesAcertadasMes: 0,
-            categoriasRespondidas: {},
-            conquistasDesbloqueadas: [],
-            missoesConcluidas: [],
-            diasAtivosMes: [],
-            temporadaAtual: nomeNovaTemporada,
-            "progressoMissoes.quizzesPerfeitosMes": 0
-          })
-        );
-
-        await Promise.all(promessas);
-
-        alert(`Temporada ${nomeNovaTemporada} iniciada com sucesso!`);
-        carregarRanking();
-        await carregarDadosUsuario(user.uid);
-      } catch (err) {
-        alert("Erro ao zerar temporada: " + err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
+    if (user?.uid !== ADMIN_UID) return;
+    if (!nomeNovaTemporada.trim()) { alert('Informe o nome da nova temporada.'); return; }
+    if (!window.confirm(`Iniciar ${nomeNovaTemporada.trim()}? O XP da temporada será zerado. Conquistas permanentes e missões do calendário serão preservadas.`)) return;
+    setLoading(true);
+    try {
+      await closeSeason(nomeNovaTemporada.trim());
+      await carregarDadosUsuario(user.uid);
+      await carregarRanking();
+      alert('Nova temporada iniciada!');
+    } catch (err) { alert(`Não foi possível encerrar a temporada: ${err.message}`); }
+    finally { setLoading(false); }
   };
 
-  const prepararBlocoQuestoes = (listaOrigem, quantidade = 10) => {
-    const erradasHojeIds = userData?.questoesErradasHoje || [];
-    const respondidasHojeIds = userData?.questoesRespondidasHoje || [];
-
-    const naoRespondidasHoje = listaOrigem.filter(q => !respondidasHojeIds.includes(q.id));
-    const acertadasHoje = listaOrigem.filter(q => respondidasHojeIds.includes(q.id) && !erradasHojeIds.includes(q.id));
-    const erradasHoje = listaOrigem.filter(q => erradasHojeIds.includes(q.id));
-
-    const grupo1 = shuffleArray(naoRespondidasHoje);
-    const grupo2 = shuffleArray(acertadasHoje);
-    const grupo3 = shuffleArray(erradasHoje);
-
-    const listaOrdenada = [...grupo1, ...grupo2, ...grupo3].slice(0, quantidade);
-    
-    return listaOrdenada.map((q) => {
-      const altsComIndice = q.alternativas.map((texto, idx) => ({
-        texto,
-        isCorreta: idx === q.respostaCorreta
-      }));
-
-      const altsEmbaralhadas = shuffleArray(altsComIndice);
-      const novoIndexCorreto = altsEmbaralhadas.findIndex(a => a.isCorreta);
-
-      return {
-        ...q,
-        alternativas: altsEmbaralhadas.map(a => a.texto),
-        respostaCorreta: novoIndexCorreto
-      };
-    });
-  };
+  const prepararBlocoQuestoes = (source, count = 10) => prepareQuestions(source, resetPeriods(userData, DEFAULT_MISSIONS), count);
 
   const iniciarQuizPorDisciplina = (disc) => {
     const filtradas = perguntas.filter(
@@ -666,6 +334,9 @@ export default function App() {
 
     const blocoPronto = prepararBlocoQuestoes(filtradas, 10);
 
+    sessionId.current = crypto.randomUUID();
+    setSaveError('');
+    setXpUltimaQuestao(0);
     setDisciplinaSelecionada(disc);
     setPerguntasSessao(blocoPronto);
     setPerguntasErradasSessao([]);
@@ -682,6 +353,11 @@ export default function App() {
   };
 
   const refazerQuestoesErradas = () => {
+    sessionId.current = crypto.randomUUID();
+    setAcertosSessao(0);
+    setPontosSessao(0);
+    setXpUltimaQuestao(0);
+    setSaveError('');
     const blocoPronto = prepararBlocoQuestoes(perguntasErradasSessao, perguntasErradasSessao.length);
 
     setPerguntasSessao(blocoPronto);
@@ -705,153 +381,100 @@ export default function App() {
 
   const perguntaAtual = perguntasSessao[indicePerguntaAtual];
 
+  const showAwards = (result) => {
+    if (result.awardXp) alert(`🎉 ${result.achievements.length} conquista(s) e ${result.missions.length} missão(ões)! +${result.awardXp} XP`);
+  };
+
   const handleConfirmarResposta = async () => {
-    setRespostaConfirmada(true);
-    setMensagemBonus('');
-    
-    let xpGanho = 0;
-    const tempoDecorrido = TEMPO_LIMITE - tempoRestante;
-    const acertou = opcaoSelecionada === perguntaAtual.respostaCorreta;
-    const discAtual = perguntaAtual.disciplina;
-    const qId = perguntaAtual.id;
-
-    const respondidasHoje = userData?.questoesRespondidasHoje || [];
-    const erradasHoje = userData?.questoesErradasHoje || [];
-    const jaRespondidaHoje = respondidasHoje.includes(qId);
-
-    const contagemCategorias = { ...(userData?.categoriasRespondidas || {}) };
-    contagemCategorias[discAtual] = (contagemCategorias[discAtual] || 0) + 1;
-
-    const novasRespondidasHoje = jaRespondidaHoje ? respondidasHoje : [...respondidasHoje, qId];
-    let novasErradasHoje = [...erradasHoje];
-
-    let updatesUsuario = {
-      questoesRespondidas: increment(1),
-      questoesRespondidasMes: increment(1),
-      categoriasRespondidas: contagemCategorias,
-      questoesRespondidasHoje: novasRespondidasHoje
-    };
-
-    if (acertou && tempoRestante > 0) {
-      setAcertosSessao((prev) => prev + 1);
-      updatesUsuario.questoesAcertadas = increment(1);
-      updatesUsuario.questoesAcertadasMes = increment(1);
-      updatesUsuario["progressoMissoes.acertosHoje"] = increment(1);
-      updatesUsuario["progressoMissoes.acertosSemana"] = increment(1);
-
-      novasErradasHoje = novasErradasHoje.filter(id => id !== qId);
-
-      if (!isModoRefazer) {
-        // Define o XP base de acordo com a dificuldade da questão
-        const xpPorDificuldade = {
-          'Fácil': 15,
-          'Médio': 30,
-          'Difícil': 50
-        };
-
-        // Obter o valor base da questão atual (ou 30 como padrão se não definido)
-        const baseDificuldade = xpPorDificuldade[perguntaAtual.dificuldade] || 30;
-
-        const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
-        let xpBase = Math.max(0, baseDificuldade - penalidadeTempo);
-
-        if (jaRespondidaHoje) {
-          xpGanho = Math.floor(xpBase / 2);
-          setMensagemBonus('⚠️ Questão repetida hoje: Metade dos pontos (sem bônus de sequência).');
-        } else {
-          xpGanho = xpBase;
-          const novoStreak = streak + 1;
-          setStreak(novoStreak);
-
-          if (novoStreak > (userData?.maiorSequencia || 0)) {
-            updatesUsuario.maiorSequencia = novoStreak;
-          }
-
-          if (novoStreak === 3) {
-            xpGanho += 20;
-            setMensagemBonus('🔥 Sequência de 3 acertos! (+20 XP)');
-          } else if (novoStreak === 5) {
-            xpGanho += 50;
-            setMensagemBonus('⚡ Sequência Incrível de 5 acertos! (+50 XP)');
-          }
-        }
-      } else {
-        // Ajuste do XP no Modo Refazer dinâmico por dificuldade
-        const xpRefazerPorDificuldade = {
-          'Fácil': 10,
-          'Médio': 15,
-          'Difícil': 25
-        };
-        const baseRefazer = xpRefazerPorDificuldade[perguntaAtual.dificuldade] || 15;
-        const penalidadeTempo = Math.floor(tempoDecorrido / 10) * 3;
-        xpGanho = Math.max(0, baseRefazer - penalidadeTempo);
-      }
-    } else {
-      setStreak(0);
-      if (!novasErradasHoje.includes(qId)) {
-        novasErradasHoje.push(qId);
-      }
-      if (!isModoRefazer) {
-        setPerguntasErradasSessao((prev) => [...prev, perguntaAtual]);
-      }
-    }
-
-    updatesUsuario.questoesErradasHoje = novasErradasHoje;
-
-    if (xpGanho > 0) {
-      updatesUsuario.pontuacaoGeral = increment(xpGanho);
-      updatesUsuario.xpTemporada = increment(xpGanho);
-    }
-
-    setXpUltimaQuestao(xpGanho);
-    setPontosSessao((prev) => prev + xpGanho);
-
-    const userRef = doc(db, 'users', user.uid);
-    await updateDoc(userRef, updatesUsuario);
-    const dadosNovos = await carregarDadosUsuario(user.uid);
-    carregarRanking();
-
-    await checarEConcederConquistas(dadosNovos, -1, tempoRestante);
+    if (operationLock.current || respostaConfirmada || !perguntaAtual || !user) return;
+    operationLock.current = true;
+    setSaving(true);
+    setSaveError('');
+    try {
+      const result = await saveQuizEvent(user.uid, {
+        id: `${sessionId.current}:answer:${indicePerguntaAtual}`, type: 'answer',
+        question: perguntaAtual, selected: opcaoSelecionada, remaining: tempoRestante,
+        review: isModoRefazer, streak
+      });
+      setUserData(result.data);
+      setRespostaConfirmada(true);
+      setMensagemBonus(result.bonus);
+      setXpUltimaQuestao(result.xp + result.awardXp);
+      setPontosSessao(prev => prev + result.xp + result.awardXp);
+      setStreak(result.streak);
+      if (result.correct) setAcertosSessao(prev => prev + 1);
+      else setPerguntasErradasSessao(prev => [...prev, perguntaAtual]);
+      showAwards(result);
+    } catch (err) {
+      setSaveError('Não foi possível salvar a resposta. Verifique sua conexão e tente novamente.');
+      console.error(err);
+    } finally { operationLock.current = false; setSaving(false); }
   };
 
   const handleProximaPergunta = async () => {
+    if (operationLock.current || !respostaConfirmada) return;
     if (indicePerguntaAtual + 1 < perguntasSessao.length) {
-      setIndicePerguntaAtual((prev) => prev + 1);
+      setIndicePerguntaAtual(prev => prev + 1);
       setOpcaoSelecionada(null);
       setRespostaConfirmada(false);
       setTempoRestante(TEMPO_LIMITE);
       setMensagemBonus('');
-    } else {
-      const userRef = doc(db, 'users', user.uid);
-      const ePerfeito = acertosSessao === perguntasSessao.length;
-
-      let payloadFinalQuiz = { 
-        quizzesRealizados: increment(1),
-        quizzesRealizadosMes: increment(1),
-        "progressoMissoes.quizzesHoje": increment(1),
-        "progressoMissoes.quizzesSemana": increment(1)
-      };
-
-      if (!isModoRefazer) {
-        const bonusConclusao = 30;
-        setPontosSessao((prev) => prev + bonusConclusao);
-        payloadFinalQuiz.pontuacaoGeral = increment(bonusConclusao);
-        payloadFinalQuiz.xpTemporada = increment(bonusConclusao);
-
-        if (ePerfeito) {
-          payloadFinalQuiz["progressoMissoes.quizzesPerfeitosSemana"] = increment(1);
-          payloadFinalQuiz["progressoMissoes.quizzesPerfeitosMes"] = increment(1);
-        }
-      }
-
-      await updateDoc(userRef, payloadFinalQuiz);
-      const dadosNovos = await carregarDadosUsuario(user.uid);
-      setQuizFinalizado(true);
-      carregarRanking();
-
-      await checarEConcederConquistas(dadosNovos, acertosSessao);
+      setXpUltimaQuestao(0);
+      setSaveError('');
+      return;
     }
+    operationLock.current = true;
+    setSaving(true);
+    setSaveError('');
+    try {
+      const result = await saveQuizEvent(user.uid, {
+        id: `${sessionId.current}:finish`, type: 'finish', correctCount: acertosSessao,
+        total: perguntasSessao.length, review: isModoRefazer
+      });
+      setUserData(result.data);
+      setPontosSessao(prev => prev + result.xp + result.awardXp);
+      setQuizFinalizado(true);
+      showAwards(result);
+      await carregarRanking();
+    } catch (err) {
+      setSaveError('Não foi possível finalizar. Tente novamente; sua pontuação não será duplicada.');
+      console.error(err);
+    } finally { operationLock.current = false; setSaving(false); }
   };
+
+  if (user && !userData) {
+    return <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center gap-4 p-6">
+      <p role="status">{error || (profileMissing ? 'Complete seu perfil para começar.' : 'Carregando seu perfil...')}</p>
+      {profileMissing && <form className="w-full max-w-md space-y-3" onSubmit={async e => {
+        e.preventDefault();
+        if (loading) return;
+        if (![nome, curso, turma, unidade].every(v => v.trim())) { setError('Preencha todos os campos.'); return; }
+        setLoading(true); setError('');
+        try {
+          const currentSeason = await loadSeason();
+          const profile = await createProfile(user.uid, {
+            uid: user.uid, email: user.email, nome: nome.trim(), curso: curso.trim(),
+            turma: turma.trim(), unidade: unidade.trim(), isAdmin: user.uid === ADMIN_UID,
+            ...initialProgress(currentSeason.name)
+          });
+          setUserData(profile); setProfileMissing(false);
+          await Promise.all([carregarPerguntas(), carregarRanking()]);
+        } catch { setError('Não foi possível concluir o cadastro. Verifique a conexão e tente novamente.'); }
+        finally { setLoading(false); }
+      }}>
+        {[["Nome completo", nome, setNome], ["Curso", curso, setCurso], ["Turma", turma, setTurma], ["Unidade", unidade, setUnidade]].map(([label, value, change]) =>
+          <label key={label} className="block">{label}<input required maxLength={200} value={value} onChange={e => change(e.target.value)} className="block w-full bg-slate-800 rounded p-2" /></label>
+        )}
+        <button disabled={loading} className="bg-indigo-600 rounded-lg px-4 py-2">{loading ? 'Salvando...' : 'Concluir cadastro'}</button>
+      </form>}
+      <button disabled={loading} className="bg-slate-700 rounded-lg px-4 py-2" onClick={async () => {
+        setError('');
+        try { await carregarDadosUsuario(user.uid); }
+        catch { setError('Não foi possível carregar seu perfil. Tente novamente.'); }
+      }}>Tentar novamente</button>
+      <button disabled={loading} onClick={() => signOut(auth)}>Sair</button>
+    </div>;
+  }
 
   if (user && userData && disciplinaSelecionada) {
     if (perguntasSessao.length === 0) {
@@ -877,7 +500,7 @@ export default function App() {
             <span className="text-5xl mb-4 block">🏆</span>
             <h2 className="text-2xl font-bold text-indigo-400 mb-2">Quiz Concluído!</h2>
             <p className="text-slate-400 text-sm mb-6">
-              {!isModoRefazer ? 'Você ganhou +30 XP bônus por finalizar o quiz!' : 'Revisão das questões erradas concluída!'}
+              {!isModoRefazer && perguntasSessao.length === 10 ? 'Você ganhou +30 XP bônus por finalizar o quiz!' : 'Sessão de estudo concluída!'}
             </p>
             
             <div className="bg-slate-700/50 p-4 rounded-xl mb-6 border border-slate-600">
@@ -886,7 +509,7 @@ export default function App() {
               <span className="text-xs text-slate-400 block mt-2">Acertos: {acertosSessao} de {perguntasSessao.length}</span>
             </div>
 
-            {perguntasErradasSessao.length > 0 && !isModoRefazer && (
+            {perguntasErradasSessao.length > 0 && (
               <button 
                 onClick={refazerQuestoesErradas}
                 className="w-full bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 rounded-lg transition mb-3"
@@ -924,6 +547,7 @@ export default function App() {
             </div>
 
             <button
+              disabled={saving}
               onClick={sairDoQuiz}
               className="text-xs bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1 rounded-lg hover:bg-red-500/30 transition"
             >
@@ -979,7 +603,7 @@ export default function App() {
               return (
                 <button
                   key={index}
-                  disabled={respostaConfirmada}
+                  disabled={respostaConfirmada || saving || tempoRestante === 0}
                   onClick={() => setOpcaoSelecionada(index)}
                   className={`w-full text-left p-3.5 rounded-xl border transition text-sm flex items-center justify-between ${btnEstilo}`}
                 >
@@ -1009,16 +633,18 @@ export default function App() {
             </div>
           )}
 
+          {saveError && <p role="alert" className="mb-3 text-sm text-red-300">{saveError}</p>}
           {!respostaConfirmada ? (
             <button
               onClick={handleConfirmarResposta}
-              disabled={opcaoSelecionada === null}
+              disabled={saving || (opcaoSelecionada === null && tempoRestante > 0)}
               className="w-full bg-indigo-600 disabled:opacity-50 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition"
             >
               Responder
             </button>
           ) : (
             <button
+              disabled={saving}
               onClick={handleProximaPergunta}
               className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-3 rounded-lg transition"
             >
@@ -1033,7 +659,7 @@ export default function App() {
 
   if (user && userData) {
     const listaDisciplinas = ['Todas', ...AREAS_ADMINISTRACAO];
-    const isUserAdminAutorizado = userData.isAdmin && user.email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase();
+    const isUserAdminAutorizado = userData.isAdmin && user.uid === ADMIN_UID;
     const conquistasDesbloqueadas = userData.conquistasDesbloqueadas || [];
     const missoesConcluidas = userData.missoesConcluidas || [];
 
@@ -1048,7 +674,7 @@ export default function App() {
               <h2 className="text-xl font-bold text-indigo-400">Olá, {userData.nome}!</h2>
               <p className="text-xs text-slate-400">{userData.email}</p>
               <span className="inline-block mt-1 text-[10px] bg-indigo-950 text-indigo-300 border border-indigo-500/30 px-2 py-0.5 rounded-full font-semibold">
-                🗓️ Temporada: {userData.temporadaAtual || 'SETEMBRO/2026'}
+                🗓️ Temporada: {userData.temporadaAtual || getPeriods().seasonName}
               </span>
             </div>
             <button 
@@ -1098,11 +724,11 @@ export default function App() {
             <div>
               <div className="bg-slate-700/40 p-4 rounded-xl border border-slate-600 flex justify-between items-center mb-6">
                 <div>
-                  <span className="text-xs text-slate-400 block">XP Mensal ({userData.temporadaAtual || 'Temporada'})</span>
+                  <span className="text-xs text-slate-400 block">XP da Temporada ({userData.temporadaAtual || 'Temporada'})</span>
                   <span className="text-2xl font-black text-emerald-400">{userData.xpTemporada || 0} XP</span>
                   <span className="text-[10px] text-slate-400 block mt-0.5">Vitalício: {userData.pontuacaoGeral || 0} XP</span>
                 </div>
-                {perguntas.length === 0 && (
+                {perguntas.length === 0 && isUserAdminAutorizado && (
                   <button 
                     onClick={handleSeed}
                     className="bg-indigo-600 hover:bg-indigo-500 text-xs text-white px-3 py-2 rounded-lg"
@@ -1110,7 +736,7 @@ export default function App() {
                     + Carregar Perguntas
                   </button>
                 )}
-                {!userData.isAdmin && user.email.toLowerCase() === ADMIN_EMAIL_AUTORIZADO.toLowerCase() && (
+                {!userData.isAdmin && user.uid === ADMIN_UID && (
                   <button 
                     onClick={handleTornarAdmin}
                     className="bg-amber-600/20 border border-amber-500/30 text-amber-300 text-[11px] px-2.5 py-1 rounded-lg hover:bg-amber-600/30 transition"
@@ -1222,7 +848,7 @@ export default function App() {
                   🏆 Top Alunos - {userData.temporadaAtual || 'Temporada Atual'}
                 </h3>
                 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-bold">
-                  Ordenado por XP Mensal
+                  Ordenado por XP da Temporada
                 </span>
               </div>
 
@@ -1296,7 +922,7 @@ export default function App() {
 
               <div className="bg-slate-900 p-4 rounded-xl border border-slate-700">
                 <div className="flex justify-between items-center mb-3">
-                  <h4 className="text-xs font-bold text-slate-200">🏆 Conquistas Mensais & Secretas ({conquistasDesbloqueadas.length}/{CONQUISTAS_SISTEMA.length})</h4>
+                  <h4 className="text-xs font-bold text-slate-200">🏆 Conquistas Permanentes & Secretas ({conquistasDesbloqueadas.length}/{CONQUISTAS_SISTEMA.length})</h4>
                   <span className="text-[10px] text-slate-400">Reinicia no fim do mês</span>
                 </div>
 
@@ -1356,7 +982,7 @@ export default function App() {
                   🗓️ Gerenciador de Temporada Mensal
                 </h4>
                 <p className="text-[11px] text-slate-400 mb-3">
-                  Ao encerrar a temporada, o XP do ranking, missões e conquistas mensais são resetados para todos os alunos. O histórico geral e estatísticas acumuladas permanecem intactos.
+                  Ao encerrar a temporada, somente o XP do ranking é zerado. Conquistas permanentes, estatísticas e missões diárias, semanais e mensais são preservadas.
                 </p>
                 <div className="flex gap-2">
                   <input 

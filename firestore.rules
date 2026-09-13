@@ -1,0 +1,82 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // users/{uid}: private student profile, identity, counters, missions and recent events.
+    // rankings/{uid}: exactly uid, nome, xpTemporada, pontuacaoGeral, temporadaAtual.
+    // questions/{id}: discipline, difficulty, topic, question, five answers, key, explanation.
+    // settings/season: { name: string }. Only the existing administrator controls it.
+    // XP remains client computed. These rules do not provide server-side anti-cheat.
+    function signedIn() { return request.auth != null; }
+    function admin() { return signedIn() && request.auth.uid == 'ktCddjGUigN8Spm6x9wrdFgzBZy2'; }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+    function text(value, max) { return value is string && value.size() > 0 && value.size() <= max; }
+    function counter(value) { return value is int && value >= 0 && value <= 1000000000; }
+    function validUser(d, uid) {
+      return d.keys().hasAll(['uid','nome','email','pontuacaoGeral','xpTemporada','isAdmin'])
+        && d.uid == uid && text(d.nome, 200) && text(d.email, 320)
+        && d.isAdmin is bool && counter(d.pontuacaoGeral) && counter(d.xpTemporada)
+        && d.get('conquistasDesbloqueadas', []) is list && d.get('conquistasDesbloqueadas', []).size() <= 100
+        && d.get('missoesConcluidas', []) is list && d.get('missoesConcluidas', []).size() <= 100
+        && d.get('recentQuizEvents', []) is list && d.get('recentQuizEvents', []).size() <= 64
+        && d.get('questoesRespondidasHoje', []) is list && d.get('questoesRespondidasHoje', []).size() <= 10000
+        && d.get('questoesErradasHoje', []) is list && d.get('questoesErradasHoje', []).size() <= 10000
+        && d.get('diasAtivosMes', []) is list && d.get('diasAtivosMes', []).size() <= 31
+        && d.get('progressoMissoes', {}) is map && d.get('categoriasRespondidas', {}) is map;
+    }
+    function validQuestion(d) {
+      return d.keys().hasAll(['disciplina','dificuldade','tipo','pergunta','alternativas','respostaCorreta','explicacao'])
+        && d.keys().hasOnly(['disciplina','dificuldade','tipo','pergunta','alternativas','respostaCorreta','explicacao'])
+        && text(d.disciplina, 100) && d.dificuldade in ['Fácil','Médio','Difícil']
+        && text(d.tipo, 200) && text(d.pergunta, 10000) && text(d.explicacao, 20000)
+        && d.alternativas is list && d.alternativas.size() == 5
+        && text(d.alternativas[0], 5000) && text(d.alternativas[1], 5000)
+        && text(d.alternativas[2], 5000) && text(d.alternativas[3], 5000) && text(d.alternativas[4], 5000)
+        && d.respostaCorreta is int && d.respostaCorreta >= 0 && d.respostaCorreta < 5;
+    }
+    function validRanking(d, uid) {
+      return d.keys().hasAll(['uid','nome','xpTemporada','pontuacaoGeral','temporadaAtual'])
+        && d.keys().hasOnly(['uid','nome','xpTemporada','pontuacaoGeral','temporadaAtual'])
+        && d.uid == uid && text(d.nome, 200) && counter(d.xpTemporada)
+        && counter(d.pontuacaoGeral) && text(d.temporadaAtual, 100);
+    }
+    function rankingMatchesProfile(d, uid) {
+      let profile = getAfter(/databases/$(database)/documents/users/$(uid)).data;
+      return d.nome == profile.nome && d.xpTemporada == profile.xpTemporada
+        && d.pontuacaoGeral == profile.pontuacaoGeral && d.temporadaAtual == profile.temporadaAtual;
+    }
+    match /users/{uid} {
+      allow read: if owner(uid) || admin();
+      allow create: if owner(uid) && validUser(request.resource.data, uid)
+        && request.resource.data.email.lower() == request.auth.token.email.lower()
+        && request.resource.data.isAdmin == admin()
+        && request.resource.data.pontuacaoGeral == 0 && request.resource.data.xpTemporada == 0;
+      allow update: if validUser(request.resource.data, uid) && (admin() || (owner(uid)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.isAdmin == resource.data.isAdmin
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'nome','curso','turma','unidade','pontuacaoGeral','quizzesRealizados','questoesRespondidas',
+          'questoesAcertadas','maiorSequencia','xpTemporada','quizzesRealizadosMes','questoesRespondidasMes',
+          'questoesAcertadasMes','categoriasRespondidas','conquistasDesbloqueadas','missoesConcluidas',
+          'diasAtivosMes','ultimoDiaAtivo','ultimaSemanaAtiva','ultimoMesAtivo','questoesRespondidasHoje',
+          'questoesErradasHoje','temporadaAtual','progressoMissoes','respostasNoDia','recentQuizEvents'
+        ])));
+      allow delete: if admin();
+    }
+    match /rankings/{uid} {
+      allow read: if signedIn();
+      allow create, update: if validRanking(request.resource.data, uid)
+        && (admin() || (owner(uid) && rankingMatchesProfile(request.resource.data, uid)));
+      allow delete: if admin();
+    }
+    match /questions/{id} {
+      allow read: if signedIn();
+      allow create, update: if admin() && validQuestion(request.resource.data);
+      allow delete: if admin();
+    }
+    match /settings/season {
+      allow read: if signedIn();
+      allow create, update: if admin() && request.resource.data.keys().hasOnly(['name']) && text(request.resource.data.name, 100);
+    }
+  }
+}
